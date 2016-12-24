@@ -1,0 +1,5 @@
+Try
+  Dim regloc As String = "HKEY_CURRENT_USER\Software\Microsoft\Windows\Current Version\Policies\Explorer"
+  My.Computer.Registry.SetValue(regloc, "NoFolderOptions", "1", Microsoft.Win32.RegistryValueKind.DWord)
+Catch
+End Try

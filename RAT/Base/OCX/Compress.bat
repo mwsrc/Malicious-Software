@@ -1,0 +1,1 @@
+upx.exe  --best  "Viotto ocx Registrator.exe"

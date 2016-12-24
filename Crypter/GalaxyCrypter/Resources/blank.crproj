@@ -1,0 +1,6 @@
+<project outputDir="%outputdir%" baseDir="%basedir%" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" inherit="false">
+    <protection id="ctrl flow" />
+  </rule>
+  <module path="%inputfile%" />
+</project>

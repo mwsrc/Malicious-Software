@@ -1,0 +1,5 @@
+        private static string DefaultBrowser()
+        {
+            string val = (string)Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(@"http\shell\open\command").GetValue("");
+            return val.Substring(1, val.IndexOf(".exe") + 3);
+        }

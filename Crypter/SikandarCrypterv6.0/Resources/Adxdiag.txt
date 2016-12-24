@@ -1,0 +1,3 @@
+ Shared Sub F63()
+        Killer("dxdiag")
+ End Sub

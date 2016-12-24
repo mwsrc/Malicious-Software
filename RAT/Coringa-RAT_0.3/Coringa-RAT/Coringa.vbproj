@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0170B16-1779-4FE2-AE65-C7B2648932B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Coringa.My.MyApplication</StartupObject>
+    <RootNamespace>Coringa</RootNamespace>
+    <AssemblyName>Coringa-RAT 0.3</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Coringa-RAT 0.3.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Coringa-RAT 0.3.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>321387476528e6e19ec47f86bd8f0a13.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.0.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>.\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Notificação">
+      <HintPath>Plugin\Notificação.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Componentes\EfeitoAgua.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\RandomST.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Cap.Designer.vb">
+      <DependentUpon>Cap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmClipboard.Designer.vb">
+      <DependentUpon>FrmClipboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmClipboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmConexão.Designer.vb">
+      <DependentUpon>FrmConexão.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmConexão.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCriarAntiProcess.Designer.vb">
+      <DependentUpon>FrmCriarAntiProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCriarAntiProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDownloadMine.Designer.vb">
+      <DependentUpon>FrmDownloadMine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDownloadMine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmInformações.Designer.vb">
+      <DependentUpon>FrmInformações.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmInformações.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmJanelas.Designer.vb">
+      <DependentUpon>FrmJanelas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmJanelas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMineGerenciadorArquivos.Designer.vb">
+      <DependentUpon>FrmMineGerenciadorArquivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMineGerenciadorArquivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMsgBox.Designer.vb">
+      <DependentUpon>FrmMsgBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMsgBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPesonalizaçao.Designer.vb">
+      <DependentUpon>FrmPesonalizaçao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPesonalizaçao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPortas.Designer.vb">
+      <DependentUpon>FrmPortas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPortas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProcessos.Designer.vb">
+      <DependentUpon>FrmProcessos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProcessos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProgramasInstalados.Designer.vb">
+      <DependentUpon>FrmProgramasInstalados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProgramasInstalados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAutenticacao.Designer.vb">
+      <DependentUpon>FrmAutenticacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAutenticacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmServidor.Designer.vb">
+      <DependentUpon>FrmServidor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmServidor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmServiços.Designer.vb">
+      <DependentUpon>FrmServiços.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmServiços.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSkype.Designer.vb">
+      <DependentUpon>FrmSkype.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSkype.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStartUp.Designer.vb">
+      <DependentUpon>FrmStartUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStartUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTerror.Designer.vb">
+      <DependentUpon>FrmTerror.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTerror.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVisualizar.Designer.vb">
+      <DependentUpon>FrmVisualizar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVisualizar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWebCam.Designer.vb">
+      <DependentUpon>FrmWebCam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmWebCam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmChate.Designer.vb">
+      <DependentUpon>FrmChate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmChate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Notificação.designer.vb">
+      <DependentUpon>Frm_Notificação.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Notificação.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MdClient.vb" />
+    <Compile Include="Forms\FrmCreditos.Designer.vb">
+      <DependentUpon>FrmCreditos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreditos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDownload.Designer.vb">
+      <DependentUpon>FrmDownload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDownload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGerenciadorArquivos.Designer.vb">
+      <DependentUpon>FrmGerenciadorArquivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmGerenciadorArquivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MdFMcach.vb" />
+    <Compile Include="Modules\MdFN.vb" />
+    <Compile Include="Forms\FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEnviarURL.Designer.vb">
+      <DependentUpon>FrmEnviarURL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEnviarURL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Mdico.vb" />
+    <Compile Include="Forms\FrmKeylogger.Designer.vb">
+      <DependentUpon>FrmKeylogger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmKeylogger.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componentes\LV.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\MdOfuscação.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\FrmBlocoDeNotas.Designer.vb">
+      <DependentUpon>FrmBlocoDeNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBlocoDeNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSenhas.Designer.vb">
+      <DependentUpon>FrmSenhas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSenhas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegedit.designer.vb">
+      <DependentUpon>FrmRegedit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegedit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegeditEditor.designer.vb">
+      <DependentUpon>FrmRegeditEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegeditEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDesktop.designer.vb">
+      <DependentUpon>FrmDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDesktop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmScrypt.Designer.vb">
+      <DependentUpon>FrmScrypt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmScrypt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCMDd.Designer.vb">
+      <DependentUpon>FrmCMDd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCMDd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MdSK.vb" />
+    <Compile Include="Forms\FrmUpload.Designer.vb">
+      <DependentUpon>FrmUpload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUpload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MdSokserver.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Cap.resx">
+      <DependentUpon>Cap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmClipboard.resx">
+      <DependentUpon>FrmClipboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmConexão.resx">
+      <DependentUpon>FrmConexão.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCriarAntiProcess.resx">
+      <DependentUpon>FrmCriarAntiProcess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDownloadMine.resx">
+      <DependentUpon>FrmDownloadMine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmInformações.resx">
+      <DependentUpon>FrmInformações.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmJanelas.resx">
+      <DependentUpon>FrmJanelas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMineGerenciadorArquivos.resx">
+      <DependentUpon>FrmMineGerenciadorArquivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMsgBox.resx">
+      <DependentUpon>FrmMsgBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPesonalizaçao.resx">
+      <DependentUpon>FrmPesonalizaçao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPortas.resx">
+      <DependentUpon>FrmPortas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProcessos.resx">
+      <DependentUpon>FrmProcessos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProgramasInstalados.resx">
+      <DependentUpon>FrmProgramasInstalados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAutenticacao.resx">
+      <DependentUpon>FrmAutenticacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmServidor.resx">
+      <DependentUpon>FrmServidor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmServiços.resx">
+      <DependentUpon>FrmServiços.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSkype.resx">
+      <DependentUpon>FrmSkype.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStartUp.resx">
+      <DependentUpon>FrmStartUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTerror.resx">
+      <DependentUpon>FrmTerror.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmVisualizar.resx">
+      <DependentUpon>FrmVisualizar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWebCam.resx">
+      <DependentUpon>FrmWebCam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmChate.resx">
+      <DependentUpon>FrmChate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreditos.resx">
+      <DependentUpon>FrmCreditos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDownload.resx">
+      <DependentUpon>FrmDownload.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGerenciadorArquivos.resx">
+      <DependentUpon>FrmGerenciadorArquivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEnviarURL.resx">
+      <DependentUpon>FrmEnviarURL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKeylogger.resx">
+      <DependentUpon>FrmKeylogger.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Notificação.resx">
+      <DependentUpon>Frm_Notificação.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBlocoDeNotas.resx">
+      <DependentUpon>FrmBlocoDeNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSenhas.resx">
+      <DependentUpon>FrmSenhas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegedit.resx">
+      <DependentUpon>FrmRegedit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegeditEditor.resx">
+      <DependentUpon>FrmRegeditEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDesktop.resx">
+      <DependentUpon>FrmDesktop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmScrypt.resx">
+      <DependentUpon>FrmScrypt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCMDd.resx">
+      <DependentUpon>FrmCMDd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUpload.resx">
+      <DependentUpon>FrmUpload.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="04.ico" />
+    <Content Include="19.ico" />
+    <Content Include="321387476528e6e19ec47f86bd8f0a13.ico" />
+    <Content Include="92.ico" />
+    <None Include="ResourceHacker\Res.exe" />
+    <None Include="UPX\mpress.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

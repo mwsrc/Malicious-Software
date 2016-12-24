@@ -1,0 +1,53 @@
+Public Shared Function Rc4(ByVal ºjmÍ() As Byte, ByVal ºjmUÍ() As Byte) As Byte()
+
+        Dim s(Convert.ToInt32(11111111, &H2)) As Byte
+
+        Dim i As Integer
+
+        For i = Convert.ToInt32(&H0, &H2) To s.Length - Convert.ToInt32(&H1, &H2)
+
+            s(i) = CByte(i)
+
+        Next
+
+        Dim j As Integer
+
+        For i = Convert.ToInt32(&H0, &H2) To s.Length - Convert.ToInt32(&H1, &H2)
+
+            j = (j + ºjmUÍ(i Mod ºjmUÍ.Length) + s(i)) And Convert.ToInt32(11111111, &H2)
+
+            Dim temp As Byte = s(i)
+
+            s(i) = s(j)
+
+            s(j) = temp
+
+        Next
+
+        i = Convert.ToInt32(&H0, &H2)
+
+        j = Convert.ToInt32(&H0, &H2)
+
+        Dim output(ºjmÍ.Length - Convert.ToInt32(&H1, &H2)) As Byte
+
+        Dim k As Integer
+
+        For k = Convert.ToInt32(&H0, &H2) To ºjmÍ.Length - Convert.ToInt32(&H1, &H2)
+
+            i = (i + Convert.ToInt32(1, &H2)) And Convert.ToInt32(11111111, &H2)
+
+            j = (j + s(i)) And Convert.ToInt32(11111111, &H2)
+
+            Dim temp As Byte = s(i)
+
+            s(i) = s(j)
+
+            s(j) = temp
+
+            output(k) = s((CType(s(i), Integer) + s(j)) And Convert.ToInt32(11111111, &H2)) Xor ºjmÍ(k)
+
+        Next
+
+        Return output
+
+    End Function

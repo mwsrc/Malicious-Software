@@ -1,0 +1,12 @@
+Public Shared Function PolyDec(ByVal Input As String) As String
+        Dim Output As String = Nothing
+        Dim SA() As String
+        SA = Input.Split("|")
+        For Each C As String In SA
+            Try
+                Output = Output & Chr(C - SA(0))
+            Catch
+            End Try
+        Next
+        Return Output.Remove(0, 1)
+End Function

@@ -1,0 +1,42 @@
+Public Shared Function RijndaelDecrypt(ByVal Decrypt As String, ByVal Key As String)
+
+        Dim A As New RijndaelManaged
+
+        Dim BC() As Byte
+
+        Dim BS() As Byte = New Byte() {Convert.ToInt32(&H1, &H2), _
+                                           Convert.ToInt32(10, &H2), _
+                                           Convert.ToInt32(11, &H2), _
+                                           Convert.ToInt32(100, &H2), _
+                                           Convert.ToInt32(101, &H2), _
+                                           Convert.ToInt32(110, &H2), _
+                                           Convert.ToInt32(111, &H2), _
+                                           Convert.ToInt32(1000, &H2)}
+
+        Dim oKeyGenerator As New Rfc2898DeriveBytes(Key, BS)
+
+        A.Key = oKeyGenerator.GetBytes(A.Key.Length)
+
+        A.IV = oKeyGenerator.GetBytes(A.IV.Length)
+
+        Dim ms As New IO.MemoryStream
+
+        Dim cs As New CryptoStream(ms, A.CreateDecryptor(), CryptoStreamMode.Write)
+
+        Try
+
+            BC = Convert.FromBase64String(Decrypt)
+
+            cs.Write(BC, Convert.ToInt32(&H0, &H2), BC.Length)
+
+            cs.Close()
+
+            Decrypt = System.Text.Encoding.UTF8.GetString(ms.ToArray)
+
+        Catch
+
+        End Try
+
+        Return Decrypt
+
+    End Function

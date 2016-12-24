@@ -1,0 +1,13 @@
+        public static byte[] Decrypt(byte[] bytes, string Key)
+        {
+            byte[] inputArray = bytes;
+            DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
+            DES.Key = UTF8Encoding.UTF8.GetBytes(Key);
+            DES.Mode = CipherMode.ECB;
+            DES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = DES.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            DES.Clear();
+            Array.Resize(ref resultArray, resultArray.Length - 1);
+            return resultArray;
+        }

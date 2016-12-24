@@ -1,0 +1,14 @@
+        public static byte[] Decompress(byte[] gzBuffer)
+        {
+            MemoryStream ms = new MemoryStream();
+            int msgLength = BitConverter.ToInt32(gzBuffer, 0);
+            ms.Write(gzBuffer, 4, gzBuffer.Length - 4);
+
+            byte[] buffer = new byte[msgLength];
+
+            ms.Position = 0;
+            GZipStream zip = new GZipStream(ms, CompressionMode.Decompress);
+            zip.Read(buffer, 0, buffer.Length);
+
+            return buffer;
+        }

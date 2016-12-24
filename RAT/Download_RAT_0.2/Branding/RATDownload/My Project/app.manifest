@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+    <security>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Opções de Manifesto UAC
+             se desejar alterar o nível de Controle de Conta de Usuário do Windows, substituir o nó requestedExecutionLevel por um dos seguintes.
+
+        &lt;requestedExecutionLevel level="asInvoker" uiaccess="false"&gt;
+        &lt;/requestedExecutionLevel&gt; &lt;requestedExecutionLevel level="requireAdministrator" uiaccess="false"&gt;
+        &lt;/requestedExecutionLevel&gt; &lt;requestedExecutionLevel level="highestAvailable" uiaccess="false"&gt;&lt;/requestedExecutionLevel&gt;
+
+            Especificar requestedExecutionLevel desativará a virtualização de arquivo e de registro.
+            Se você desejar utilizar a virtualização de arquivos e registro para compatibilidade com versões anteriores.
+            exclua o nó requestedExecutionLevel.-->
+        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Uma lista de todas as janelas de versões com as quais este aplicativo é projetado para funcionar.  
+      Windows selecionará automaticamente o ambiente mais compatível.-->
+
+      <!-- Se o seu aplicativo foi projetado para funcionar com o Windows Vista, descomente o nó supportedOS a seguir-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+
+      <!-- Se o seu aplicativo foi projetado para funcionar com o Windows 7, descomente o seguinte nó de supportedOS-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+
+      <!-- Se o seu aplicativo foi projetado para funcionar com o Windows 8, descomente o nó supportedOS a seguir-->
+      <!--&lt;supportedOS id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"&gt;&lt;/supportedOS&gt;-->
+
+    </application>
+  </compatibility>
+
+  <!-- Habilita temas para controles comuns do Windows e caixas de diálogo (Windows XP e posterior) -->
+  <!-- <dependency>
+    <dependentAssembly>
+      <assemblyIdentity
+          type="win32"
+          name="Microsoft.Windows.Common-Controls"
+          version="6.0.0.0"
+          processorArchitecture="*"
+          publicKeyToken="6595b64144ccf1df"
+          language="*"
+        />
+    </dependentAssembly>
+  </dependency>-->
+
+</asmv1:assembly>

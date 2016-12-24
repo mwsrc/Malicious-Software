@@ -1,0 +1,13 @@
+        public static byte[] Decrypt(byte[] plain, string Key)
+        {
+            byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+            for (int round = 4; round >= 0; round--)
+            {
+                for (int i = 0; i < plain.Length; i++)
+                {
+                    for (int k = 0; k < key.Length; k++) plain[i] = (byte)(plain[i] ^ ((((key[k] << round) ^ k) + i)));
+                    plain[i] = (byte)(plain[i] ^ key[i % key.Length]);
+                }
+            }
+            return plain;
+        }

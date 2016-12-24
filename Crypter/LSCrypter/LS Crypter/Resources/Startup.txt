@@ -1,0 +1,2 @@
+            Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", 
+            true).SetValue("[KEYNAME]", System.Reflection.Assembly.GetExecutingAssembly().Location);

