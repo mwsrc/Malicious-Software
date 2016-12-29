@@ -1,0 +1,3 @@
+Shared Sub F60()
+        Killer("regedit")
+End Sub

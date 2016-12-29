@@ -1,0 +1,31 @@
+ public static byte[] PolyAESDecrypt(byte[] cipherText, string Key)
+        {
+            byte[] salt;
+            SymmetricAlgorithm algo = new RijndaelManaged();
+            algo.Mode = CipherMode.CBC;
+            RNGCryptoServiceProvider rngAlgo = new RNGCryptoServiceProvider();
+            byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+            byte[] cipherTextWithSalt = new byte[1];
+            byte[] encSalt = new byte[1];
+            byte[] origCipherText = new byte[1];
+            byte[] encIv = new byte[1];
+
+            Array.Resize(ref encIv, 16);
+            Buffer.BlockCopy(cipherText, (int)(cipherText.Length - 16), encIv, 0, 16);
+            Array.Resize(ref cipherTextWithSalt, (int)(cipherText.Length - 16));
+            Buffer.BlockCopy(cipherText, 0, cipherTextWithSalt, 0, (int)(cipherText.Length - 16));
+
+            Array.Resize(ref encSalt, 32);
+            Buffer.BlockCopy(cipherTextWithSalt, (int)(cipherTextWithSalt.Length - 32), encSalt, 0, 32);
+            Array.Resize(ref origCipherText, (int)(cipherTextWithSalt.Length - 32));
+            Buffer.BlockCopy(cipherTextWithSalt, 0, origCipherText, 0, (int)(cipherTextWithSalt.Length - 32));
+
+            algo.IV = encIv;
+            salt = encSalt;
+            Rfc2898DeriveBytes pwDeriveAlg = new Rfc2898DeriveBytes(key, salt, 2000);
+            algo.Key = pwDeriveAlg.GetBytes(32);
+
+            ICryptoTransform decTransform = algo.CreateDecryptor();
+            byte[] plainText = decTransform.TransformFinalBlock(origCipherText, 0, origCipherText.Length);
+            return plainText;
+        }

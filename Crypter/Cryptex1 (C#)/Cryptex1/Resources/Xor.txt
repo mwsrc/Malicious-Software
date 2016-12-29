@@ -1,0 +1,6 @@
+       public static byte[] XOR(byte[] input, string Key, int amount)
+        {
+            byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+            for (int i = 0; i < input.Length; i++)  input[i] ^= (byte)(key[i % key.Length] >> (i + amount + key.Length) & 255);
+            return input;
+        }

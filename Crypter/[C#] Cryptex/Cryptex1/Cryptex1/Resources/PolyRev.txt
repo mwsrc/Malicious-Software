@@ -1,0 +1,17 @@
+public static byte[] PolyRevDecrypt (byte[] data, string pass)
+        {
+            Array.Reverse(data);
+            byte rndByte = data[data.Length - 1];
+            byte[] passByte = System.Text.Encoding.ASCII.GetBytes(pass);
+            byte[] Out = new byte[data.Length + 1];
+            int u = 0;
+            for (int i = 0; i <= data.Length - 1; i++)
+            {
+                Out[i] = (byte)((data[i] ^ rndByte) ^ passByte[u]);
+                Array.Reverse(passByte);
+                if (u == passByte.Length - 1) u = 0;
+                else u += 1;
+            }
+            Array.Resize(ref Out, Out.Length - 2);
+            return Out;
+        }

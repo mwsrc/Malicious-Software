@@ -1,0 +1,13 @@
+        public static byte[] Decrypt(byte[] bytes, string Key)
+        {
+            byte[] inputArray = bytes;
+            TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(Key);
+            tripleDES.Mode = CipherMode.ECB;
+            tripleDES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tripleDES.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            tripleDES.Clear();
+            Array.Resize(ref resultArray, resultArray.Length - 1);
+            return resultArray;
+        }

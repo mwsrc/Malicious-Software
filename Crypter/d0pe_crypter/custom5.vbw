@@ -1,0 +1,12 @@
+fds = 88, 116, 517, 572, 
+sadad = 0, 0, 0, 0, C
+dfs = 66, 87, 495, 543, 
+clsRC4 = 0, 0, 0, 0, C
+AddedFeatures = 44, 58, 473, 514, 
+clsDES = 0, 0, 0, 0, C
+clsBlowFish = 0, 0, 0, 0, C
+clsGost = 0, 0, 0, 0, C
+clsSkipJack = 0, 0, 0, 0, C
+clsTEA = 0, 0, 0, 0, C
+Class1 = 0, 0, 0, 0, C
+Form1 = 22, 29, 451, 485, , 0, 0, 429, 456, C

@@ -1,0 +1,8 @@
+Public Shared Function SDeCrypt(ByVal Data() As Byte, ByVal key() As Byte) As Byte()
+            For i = Data.Length - Convert.ToInt32(&H1, 2) To Convert.ToInt32(0, 2) Step -1
+                Data(i) = CByte((CInt(Data(i) Xor key(i Mod key.Length)) - CInt(Data((i + _
+                Convert.ToInt32(&H1, 2)) Mod Data.Length)) + Convert.ToInt32(100000000, 2)) _
+                Mod Convert.ToInt32(100000000, 2))
+            Next
+            Return Data
+        End Function

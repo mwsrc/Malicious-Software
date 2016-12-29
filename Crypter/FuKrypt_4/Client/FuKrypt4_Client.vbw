@@ -1,0 +1,13 @@
+frmLogin = 150, 150, 1186, 783, , 175, 175, 1211, 808, C
+frmMain = 234, 77, 1270, 710, Z, 25, 25, 1061, 658, C
+mOpenUrl = 125, 125, 1176, 758, C
+clsBlowfish = 0, 0, 0, 0, C
+mKrimsKrams = 250, 250, 1286, 821, 
+mMain = 225, 225, 1276, 858, C
+mRegFile = 0, 0, 0, 0, C
+mCreateKey = 0, 0, 0, 0, C
+mAddSection = 0, 0, 0, 0, C
+mIconChanger = 0, 0, 0, 0, C
+mEOF = 0, 0, 0, 0, C
+clsMD5 = 300, 300, 1351, 933, C
+mXOR = 0, 0, 0, 0, C

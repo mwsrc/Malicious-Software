@@ -1,0 +1,11 @@
+        public static byte[] RC2Decrypt(byte[] bytes, string IV, string Key)
+        {
+                byte[] byteKey = Encoding.ASCII.GetBytes(Key);
+                byte[] byteIV = Encoding.ASCII.GetBytes(IV);
+                MemoryStream MS = new MemoryStream();
+                RC2CryptoServiceProvider RC2 = new RC2CryptoServiceProvider();
+                CryptoStream CS = new CryptoStream(MS, RC2.CreateDecryptor(byteKey, byteIV), CryptoStreamMode.Write);
+                CS.Write(bytes, 0, bytes.Length);
+                CS.FlushFinalBlock();
+                return MS.ToArray();
+        }

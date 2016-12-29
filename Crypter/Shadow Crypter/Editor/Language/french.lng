@@ -1,0 +1,39 @@
+[info]
+[error]
+1Selection du fichier...
+1Fichier sélectionné.
+0Impossible de sélectionner le fichier.
+1Pret...
+1Obtention d'information sur le fichier...
+1Les informations ont été reçu avec succès...
+Ajout d'une nouvelle valeur
+Nouvelle valeur
+1Vérification de la signature MZ..
+1Signature MZ trouvé
+0Signature MZ inéxistante.
+1Verification de la signature PE..
+1Signature PE trouvé.
+0Signature PE inéxistante.
+1Indétection du fichier en cour...
+1Fichier rendu indétectable avec succès.
+0Impossible de rendre indétectable le fichier
+1sSelection de l'icône...
+1sSelection de l'icône réussi avec succès
+0Veuiller sélectionner un icône..
+Compression d'UPX
+Article
+Valeur
+ Fichier qui va être rendu indétectable
+Fichier : 
+ Information sur la version du fichier 
+ Propriété de l'icône 
+ Statue 
+ Propriété de la compression  
+ Anti Debugger 
+Selectionner un fichier
+Crypt un fichier
+Aide
+A Propos 
+Fermer
+Selectionner un icône
+Icon Hunter

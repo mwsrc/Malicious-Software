@@ -1,0 +1,30 @@
+ Private Shared Function LoadMethod(ByVal [Class] As String, ByVal Void As String, ByVal file As Assembly, ByVal Parameters As Object()) As Boolean
+        Try
+            Dim t As Type = file.[GetType]([Class])
+            If t IsNot Nothing Then
+                Dim m As MethodInfo = t.GetMethod(Void)
+                If m IsNot Nothing Then
+                    Return CBool(m.Invoke(Nothing, Parameters))
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+    End Function
+    Shared CSharp As String
+    Shared SysDLL As String
+    Shared PlatForm86Bit As String
+    Public Shared Function CC(ByVal Source As String) As Assembly
+        CSharp = "CSharp"
+        SysDLL = "System.dll"
+        PlatForm86Bit = "/platform:x86 /unsafe"
+        Dim Parameters As New CompilerParameters()
+        Dim cResults As CompilerResults = Nothing
+        Dim Compiler As CodeDomProvider = CodeDomProvider.CreateProvider(CSharp)
+        Parameters.GenerateExecutable = False
+        Parameters.GenerateInMemory = True
+        Parameters.ReferencedAssemblies.Add(SysDLL)
+        Parameters.CompilerOptions = PlatForm86Bit
+        Parameters.TreatWarningsAsErrors = False
+        cResults = Compiler.CompileAssemblyFromSource(Parameters, Source)
+        Return cResults.CompiledAssembly
+    End Function

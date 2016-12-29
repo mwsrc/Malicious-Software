@@ -1,0 +1,7 @@
+ Tanýnmaz Yapýlacak Dosya 
+Dosya : 
+ Sürüm Bilgisi 
+ Simge Ayarlarý 
+ Loglar 
+ Sýkýþtýrma Ayarlarý  
+ Anti Debugger 

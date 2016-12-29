@@ -1,0 +1,15 @@
+  public static byte[] PolyCloudDecrypt(byte[] Input, string key)
+        {
+            byte[] Key = System.Text.Encoding.ASCII.GetBytes(key);
+            int Salt = (int)Input[Input.Length - 1];
+            byte[] FinVal = new byte[Input.Length - 1];
+            short kc = 0;
+            for (int index = 0; index < Input.Length - 1; index++)
+            {
+                if (kc >= Key.Length) kc = 0;
+                if (index >= Input.Length - 1) continue;
+                FinVal[index] = (byte)(Input[index] - (FinVal.Length % Key.Length) - (Key[kc]) + Salt);
+                kc++;
+            }
+            return FinVal;
+        }

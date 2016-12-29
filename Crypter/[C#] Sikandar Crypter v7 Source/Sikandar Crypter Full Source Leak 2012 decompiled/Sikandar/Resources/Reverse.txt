@@ -1,0 +1,5 @@
+Shared Function Reverse(ByVal s As String) As String
+        Dim arr As Char() = s.ToCharArray()
+        Array.Reverse(arr)
+        Return New String(arr)
+ End Function

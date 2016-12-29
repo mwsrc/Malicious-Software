@@ -1,0 +1,7 @@
+[assembly: AssemblyTitle("[TITLE]")]
+[assembly: AssemblyDescription("[ASSDESCRIPTION]")]
+[assembly: AssemblyCompany("[COMPANY]")]
+[assembly: AssemblyProduct("[PRODUCT]")]
+[assembly: AssemblyCopyright("[COPYRIGHT]")]
+[assembly: AssemblyVersion("[MAJOR].[MINOR].[BILD].[REVISION]")]
+[assembly: AssemblyFileVersion("[MAJOR].[MINOR].[BILD].[REVISION]")]

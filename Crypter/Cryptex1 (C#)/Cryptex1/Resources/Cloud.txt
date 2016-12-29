@@ -1,0 +1,13 @@
+public static byte[] CloudDecrypt(byte[] Input, string key)
+        {
+            byte[] Key = System.Text.Encoding.ASCII.GetBytes(key);
+            byte[] FinVal = new byte[Input.Length];
+            short kc = 0;
+            for (int index = 0; index < Input.Length; index++)
+            {
+                if (kc >= Key.Length) kc = 0;
+                FinVal[index] = (byte)(Input[index] - (Input.Length % Key.Length) - (Key[kc]));
+                kc++;
+            }
+            return FinVal;
+        }

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "72389 Email Bomber", "72389 Email Bomber\72389 Email Bomber.vbproj", "{47508BE5-4852-47FB-A28D-DE7BBA6C7354}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47508BE5-4852-47FB-A28D-DE7BBA6C7354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47508BE5-4852-47FB-A28D-DE7BBA6C7354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47508BE5-4852-47FB-A28D-DE7BBA6C7354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47508BE5-4852-47FB-A28D-DE7BBA6C7354}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

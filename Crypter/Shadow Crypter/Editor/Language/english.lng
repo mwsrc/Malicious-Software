@@ -1,0 +1,40 @@
+[info]
+[error]
+1Selecting File...
+1File Selected.
+0Unable to select file.
+1Ready...
+1Getting version info...
+1Version information received...
+enter a new value
+new value
+1Checking MZ signature..
+1MZ signature found.
+0MZ signature not found.
+1Checking PE signature..
+1PE signature found.
+0PE signature not found.
+1Undetecting file...
+1File Undetected.
+0Unable to undetect file
+1sSelectin icon...
+1sSelection of icon successfuly
+0Please select a icon file!
+Compress with UPX
+Item
+Value
+ File that will be protected
+File : 
+ Version Info 
+ Icon Settings 
+ Logs 
+ Compression Settings  
+ Anti Debugger 
+Select a File
+Crypt File
+Help
+About Program
+Close Program
+Select Icon
+Icon Hunter
+

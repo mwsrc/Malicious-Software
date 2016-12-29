@@ -1,0 +1,7 @@
+Copy and paste the Rc4 unit in your form
+
+Needed Imports:
+Imports System.Text
+
+Usage:
+rc4("String to Encrypt / Decrypt", "Password")

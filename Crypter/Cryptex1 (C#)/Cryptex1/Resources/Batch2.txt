@@ -1,0 +1,5 @@
+ri.Close();
+ProcessStartInfo inff = new ProcessStartInfo();
+inff.WindowStyle = ProcessWindowStyle.Hidden;
+inff.FileName = (Application.LocalUserAppDataPath + "\\run.bat");
+Process.Start(inf);

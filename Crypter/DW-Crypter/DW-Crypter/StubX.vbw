@@ -1,0 +1,9 @@
+Stb = 175, 175, 728, 636, 
+Class2 = 200, 200, 753, 661, 
+clsDES = 100, 100, 654, 561, 
+clsGost = 0, 0, 0, 0, C
+clsRijndael = 0, 0, 0, 0, C
+clsTEA = 0, 0, 0, 0, C
+clsRC4 = 0, 0, 0, 0, C
+clsXOR = 0, 0, 0, 0, C
+Module2 = 175, 175, 729, 636, Z

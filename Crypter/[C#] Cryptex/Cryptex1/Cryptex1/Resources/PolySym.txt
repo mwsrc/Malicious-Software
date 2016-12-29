@@ -1,0 +1,13 @@
+ public static byte[] PolySymetricDecrypt(byte[] bytes, string Key)
+        {
+            MemoryStream ms = new MemoryStream();
+            System.Security.Cryptography.SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
+            byte[] key = Encoding.ASCII.GetBytes(Key);
+            byte[] rgbIV = key;
+            CryptoStream cs = new CryptoStream(ms, rijn.CreateDecryptor(key, rgbIV), CryptoStreamMode.Write);
+            cs.Write(bytes, 0, bytes.Length);
+            cs.Close();
+            byte[] b = ms.ToArray();
+            Array.Resize(ref b, b.Length - 1);
+            return b;
+        }

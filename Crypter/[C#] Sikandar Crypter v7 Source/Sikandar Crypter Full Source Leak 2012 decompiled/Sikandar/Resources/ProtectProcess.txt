@@ -1,0 +1,21 @@
+using System;
+public class A
+{
+	public static bool PP(string F)
+    {
+            try
+            {
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses())
+                {
+                    if (F.Contains(p.ProcessName)){p.Kill();}
+                }
+                if (System.IO.File.Exists(F)) {System.IO.File.Delete(F);}
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+     }
+
+}

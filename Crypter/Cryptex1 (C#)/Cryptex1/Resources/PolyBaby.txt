@@ -1,0 +1,8 @@
+public static byte[] PolyBabyDecrypt(byte[] input, string Key)
+        {
+            byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+            byte[] Out = new byte[input.Length - 1];
+            int x = input[input.Length - 1];
+            for (int i = 0; i <= Out.Length - 1; i++) Out[i] = (byte)(input[i] ^ (key[i % key.Length] + x) & 255);
+            return Out;
+        }

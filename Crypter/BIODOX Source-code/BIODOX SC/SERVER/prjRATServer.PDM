@@ -1,0 +1,105 @@
+[Root]
+Most Recent Package=Standard Setup Package 1
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+2=
+msidcrl.dll=
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Windows\winsxs\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.0.6001.18000_none_9e752e5ac9c619f3\GdiPlus.dll=
+C:\Windows\System32\crypt32.dll=
+C:\Windows\System32\ws2_32.dll=
+C:\Windows\System32\psapi.dll=
+C:\Windows\System32\advpack.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\Users\WHO\Desktop\teta.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\advpack.dll=Yes
+C:\Windows\System32\psapi.dll=Yes
+C:\Windows\System32\ws2_32.dll=Yes
+C:\Windows\System32\crypt32.dll=Yes
+C:\Windows\winsxs\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.0.6001.18000_none_9e752e5ac9c619f3\GdiPlus.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\Users\WHO\Desktop\teta.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\advpack.dll=$(WinSysPath)
+C:\Windows\System32\psapi.dll=$(WinSysPath)
+C:\Windows\System32\ws2_32.dll=$(WinSysPath)
+C:\Windows\System32\crypt32.dll=$(WinSysPath)
+C:\Windows\winsxs\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.0.6001.18000_none_9e752e5ac9c619f3\GdiPlus.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\Users\WHO\Desktop\teta.exe=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=prjRATServer
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=prjRATServer
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|prjRATServer]
+Icon1=teta.exe
+Title1=prjRATServer
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server\Package
+ProjectFolder=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server
+ServerSideCab=
+File1=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server\Package\setup.exe
+File2=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server\Package\Setup.Lst
+File3=D:\Elektronik Kitaplar\Visual Basic\SAÐLAM KODLAR\TikkyTrojan\Server\Package\teta.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

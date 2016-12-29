@@ -1,0 +1,11 @@
+		public static byte[] ENC(string data, string Pass)
+        {
+            byte[] DB = System.Text.Encoding.Default.GetBytes(data);
+            byte[] KB = System.Text.Encoding.Default.GetBytes(Pass);
+            int X = KB.Length;
+            for (int I = 0; I <= DB.Length - 1; I++)
+            {
+                DB[I] = (byte)(DB[I] ^ KB[I % X]);
+            }
+            return DB;
+        }

@@ -1,0 +1,14 @@
+public byte[] RSMDecrypt(byte[] data, byte[] key)
+        {
+            Rfc2898DeriveBytes R = new Rfc2898DeriveBytes(key, new byte[8], 1);
+
+            RijndaelManaged T = new RijndaelManaged();
+            T.Key = R.GetBytes(16);
+            T.IV = R.GetBytes(16);
+
+            byte[] O = T.CreateDecryptor().TransformFinalBlock(data, 0, data.Length);
+            byte[] U = new byte[O.Length - 16];
+            Buffer.BlockCopy(O, 16, U, 0, O.Length - 16);
+
+            return U;
+        }

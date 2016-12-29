@@ -1,0 +1,12 @@
+Shared Function StringE(ByVal Input As String, ByVal Pass As String) As String
+        Dim i As Int64 = Nothing
+        Dim R As String = Nothing
+        Dim a, b As Int32
+        Dim H As String = "&H "
+        For i = 1 To (Len(Input) / 2)
+            a = Val(H & (Mid$(Input, (2 * i) - 1, 2)))
+            b = Asc(Mid$(Pass, ((i Mod Len(Pass)) + 1), 1))
+            R += Chr(a Xor b)
+        Next i
+        Return R
+End Function

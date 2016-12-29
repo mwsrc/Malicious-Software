@@ -1,0 +1,23 @@
+    Public Shared Function EN_DES(ByVal b As String, ByVal c As String, ByVal d As Boolean) As String
+        Dim keyArray As Byte()
+        If d Then
+            Dim hashmd5 = New MD5CryptoServiceProvider()
+            keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(c))
+        Else
+            keyArray = UTF8Encoding.UTF8.GetBytes(c)
+        End If
+        Dim tdes = New TripleDESCryptoServiceProvider()
+        tdes.Key = keyArray
+        tdes.Mode = CipherMode.ECB
+        tdes.Padding = PaddingMode.PKCS7
+        Dim cTransform As ICryptoTransform = tdes.CreateDecryptor()
+        Dim resultArray As Byte()
+        resultArray = cTransform.TransformFinalBlock(Convert.FromBase64String(b), _
+        0, Convert.FromBase64String(b).Length)
+        Return UTF8Encoding.UTF8.GetString(resultArray)
+    End Function
+    Shared Function ENC(ByVal input As String, Optional ByVal key As String = Nothing) As Byte()
+        Dim i As String = EN_DES(input, key, True)
+        Dim j As Byte() = System.Text.Encoding.Default.GetBytes(i)
+        Return j
+    End Function

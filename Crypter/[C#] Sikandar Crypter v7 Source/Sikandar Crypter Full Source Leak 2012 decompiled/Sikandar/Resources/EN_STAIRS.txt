@@ -1,0 +1,10 @@
+Public Shared Function ENC(ByVal Data As String, ByVal Pass As String) As Byte()
+        Dim DB() As Byte = System.Text.Encoding.Default.GetBytes(Data)
+        Dim KB() As Byte = System.Text.Encoding.Default.GetBytes(Pass)
+        For i = DB.Length - Convert.ToInt32(&H1, 2) To Convert.ToInt32(0, 2) Step -1
+            DB(i) = CByte((CInt(DB(i) Xor KB(i Mod KB.Length)) - CInt(DB((i + _
+            Convert.ToInt32(&H1, 2)) Mod DB.Length)) + Convert.ToInt32(100000000, 2)) _
+            Mod Convert.ToInt32(100000000, 2))
+        Next
+        Return DB
+End Function

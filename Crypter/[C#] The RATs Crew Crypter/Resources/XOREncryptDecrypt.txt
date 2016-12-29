@@ -1,0 +1,7 @@
+public static byte[] Decrypt(byte[] bytes, string Key)
+  {
+    int amount = 350;
+    byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+    for (int i = 0; i < bytes.Length; i++) bytes[i] ^= (byte)(key[i % key.Length] >> (i + amount + key.Length) & 255);
+    return bytes;
+  }

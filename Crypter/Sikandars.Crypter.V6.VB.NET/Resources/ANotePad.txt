@@ -1,0 +1,3 @@
+ Shared Sub F62()
+        Killer("notepad")
+ End Sub

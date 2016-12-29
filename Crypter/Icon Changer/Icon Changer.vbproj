@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D8C7ABB-7A11-4FE5-AC4E-D716890E6A1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Icon_Changer.My.MyApplication</StartupObject>
+    <RootNamespace>Icon_Changer</RootNamespace>
+    <AssemblyName>Icon Changer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>Bart.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Icon Changer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Desktop\</OutputPath>
+    <DocumentationFile>Icon Changer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dissembler Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Dissembler Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\fLaSh.Dissembler.VersionResource.datasource" />
+    <None Include="My Project\DataSources\Icon_Changer.My.MySettings.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bart.ico" />
+    <Content Include="grunt_done_100.ico" />
+    <None Include="Resources\ball" />
+    <None Include="Resources\court" />
+    <None Include="Resources\dissembler LIB" />
+    <None Include="Resources\Djack" />
+    <None Include="Resources\Djack.ico" />
+    <None Include="My Project\DataSources\Form2.datasource" />
+    <None Include="Resources\earth" />
+    <None Include="Resources\eye" />
+    <None Include="Resources\GTA" />
+    <None Include="Resources\head" />
+    <None Include="Resources\hearts" />
+    <None Include="Resources\inano" />
+    <None Include="Resources\ishuffle" />
+    <None Include="Resources\jack" />
+    <None Include="Resources\Joystick" />
+    <None Include="Resources\lamborghini" />
+    <None Include="Resources\macblack" />
+    <None Include="Resources\macwhite" />
+    <None Include="Resources\nbalogo" />
+    <None Include="Resources\pumpkin" />
+    <None Include="Resources\rose" />
+    <None Include="Resources\saturn" />
+    <None Include="Resources\scream" />
+    <None Include="Resources\spiderman" />
+    <None Include="Resources\sun" />
+    <None Include="Resources\superman" />
+    <None Include="Resources\terrorist" />
+    <None Include="Resources\Terrorist.ico" />
+    <None Include="Resources\superman.ico" />
+    <None Include="Resources\Sun.ico" />
+    <None Include="Resources\scream.ico" />
+    <None Include="Resources\Saturn.ico" />
+    <None Include="Resources\rose.ico" />
+    <None Include="Resources\pumpkin.ico" />
+    <None Include="Resources\mypc.ico" />
+    <None Include="Resources\Mac-white.ico" />
+    <None Include="Resources\Mac Book Black %28Off%29.ico" />
+    <None Include="Resources\Lamborghini.ico" />
+    <None Include="Resources\Joystick-1.ico" />
+    <None Include="Resources\jack.ico" />
+    <None Include="Resources\iPod-Nano.ico" />
+    <None Include="Resources\iPod shuffle dock.ico" />
+    <None Include="Resources\internet.ico" />
+    <None Include="Resources\head.ico" />
+    <None Include="Resources\favorites.ico" />
+    <None Include="Resources\eye.ico" />
+    <None Include="Resources\Earth.ico" />
+    <None Include="Resources\Dr-jack.ico" />
+    <None Include="Resources\bleeding_hearts.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

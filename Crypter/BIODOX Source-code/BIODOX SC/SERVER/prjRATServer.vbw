@@ -1,0 +1,16 @@
+frmMain = 96, 53, 910, 527, , 23, 23, 836, 444, C
+mdlFunction = 0, 97, 958, 839, 
+mdlProcess = 51, 145, 953, 876, 
+mdlWindow = 23, 161, 937, 840, 
+mdlProgram = 22, 14, 1002, 826, 
+mdlService = 90, 115, 1007, 844, 
+mdlFileManager = 1, 47, 990, 851, 
+mdlRegistry = 19, 204, 873, 877, C
+CSocketMaster = 161, 161, 1008, 555, C
+modSocketMaster = 69, 69, 832, 527, 
+Socket = 0, 0, 0, 0, C, 92, 92, 848, 550, C
+mdlapiler = 161, 161, 924, 619, 
+mdlfunmanager = 159, 165, 915, 623, 
+frmDesktop = 184, 184, 935, 642, C, 115, 115, 871, 573, C
+ScreenCap = 161, 161, 912, 619, 
+mdlwebcam = 46, 46, 688, 414, C

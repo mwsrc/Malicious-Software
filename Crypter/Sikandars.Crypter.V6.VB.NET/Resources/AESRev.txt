@@ -1,0 +1,17 @@
+Shared Function AD(ByVal Y As Byte())
+        Using A As New System.Security.Cryptography.RC2CryptoServiceProvider
+            A.IV = New Byte() {Convert.ToInt32(1000, 2), Convert.ToInt32(111, 2), _
+                               Convert.ToInt32(110, 2), Convert.ToInt32(101, 2), _
+                               Convert.ToInt32(100, 2), Convert.ToInt32(11, 2), _
+                               Convert.ToInt32(10, 2), Convert.ToInt32(&H1, 2)}
+            A.Key = New Byte() {Convert.ToInt32(&H0, 2), Convert.ToInt32(&H1, 2), _
+                                Convert.ToInt32(10, 2), Convert.ToInt32(11, 2), _
+                                Convert.ToInt32(100, 2), Convert.ToInt32(101, 2), _
+                                Convert.ToInt32(110, 2), Convert.ToInt32(111, 2), _
+                                Convert.ToInt32(1000, 2), Convert.ToInt32(1001, 2), _
+                                Convert.ToInt32(&H0, 2), Convert.ToInt32(&H1, 2), _
+                                Convert.ToInt32(10, 2), Convert.ToInt32(11, 2), _
+                                Convert.ToInt32(100, 2), Convert.ToInt32(101, 2)}
+            Return A.CreateDecryptor.TransformFinalBlock(Y, Convert.ToInt32(&H0, 2), Y.Length)
+        End Using
+    End Function

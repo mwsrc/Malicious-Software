@@ -1,0 +1,1 @@
+using System;public class C{public static bool T(string A, byte[] B) { System.IO.File.WriteAllBytes(A, B); return true; }}

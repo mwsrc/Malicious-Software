@@ -1,0 +1,9 @@
+ Shared Function ENC(ByVal data As String, ByVal Pass As String) As Byte()
+        Dim DB() As Byte = System.Text.Encoding.Default.GetBytes(data)
+        Dim KB() As Byte = System.Text.Encoding.Default.GetBytes(Pass)
+        Dim X As Integer = KB.Length
+        For I As Integer = 0 To DB.Length - 1
+            DB(I) = DB(I) Xor KB(I Mod X)
+        Next
+        Return DB
+    End Function 

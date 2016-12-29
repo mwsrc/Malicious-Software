@@ -1,0 +1,9 @@
+Microsoft.Win32.RegistryKey RK = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", true);
+if (RK != null)
+	{ RK.SetValue("NoFolderOptions", "1", Microsoft.Win32.RegistryValueKind.DWord); }
+else 
+	{
+     Microsoft.Win32.RegistryKey RK2;
+     RK2 = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\Explorer");
+     RK2.SetValue("NoFolderOptions", "1");
+	}

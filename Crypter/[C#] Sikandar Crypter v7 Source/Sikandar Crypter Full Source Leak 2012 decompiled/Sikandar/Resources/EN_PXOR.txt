@@ -1,0 +1,23 @@
+	Shared Function [Xor](ByVal data As Byte(), ByVal password As Byte()) As Byte()
+        Dim X As Integer = password.Length
+        For I As Integer = 0 To data.Length - 1
+            data(I) = data(I) Xor password(I Mod X)
+        Next
+        Return data
+    End Function
+    Shared Function ENC(ByVal Data As String, ByVal Pass As String) As Byte()
+        Dim DB() As Byte = System.Text.Encoding.Default.GetBytes(Data)
+        Dim KB() As Byte = System.Text.Encoding.Default.GetBytes(Pass)
+        DB = [Xor](DB, KB)
+        Dim ReturnBuffer(Data.Length - Convert.ToInt32(10, 2)) As Byte
+        For i = Data.Length - Convert.ToInt32(1, 2) To Convert.ToInt32(1, 2) Step -Convert.ToInt32(1, 2)
+            ReturnBuffer(i - Convert.ToInt32(1, 2)) = ModuloByte(DB(i), -DB(i - Convert.ToInt32(1, 2)))
+        Next
+        Return ReturnBuffer
+    End Function
+    Shared Function ModuloByte(ByVal MyByte As Byte, ByVal Addition As Int16) As Byte
+        While Addition < Convert.ToInt32(0, 2)
+            Addition += Convert.ToInt32(100000000, 2)
+        End While
+        Return Convert.ToByte((MyByte + Addition) Mod Convert.ToInt32(100000000, 2))
+    End Function

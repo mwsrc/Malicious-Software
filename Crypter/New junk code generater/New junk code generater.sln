@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Basic Express 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "New junk code generater", "New junk code generater\New junk code generater.vbproj", "{C81CB142-0EB7-4136-9607-E5D1A4CD9548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C81CB142-0EB7-4136-9607-E5D1A4CD9548}.Debug|x86.ActiveCfg = Debug|x86
+		{C81CB142-0EB7-4136-9607-E5D1A4CD9548}.Debug|x86.Build.0 = Debug|x86
+		{C81CB142-0EB7-4136-9607-E5D1A4CD9548}.Release|x86.ActiveCfg = Release|x86
+		{C81CB142-0EB7-4136-9607-E5D1A4CD9548}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+Frm1 = 70, 80, 830, 538, , 23, 23, 783, 584, C
+MdlCompress = 46, 46, 806, 504, C
+mdlversionreader = 69, 69, 829, 527, C
+kaynak = 0, 0, 760, 458, C
+cmd = 0, 0, 0, 0, C, 92, 92, 925, 513, C
+mdlcdlg = 0, 0, 0, 0, C
+cFileIcon = 46, 46, 795, 467, C
+cResources = 69, 69, 818, 490, C
+frmiconhunter = 92, 92, 852, 550, C, 23, 23, 783, 481, C
+iconchanger = 115, 115, 937, 536, C
+mResource = 0, 0, 0, 0, C
+ModulPE = 49, 79, 832, 500, C
+frmabout = 92, 92, 914, 513, C, 248, 55, 689, 481, C

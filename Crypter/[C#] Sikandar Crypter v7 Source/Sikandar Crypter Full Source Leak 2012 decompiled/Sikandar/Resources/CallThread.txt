@@ -1,0 +1,2 @@
+using System;
+public class CT{public static bool H(System.Threading.Thread P){P.Start();return true;}}

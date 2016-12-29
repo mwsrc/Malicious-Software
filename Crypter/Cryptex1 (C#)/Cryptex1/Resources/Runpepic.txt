@@ -1,0 +1,23 @@
+		 public static string bAA1BCC1(Image a)
+        {
+            string retrievestr = "";
+            int xmax = 0;
+            int ymax = 0;
+            xmax = a.Width - 1;
+            ymax = a.Height - 1;
+            for (int y = 1; y <= ymax; y++)
+            {
+                for (int x = 1; x <= xmax; x++)
+                {
+                    System.Drawing.Color _with1 = new System.Drawing.Color();
+                    _with1 = ((Bitmap)a).GetPixel(x, y);                                   
+                    retrievestr = retrievestr + Convert.ToChar(_with1.R);
+                }
+            }
+
+            retrievestr = retrievestr.Replace("\\", "");
+            retrievestr = retrievestr.Trim(Convert.ToChar(0));
+            byte[] abc = Convert.FromBase64String(retrievestr);
+            retrievestr = System.Text.Encoding.UTF8.GetString(abc);  
+            return retrievestr;
+        }

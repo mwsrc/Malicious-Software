@@ -1,0 +1,4 @@
+
+Dim %path2% As String = "{PATH}"
+%DD%.%SRexec%(ext, %path2%, True)
+

@@ -1,0 +1,28 @@
+    <AccessedThroughProperty("MButton8")> _
+    Private gcontrol0_0 As GControl0
+    <AccessedThroughProperty("MButton1")> _
+    Private gcontrol0_1 As GControl0
+    <AccessedThroughProperty("GroupBox1")> _
+    Private groupBox_0 As GroupBox
+    Private icontainer_0 As IContainer
+    Private int_0 As Integer
+    Private int_1 As Integer
+    <AccessedThroughProperty("Label12")> _
+    Private label_0 As Label
+    <AccessedThroughProperty("PictureBox1")> _
+    Private pictureBox_0 As PictureBox
+    Private point_0 As Point
+    <AccessedThroughProperty("TextBox1")> _
+    Private textBox_0 As TextBox
+    <AccessedThroughProperty("TextBox4")> _
+    Private textBox_1 As TextBox
+    <AccessedThroughProperty("TextBox3")> _
+    Private textBox_2 As TextBox
+    <AccessedThroughProperty("TextBox2")> _
+    Private textBox_3 As TextBox
+    <AccessedThroughProperty("TextBox6")> _
+    Private textBox_4 As TextBox
+    <AccessedThroughProperty("TextBox5")> _
+    Private textBox_5 As TextBox
+    <AccessedThroughProperty("TextBox7")> _
+    Private textBox_6 As TextBox

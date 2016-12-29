@@ -1,0 +1,261 @@
+ Private bool_0 As Boolean
+    <AccessedThroughProperty("CheckBox3")> _
+    Private checkBox_0 As CheckBox
+    <AccessedThroughProperty("CheckBox2")> _
+    Private checkBox_1 As CheckBox
+    <AccessedThroughProperty("CheckBox8")> _
+    Private checkBox_10 As CheckBox
+    <AccessedThroughProperty("CheckBox14")> _
+    Private checkBox_11 As CheckBox
+    <AccessedThroughProperty("CheckBox13")> _
+    Private checkBox_12 As CheckBox
+    <AccessedThroughProperty("CheckBox12")> _
+    Private checkBox_13 As CheckBox
+    <AccessedThroughProperty("CheckBox16")> _
+    Private checkBox_14 As CheckBox
+    <AccessedThroughProperty("CheckBox15")> _
+    Private checkBox_15 As CheckBox
+    <AccessedThroughProperty("CheckBox19")> _
+    Private checkBox_16 As CheckBox
+    <AccessedThroughProperty("CheckBox18")> _
+    Private checkBox_17 As CheckBox
+    <AccessedThroughProperty("CheckBox17")> _
+    Private checkBox_18 As CheckBox
+    <AccessedThroughProperty("CheckBox22")> _
+    Private checkBox_19 As CheckBox
+    <AccessedThroughProperty("CheckBox1")> _
+    Private checkBox_2 As CheckBox
+    <AccessedThroughProperty("CheckBox21")> _
+    Private checkBox_20 As CheckBox
+    <AccessedThroughProperty("CheckBox20")> _
+    Private checkBox_21 As CheckBox
+    <AccessedThroughProperty("CheckBox25")> _
+    Private checkBox_22 As CheckBox
+    <AccessedThroughProperty("CheckBox24")> _
+    Private checkBox_23 As CheckBox
+    <AccessedThroughProperty("CheckBox23")> _
+    Private checkBox_24 As CheckBox
+    <AccessedThroughProperty("CheckBox26")> _
+    Private checkBox_25 As CheckBox
+    <AccessedThroughProperty("CheckBox29")> _
+    Private checkBox_26 As CheckBox
+    <AccessedThroughProperty("CheckBox28")> _
+    Private checkBox_27 As CheckBox
+    <AccessedThroughProperty("CheckBox27")> _
+    Private checkBox_28 As CheckBox
+    <AccessedThroughProperty("CheckBox30")> _
+    Private checkBox_29 As CheckBox
+    <AccessedThroughProperty("CheckBox6")> _
+    Private checkBox_3 As CheckBox
+    <AccessedThroughProperty("CheckBox31")> _
+    Private checkBox_30 As CheckBox
+    <AccessedThroughProperty("CheckBox32")> _
+    Private checkBox_31 As CheckBox
+    <AccessedThroughProperty("CheckBox34")> _
+    Private checkBox_32 As CheckBox
+    <AccessedThroughProperty("CheckBox33")> _
+    Private checkBox_33 As CheckBox
+    <AccessedThroughProperty("CheckBox35")> _
+    Private checkBox_34 As CheckBox
+    <AccessedThroughProperty("CheckBox36")> _
+    Private checkBox_35 As CheckBox
+    <AccessedThroughProperty("CheckBox37")> _
+    Private checkBox_36 As CheckBox
+    <AccessedThroughProperty("CheckBox5")> _
+    Private checkBox_4 As CheckBox
+    <AccessedThroughProperty("CheckBox4")> _
+    Private checkBox_5 As CheckBox
+    <AccessedThroughProperty("CheckBox7")> _
+    Private checkBox_6 As CheckBox
+    <AccessedThroughProperty("CheckBox11")> _
+    Private checkBox_7 As CheckBox
+    <AccessedThroughProperty("CheckBox10")> _
+    Private checkBox_8 As CheckBox
+    <AccessedThroughProperty("CheckBox9")> _
+    Private checkBox_9 As CheckBox
+    <AccessedThroughProperty("MButton10")> _
+    Private gcontrol0_0 As GControl0
+    <AccessedThroughProperty("MButton12")> _
+    Private gcontrol0_1 As GControl0
+    <AccessedThroughProperty("MButton11")> _
+    Private gcontrol0_2 As GControl0
+    <AccessedThroughProperty("MButton1")> _
+    Private gcontrol0_3 As GControl0
+    <AccessedThroughProperty("MButton7")> _
+    Private gcontrol0_4 As GControl0
+    <AccessedThroughProperty("MButton6")> _
+    Private gcontrol0_5 As GControl0
+    <AccessedThroughProperty("MButton9")> _
+    Private gcontrol0_6 As GControl0
+    <AccessedThroughProperty("MButton8")> _
+    Private gcontrol0_7 As GControl0
+    <AccessedThroughProperty("MButton5")> _
+    Private gcontrol0_8 As GControl0
+    <AccessedThroughProperty("MButton2")> _
+    Private gcontrol0_9 As GControl0
+    Private icontainer_0 As IContainer
+    <AccessedThroughProperty("ImageList1")> _
+    Private imageList_0 As ImageList
+    Private int_0 As Integer
+    Private int_1 As Integer
+    Private Const int_2 As Integer = 0
+    <AccessedThroughProperty("Label1")> _
+    Private label_0 As Label
+    <AccessedThroughProperty("Label2")> _
+    Private label_1 As Label
+    <AccessedThroughProperty("Label11")> _
+    Private label_10 As Label
+    <AccessedThroughProperty("Label12")> _
+    Private label_11 As Label
+    <AccessedThroughProperty("Label13")> _
+    Private label_12 As Label
+    <AccessedThroughProperty("Label14")> _
+    Private label_13 As Label
+    <AccessedThroughProperty("Label15")> _
+    Private label_14 As Label
+    <AccessedThroughProperty("Label16")> _
+    Private label_15 As Label
+    <AccessedThroughProperty("Label9")> _
+    Private label_2 As Label
+    <AccessedThroughProperty("Label4")> _
+    Private label_3 As Label
+    <AccessedThroughProperty("Label3")> _
+    Private label_4 As Label
+    <AccessedThroughProperty("Label5")> _
+    Private label_5 As Label
+    <AccessedThroughProperty("Label6")> _
+    Private label_6 As Label
+    <AccessedThroughProperty("Label7")> _
+    Private label_7 As Label
+    <AccessedThroughProperty("Label8")> _
+    Private label_8 As Label
+    <AccessedThroughProperty("Label10")> _
+    Private label_9 As Label
+    <AccessedThroughProperty("ListView1")> _
+    Private listBox_0 As ListBox
+    <AccessedThroughProperty("NumericUpDown6")> _
+    Private numericUpDown_0 As NumericUpDown
+    <AccessedThroughProperty("NumericUpDown4")> _
+    Private numericUpDown_1 As NumericUpDown
+    <AccessedThroughProperty("NumericUpDown3")> _
+    Private numericUpDown_2 As NumericUpDown
+    <AccessedThroughProperty("NumericUpDown2")> _
+    Private numericUpDown_3 As NumericUpDown
+    <AccessedThroughProperty("NumericUpDown1")> _
+    Private numericUpDown_4 As NumericUpDown
+    Private Const object_0 As Object
+    Private Const object_1 As Object
+    Private Const object_2 As Object
+    Private Const object_3 As Object
+    Private Const object_4 As Object
+    Private Const object_5 As Object
+    Private Const object_6 As Object
+    Private Const object_7 As Object
+    Private Const object_8 As Object
+    Private openFileDialog_0 As OpenFileDialog
+    Private openFileDialog_1 As OpenFileDialog
+    Private openFileDialog_2 As OpenFileDialog
+    <AccessedThroughProperty("PictureBox1")> _
+    Private pictureBox_0 As PictureBox
+    <AccessedThroughProperty("PictureBox2")> _
+    Private pictureBox_1 As PictureBox
+    <AccessedThroughProperty("PictureBox11")> _
+    Private pictureBox_10 As PictureBox
+    <AccessedThroughProperty("PictureBox12")> _
+    Private pictureBox_11 As PictureBox
+    <AccessedThroughProperty("PictureBox13")> _
+    Private pictureBox_12 As PictureBox
+    <AccessedThroughProperty("PictureBox14")> _
+    Private pictureBox_13 As PictureBox
+    <AccessedThroughProperty("PictureBox15")> _
+    Private pictureBox_14 As PictureBox
+    <AccessedThroughProperty("PictureBox16")> _
+    Private pictureBox_15 As PictureBox
+    <AccessedThroughProperty("PictureBox17")> _
+    Private pictureBox_16 As PictureBox
+    <AccessedThroughProperty("PictureBox18")> _
+    Private pictureBox_17 As PictureBox
+    <AccessedThroughProperty("PictureBox3")> _
+    Private pictureBox_2 As PictureBox
+    <AccessedThroughProperty("PictureBox4")> _
+    Private pictureBox_3 As PictureBox
+    <AccessedThroughProperty("PictureBox5")> _
+    Private pictureBox_4 As PictureBox
+    <AccessedThroughProperty("PictureBox6")> _
+    Private pictureBox_5 As PictureBox
+    <AccessedThroughProperty("PictureBox7")> _
+    Private pictureBox_6 As PictureBox
+    <AccessedThroughProperty("PictureBox8")> _
+    Private pictureBox_7 As PictureBox
+    <AccessedThroughProperty("PictureBox9")> _
+    Private pictureBox_8 As PictureBox
+    <AccessedThroughProperty("PictureBox10")> _
+    Private pictureBox_9 As PictureBox
+    Private point_0 As Point
+    <AccessedThroughProperty("ProgressBar1")> _
+    Private progressBar_0 As ProgressBar
+    <AccessedThroughProperty("RadioButton21")> _
+    Private radioButton_0 As RadioButton
+    <AccessedThroughProperty("RadioButton1")> _
+    Private radioButton_1 As RadioButton
+    <AccessedThroughProperty("RadioButton10")> _
+    Private radioButton_2 As RadioButton
+    <AccessedThroughProperty("RadioButton4")> _
+    Private radioButton_3 As RadioButton
+    <AccessedThroughProperty("RadioButton2")> _
+    Private radioButton_4 As RadioButton
+    <AccessedThroughProperty("RadioButton3")> _
+    Private radioButton_5 As RadioButton
+    <AccessedThroughProperty("RadioButton24")> _
+    Private radioButton_6 As RadioButton
+    <AccessedThroughProperty("RadioButton5")> _
+    Private radioButton_7 As RadioButton
+    <AccessedThroughProperty("RadioButton6")> _
+    Private radioButton_8 As RadioButton
+    <AccessedThroughProperty("RadioButton17")> _
+    Private radioButton_9 As RadioButton
+    Private saveFileDialog_0 As SaveFileDialog
+    Private string_0 As String
+    Private string_1 As String
+    Private string_2 As String
+    Private string_3 As String
+    Private string_4 As String
+    Private string_5 As String
+    <AccessedThroughProperty("TabControl1")> _
+    Private tabControl_0 As TabControl
+    <AccessedThroughProperty("TabPage1")> _
+    Private tabPage_0 As TabPage
+    <AccessedThroughProperty("TabPage2")> _
+    Private tabPage_1 As TabPage
+    <AccessedThroughProperty("TabPage3")> _
+    Private tabPage_2 As TabPage
+    <AccessedThroughProperty("TabPage4")> _
+    Private tabPage_3 As TabPage
+    <AccessedThroughProperty("TextBox1")> _
+    Private textBox_0 As TextBox
+    <AccessedThroughProperty("TextBox2")> _
+    Private textBox_1 As TextBox
+    <AccessedThroughProperty("TextBox11")> _
+    Private textBox_10 As TextBox
+    <AccessedThroughProperty("TextBox12")> _
+    Private textBox_11 As TextBox
+    <AccessedThroughProperty("TextBox13")> _
+    Private textBox_12 As TextBox
+    <AccessedThroughProperty("TextBox3")> _
+    Private textBox_2 As TextBox
+    <AccessedThroughProperty("TextBox10")> _
+    Private textBox_3 As TextBox
+    <AccessedThroughProperty("TextBox5")> _
+    Private textBox_4 As TextBox
+    <AccessedThroughProperty("TextBox4")> _
+    Private textBox_5 As TextBox
+    <AccessedThroughProperty("TextBox6")> _
+    Private textBox_6 As TextBox
+    <AccessedThroughProperty("TextBox7")> _
+    Private textBox_7 As TextBox
+    <AccessedThroughProperty("TextBox8")> _
+    Private textBox_8 As TextBox
+    <AccessedThroughProperty("TextBox9")> _
+    Private textBox_9 As TextBox
+    <AccessedThroughProperty("ToolTip1")> _
+    Private toolTip_0 As ToolTip

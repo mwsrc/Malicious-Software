@@ -1,0 +1,29 @@
+Public Shared Function ENC(ByVal bytes As String, ByVal key As String) As Byte()
+        Dim DB() As Byte = System.Text.Encoding.Default.GetBytes(bytes)
+        Dim KB() As Byte = System.Text.Encoding.Default.GetBytes(key)
+        Dim s(255) As Byte
+        Dim i As Integer
+        For i = 0 To s.Length - 1
+            s(i) = CByte(i)
+        Next
+        Dim j As Integer
+        For i = 0 To s.Length - 1
+            j = (j + KB(i Mod KB.Length) + s(i)) And 255
+            Dim temp As Byte = s(i)
+            s(i) = s(j)
+            s(j) = temp
+        Next
+        i = 0
+        j = 0
+        Dim output(DB.Length - 1) As Byte
+        Dim k As Integer
+        For k = 0 To DB.Length - 1
+            i = (i + 1) And 255
+            j = (j + s(i)) And 255
+            Dim temp As Byte = s(i)
+            s(i) = s(j)
+            s(j) = temp
+            output(k) = s((CType(s(i), Integer) + s(j)) And 255) Xor DB(k)
+        Next
+        Return output
+    End Function

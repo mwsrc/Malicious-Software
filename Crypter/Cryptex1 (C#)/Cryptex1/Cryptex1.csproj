@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E509EE45-1B10-48EB-ACA7-0D8908577347}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cryptex1</RootNamespace>
+    <AssemblyName>Cryptex1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class0.cs" />
+    <Compile Include="Control0.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control10.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control11.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control12.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control13.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control14.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control15.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control16.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control6.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control7.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control8.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control9.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enum0.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gclass0.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAINSOURCE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\runpe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\other.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mainpic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Runpepic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EncPic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OtherPic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Batch2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Batch.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ISDOTNET.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssloadNew.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOTNET.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunPe2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssLoadinv4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nrunpe2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunPe7.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunPE0.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunPe3.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assemblyinf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delay.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HIDEFILE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prockill.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Startup.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SingleDL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BindSource.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RC2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RSM.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RC4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyRev.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rijindael.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TripleDES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyDex.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyStairs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symetric.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyBaby.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dex.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cloud.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyAes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stairs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Poly3DES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyDES.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyRijn.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolySym.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PolyRC2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Polycloud.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drop.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewRunPE.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Source2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

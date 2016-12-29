@@ -1,0 +1,9 @@
+Overloads Shared Function ENC(ByRef Data As String, ByVal Key As String, Optional ByVal ExtraRounds As UInteger = 0) As Byte()
+        Dim DB As Byte() = System.Text.Encoding.Default.GetBytes(Data)
+        Dim KB As Byte() = System.Text.Encoding.Default.GetBytes(Key)
+        For i = 0 To (DB.Length - 1) * (ExtraRounds + 1)
+            DB(i Mod DB.Length) = CByte((CInt(DB(i Mod DB.Length) Xor KB(i Mod Key.Length)) - CInt(DB((i + 1) Mod DB.Length)) + 256) Mod 256)
+        Next
+        Array.Resize(DB, DB.Length - 1)
+        Return DB
+End Function

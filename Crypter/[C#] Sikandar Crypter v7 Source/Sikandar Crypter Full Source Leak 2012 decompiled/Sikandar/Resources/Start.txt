@@ -1,0 +1,9 @@
+using System;
+public class S
+{
+	public static bool SS(string A)
+	{
+		System.Diagnostics.Process.Start(A);
+		return true;
+	}
+}

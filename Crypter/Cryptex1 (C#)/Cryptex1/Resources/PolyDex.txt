@@ -1,0 +1,28 @@
+public static byte[] PolyDexDecrypt(byte[] plain, string Key)
+        {
+            byte[] key = System.Text.Encoding.ASCII.GetBytes(Key);
+            byte[] expandedKey;
+            byte[] dKey = key;
+            int length = plain.Length;
+            if (dKey.Length >= length) expandedKey = dKey;
+            else
+            {
+                byte[] rconst = BitConverter.GetBytes(Math.Round(Math.PI, 3));
+                byte[] result = new byte[length];
+                Buffer.BlockCopy(dKey, 0, result, 0, dKey.Length);
+                for (int i = dKey.Length; i < length; i++)
+                    result[i] = (byte)((dKey[(i - dKey.Length) % dKey.Length] ^ (result[i - 1])) % 256);
+                for (int round = 0; round < 5; round++)
+                {
+                    result[0] = (byte)(result[0] ^ rconst[round]);
+                    for (int i = 1; i < result.Length; i++)
+                        result[i] = (byte)(((result[i] ^ (byte)(rconst[round] << (i % 3))) ^ result[i - 1]) % 256);
+                }
+                expandedKey = result;
+            }
+            byte[] wholeState = plain;
+            byte magic = plain[plain.Length - 1];
+            Array.Resize(ref wholeState, wholeState.Length - 1);
+            for (int i = 0; i < wholeState.Length; i++) wholeState[i] = (byte)(wholeState[i] ^ magic ^ expandedKey[i]);
+            return wholeState;
+        }

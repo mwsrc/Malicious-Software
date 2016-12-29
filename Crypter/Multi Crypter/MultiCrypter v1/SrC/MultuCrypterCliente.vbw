@@ -1,0 +1,5 @@
+frmStar = 22, 22, 539, 468, Z, 44, 44, 571, 490, C
+mGlobal = 0, 0, 0, 0, C
+clsAES = 0, 0, 0, 0, C
+clsRC4 = 0, 0, 0, 0, C
+clsXOR = 0, 0, 0, 0, C

@@ -1,0 +1,3 @@
+Shared Sub F59()
+     Killer("taskmgr")
+End Sub

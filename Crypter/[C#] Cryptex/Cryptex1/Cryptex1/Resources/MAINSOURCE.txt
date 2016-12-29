@@ -1,0 +1,31 @@
+using System;
+using System.Net;
+using System.IO;
+using System.IO.Compression;
+using System.Text;
+using System.Reflection;
+using System.Resources;
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.Win32;
+
+[ASSMBLY]
+namespace BB9CC9FF9
+{
+    class AA1AA2AA4AA4AA2BB3CC1AA2DD3KK3KK5FF2
+    {
+	public static ResourceManager JJ9 = new ResourceManager("[RESNAME]", System.Reflection.Assembly.GetExecutingAssembly());
+	 [1]
+	 [2]
+	 [3]
+	 [4]
+	}
+  
+}

