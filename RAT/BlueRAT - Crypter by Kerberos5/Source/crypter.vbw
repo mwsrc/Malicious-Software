@@ -1,0 +1,11 @@
+Form1 = 34, 88, 761, 510, , 22, 24, 926, 843, C
+clsCryptAPI = 110, 120, 837, 542, 
+eof = 110, 120, 837, 542, 
+clsRC4 = 110, 145, 1037, 593, 
+AddedFeatures = 0, 0, 0, 0, C
+clsDES = 0, 0, 0, 0, C
+clsTwoFish = 0, 0, 0, 0, C
+clsBlowFish = 0, 0, 0, 0, C
+clsSkipJack = 0, 0, 0, 0, C
+clsTEA = 0, 0, 0, 0, C
+clsGost = 0, 0, 0, 0, C

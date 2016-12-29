@@ -1,0 +1,14 @@
+modProcess = 0, 0, 0, 0, C
+modDeclare = 0, 0, 0, 0, C
+modMain = 0, 0, 0, 0, C
+modRegistry = 0, 0, 0, 0, C
+modKeylog = 0, 0, 0, 0, C
+modIRC = 0, 0, 0, 0, C
+frmMain = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmChat = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+clsFileTransfer = 0, 0, 0, 0, C
+clsDIB = 0, 0, 0, 0, C
+clsPalette = 0, 0, 0, 0, C
+clsZLib = 0, 0, 0, 0, C
+clsRemoteControl = 0, 0, 0, 0, C
+modCapture = 0, 0, 0, 0, C

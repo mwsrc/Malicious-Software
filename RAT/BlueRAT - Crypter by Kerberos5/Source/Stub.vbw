@@ -1,0 +1,6 @@
+fds = 44, 48, 771, 470, 
+clsCryptAPI = 88, 96, 815, 518, 
+dfs = 88, 96, 815, 518, 
+modCryptStuff = 154, 168, 891, 790, 
+clsRC4 = 0, 0, 0, 0, C
+clsSimpleXOR = 0, 0, 0, 0, C

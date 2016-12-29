@@ -1,0 +1,11 @@
+fds = 44, 48, 771, 470, 
+clsCryptAPI = 88, 96, 815, 518, 
+dfs = 88, 96, 815, 518, 
+clsRC4 = 0, 0, 0, 0, C
+AddedFeatures = 0, 0, 0, 0, C
+clsDES = 0, 0, 0, 0, C
+clsTwoFish = 0, 0, 0, 0, C
+clsBlowFish = 88, 116, 1015, 564, 
+clsGost = 0, 0, 0, 0, C
+clsSkipJack = 0, 0, 0, 0, C
+clsTEA = 0, 0, 0, 0, C

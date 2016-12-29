@@ -1,0 +1,8 @@
+Crypter veramente efficace prelevato da indetectable.net ho eliminato XOR perchè era detect ed ho aggiunto DES - BlowFish - TwoFish gost - TEA - skipjack algoritmi estremamente efficaci m poco conosciuti il risultato è straordinario!!! modificata interfaccia grafica
+
+crypter con 8 algoritmi di cifratura settabili!!!!!!
+EOF data support
+
+enjoy
+
+Kerb5
