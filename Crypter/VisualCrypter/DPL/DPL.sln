@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DPL", "DPL\DPL.vbproj", "{5E4A498C-2146-4F31-91AD-036D683BCAA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Debug|x86.ActiveCfg = Debug|x86
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Debug|x86.Build.0 = Debug|x86
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Release|x86.ActiveCfg = Release|x86
+		{5E4A498C-2146-4F31-91AD-036D683BCAA8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
