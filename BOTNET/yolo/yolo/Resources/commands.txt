@@ -1,0 +1,14 @@
+==========Commands==========
+#resolve {username} - Resolve a skype name to reveal IP.
+#trace {IP / Host} - Trace a website or IP.
+#ddos {IP} {time} - Attack an IP with a powerful UDP attack. //Currently Disabled
+#about - Gives you a little info about the bot.
+#ssyn {IP} {time} - Attack an IP with a nice and powerful SSYN attack. //Currently Disabled
+#purchase - Purchase premium.
+#blacklist {username} - Request blacklisting.
+#cfresolve {host} - Resolve a cloudflare protected site.
+#joke - Shows a joke.
+#ip2skype - Check if an IP is connected to a Skype.
+#portscan {IP} - Scan an IP for open ports.
+#vpndetect - Detect if an IP is a VPN.
+============================

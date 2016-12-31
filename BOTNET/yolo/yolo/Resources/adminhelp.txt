@@ -1,0 +1,16 @@
+==========Admin Help==========
+The current available admin commands are:
+#online - Sets the bots status to online.
+#away - Sets the bots status to away.
+#busy - Sets the bots status to do not disturb.
+#hide - Sets the bots status to invisible.
+#setpremium {username} - Sets a user to premium.
+#delpremium {username} - Removes a user from premium.
+#setadmin {username} - Sets a user to admin.
+#deladmin {username} - Removes a user from admin.
+#block - Block the person you send this to.
+#broadcast -m - Sends a message to everyone on bots skype.
+#afk set {afk message} - Sends an afk message everytime someone sends a message to the bot.
+#afk remove - Removes the message, and makes the bot go back to normal.
+#mood -m {message} - Sets the bots mood to whatever you want.
+==============================

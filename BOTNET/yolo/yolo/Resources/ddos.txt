@@ -1,0 +1,10 @@
+Imports System.Windows.Forms
+Imports System.Net
+Module CastleStub
+    Sub Main()
+	   on error resume next
+        Dim request As HttpWebRequest = HttpWebRequest.Create("%server%")
+        Dim response As HttpWebResponse = request.GetResponse
+    End Sub
+
+End Module
