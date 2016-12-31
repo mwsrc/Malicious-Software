@@ -1,0 +1,9 @@
+frmMain = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+clsThreading = 0, 0, 0, 0, C
+clsThreadings = 0, 0, 0, 0, C
+basMultiDownload = 0, 0, 0, 0, C
+basAlwaysOnTop = 0, 0, 0, 0, C
+basFileFunctions = 0, 0, 0, 0, C
+basStringFunction = 0, 0, 0, 0, C
+basRegistrySettings = 0, 0, 0, 0, C
+basSaveAs = 0, 0, 0, 0, C

